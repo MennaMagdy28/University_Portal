@@ -1,0 +1,6 @@
+@HUP_HostAddress = http://localhost:5267
+
+GET {{HUP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
