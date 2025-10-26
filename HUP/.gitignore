@@ -52,3 +52,53 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Visual Studio / IDE files (ignore workspace DB and state files)
+.vs/
+.vscode/
+
+# Visual Studio generated DBs, workspace and user files
+*.slnx.sqlite
+VSWorkspaceState.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+
+# Rider / JetBrains
+.idea/
+.idea/* 
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/shelf/
+.gradle/
+
+# Coverage
+coverage*/
+coverage/
+
+# Local secrets
+*.userprefs
+secrets.json
+
+# Publish output
+publish/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Lock files
+global.json.lock
+
+# Optional: package manager folders
+node_modules/
+
+# End of file
