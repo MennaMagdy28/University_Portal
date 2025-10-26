@@ -1,10 +1,7 @@
-﻿using HUP.Core.Models.ServiceModels;
-
-namespace HUP.Core.Models.UserModels
+namespace HUP.Core.Entities.Identity
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int UserId { get; set; }
         public string NationalID { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }

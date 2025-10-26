@@ -1,13 +1,13 @@
-﻿namespace HUP.Core.Models.AcademicModels
+
+namespace HUP.Core.Entities.Academics
 {
-    public class Course
+    public class Course : BaseEntity
     {
-        public int CourseID { get; set; }
         public string CourseCode { get; set; }
         public string CourseName { get; set; }
         public int Credits { get; set; }
-        public int DepartmentID { get; set; }
-        public int PrerequisiteID { get; set; }
+        public Guid DepartmentID { get; set; }
+        public Gudi PrerequisiteID { get; set; }
 
         public Department Department { get; set; }
         public Course Prerequisite { get; set; }

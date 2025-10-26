@@ -3,9 +3,9 @@ using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.DTOs.CommonDtos;
 using HUP.Core.DTOs.ServiceDtos;
 using HUP.Core.DTOs.UserDtos;
-using HUP.Core.Models.AcademicModels;
-using HUP.Core.Models.ServiceModels;
-using HUP.Core.Models.UserModels;
+using HUP.Core.Entities.Academics;
+using HUP.Core.Entities.Identity;
+using HUP.Core.Entities.Permissions;
 
 namespace HUP
 {

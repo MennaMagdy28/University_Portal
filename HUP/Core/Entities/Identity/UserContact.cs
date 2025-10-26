@@ -1,8 +1,8 @@
-﻿namespace HUP.Core.Models.AcademicModels
+namespace HUP.Core.Entities.Identity
 {
-    public class StudentContacts
+    public class UserContact : BaseEntity
     {
-        public int StudentID { get; set; }
+        public Guid StudentID { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string PhoneNumber { get; set; }

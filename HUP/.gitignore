@@ -103,4 +103,6 @@ node_modules/
 
 obj/
 bin/
+obj/*
+bin/*
 # End of file

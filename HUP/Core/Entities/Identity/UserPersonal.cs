@@ -1,10 +1,10 @@
-﻿using HUP.Core.Enums;
+using HUP.Core.Enums;
 
-namespace HUP.Core.Models.AcademicModels
+namespace HUP.Core.Entities.Identity
 {
-    public class StudentPersonal
+    public class UserPersonal : BaseEntity
     {
-        public int StudentID { get; set; }
+        public Guid StudentID { get; set; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string Religion { get; set; }
