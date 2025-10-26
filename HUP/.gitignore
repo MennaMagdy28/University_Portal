@@ -101,4 +101,6 @@ global.json.lock
 # Optional: package manager folders
 node_modules/
 
+obj/
+bin/
 # End of file
