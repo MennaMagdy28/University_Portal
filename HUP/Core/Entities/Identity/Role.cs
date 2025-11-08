@@ -2,11 +2,11 @@ namespace HUP.Core.Entities.Identity
 {
     public class Role : BaseEntity
     {
-        public string RoleName { get; set; }
-        public string RoleDescription { get; set; }
-        public int CreatedBy { get; set; }
+        public string Name { get; set; }
+        public string DisplayName { get; set; }
+        public string ? Description { get; set; }
+        public Guid CreatedBy { get; set; }
 
         public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
-        public ICollection<RolePagePermission> RolePagePermissions { get; set; } = new List<RolePagePermission>();
-    }
+        public User User { get; set; }
 }

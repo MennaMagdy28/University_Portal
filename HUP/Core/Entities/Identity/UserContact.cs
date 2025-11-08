@@ -1,13 +1,13 @@
 namespace HUP.Core.Entities.Identity
 {
-    public class UserContact : BaseEntity
+    public class UserContact
     {
-        public Guid StudentID { get; set; }
+        public Guid UserID { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string PhoneNumber { get; set; }
         public string AltEmail { get; set; }
 
-        public Student Student { get; set; }
+        public User User { get; set; }
     }
 }

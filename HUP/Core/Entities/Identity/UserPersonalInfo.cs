@@ -2,15 +2,15 @@ using HUP.Core.Enums;
 
 namespace HUP.Core.Entities.Identity
 {
-    public class UserPersonal : BaseEntity
+    public class UserPersonalInfo
     {
-        public Guid StudentID { get; set; }
+        public Guid UserID { get; set; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string Religion { get; set; }
         public string Nationality { get; set; }
         public string BirthPlace { get; set; }
 
-        public Student Student { get; set; }
+        public User User { get; set; }
     }
 }

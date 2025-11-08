@@ -8,8 +8,9 @@ namespace HUP.Core.Entities.Identity
         public string FullName { get; set; }
         public string Phone { get; set; }
         public bool IsActive { get; set; } = true;
+        public Guid RoleId { get; set; }
 
-        public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
+        public Role UserRole { get; set; };
         public ICollection<UserPagePermission> UserPagePermissions { get; set; } = new List<UserPagePermission>();
     }
 }
