@@ -1,6 +1,8 @@
-﻿namespace HUP.Core.Models.AcademicModels
+﻿using HUP.Core.Models.Shared;
+
+namespace HUP.Core.Models.AcademicModels
 {
-    public class StudentContacts
+    public class StudentContacts : BaseEntity
     {
         public int StudentID { get; set; }
         public string Address { get; set; }
@@ -8,6 +10,6 @@
         public string PhoneNumber { get; set; }
         public string AltEmail { get; set; }
 
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

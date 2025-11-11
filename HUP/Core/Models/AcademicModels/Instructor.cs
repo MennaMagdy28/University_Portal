@@ -1,15 +1,15 @@
-﻿using HUP.Core.Models.UserModels;
+﻿using HUP.Core.Models.Shared;
+using HUP.Core.Models.UserModels;
 
 namespace HUP.Core.Models.AcademicModels
 {
-    public class Instructor
+    public class Instructor : BaseEntity
     {
-        public int InstructorID { get; set; }
         public int UserID { get; set; }
         public int DepartmentID { get; set; }
         public string AcademicTitle { get; set; }
 
-        public User User { get; set; }
-        public Department Department { get; set; }
+        public virtual User User { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

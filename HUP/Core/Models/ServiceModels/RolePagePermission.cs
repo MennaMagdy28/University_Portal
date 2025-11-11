@@ -1,16 +1,16 @@
-﻿using HUP.Core.Models.AcademicModels;
+﻿using HUP.Core.Models.Shared;
+using HUP.Core.Models.UserModels;
 
 namespace HUP.Core.Models.ServiceModels
 {
-    public class RolePagePermission
+    public class RolePagePermission : BaseEntity
     {
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
+        public int RoleID { get; set; }
+        public int PageID { get; set; }
+        public int PermissionID { get; set; }
 
-        public int PageId { get; set; }
-        public Page Page { get; set; }
-
-        public int PermissionId { get; set; }
-        public Permission Permission { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual Page Page { get; set; }
+        public virtual Permission Permission { get; set; }
     }
 }

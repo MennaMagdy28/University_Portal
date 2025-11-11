@@ -1,9 +1,14 @@
-﻿namespace HUP.Core.Models.ServiceModels
+﻿using HUP.Core.Models.Shared;
+using HUP.Core.Models.UserModels;
+
+namespace HUP.Core.Models.ServiceModels
 {
-    public class Permission
+    public class Permission : BaseEntity
     {
-        public int PermissionId { get; set; }
         public string PermissionName { get; set; }
         public string PermissionDescription { get; set; }
+
+        public virtual ICollection<RolePagePermission> RolePagePermissions { get; set; }
+        public virtual ICollection<UserPagePermission> UserPagePermissions { get; set; }
     }
 }

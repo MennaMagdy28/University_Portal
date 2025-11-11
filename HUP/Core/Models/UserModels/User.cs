@@ -1,18 +1,21 @@
-﻿using HUP.Core.Models.ServiceModels;
+﻿using HUP.Core.Enums;
+using HUP.Core.Models.AcademicModels;
+using HUP.Core.Models.Shared;
 
 namespace HUP.Core.Models.UserModels
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int UserId { get; set; }
         public string NationalID { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string UniversityEmail { get; set; }
+        public string Password { get; set; }
         public string FullName { get; set; }
         public string Phone { get; set; }
-        public bool IsActive { get; set; } = true;
+        public RoleType Role { get; set; }
 
-        public ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
-        public ICollection<UserPagePermission> UserPagePermissions { get; set; } = new List<UserPagePermission>();
+        public virtual ICollection<UserRole> UserRoles { get; set; }
+        public virtual ICollection<UserPagePermission> UserPagePermissions { get; set; }
+        public virtual Student Student { get; set; }
+        public virtual Instructor Instructor { get; set; }
     }
 }

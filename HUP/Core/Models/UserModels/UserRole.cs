@@ -1,17 +1,15 @@
-﻿using HUP.Core.Models.ServiceModels;
+﻿using HUP.Core.Models.Shared;
 
 namespace HUP.Core.Models.UserModels
 {
-    public class UserRole
+    public class UserRole : BaseEntity
     {
-        public int UserRoleId { get; set; }
-        public int UserId { get; set; }
-        public User User { get; set; }
-
-        public int RoleId { get; set; }
-        public Role Role { get; set; }
-
+        public int UserID { get; set; }
+        public int RoleID { get; set; }
         public int AssignedBy { get; set; }
-        public DateTime ExpiryDate { get; set; }
+        public DateOnly ExpiryDate { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

@@ -1,12 +1,16 @@
-﻿namespace HUP.Core.Models.AcademicModels
+﻿using HUP.Core.Models.Shared;
+
+namespace HUP.Core.Models.AcademicModels
 {
-    public class Department
+    public class Department : BaseEntity
     {
-        public int DepartmentId { get; set; }
         public int FacultyID { get; set; }
         public string DepartmentName { get; set; }
         public string HeadOfDepartment { get; set; }
 
-        public Faculty Faculty { get; set; }
+        public virtual Faculty Faculty { get; set; }
+        public virtual ICollection<ProgramEntity> Programs { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Instructor> Instructors { get; set; }
     }
 }

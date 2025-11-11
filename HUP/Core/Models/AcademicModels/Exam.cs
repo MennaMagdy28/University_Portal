@@ -1,17 +1,16 @@
 ﻿using HUP.Core.Enums;
+using HUP.Core.Models.Shared;
 
 namespace HUP.Core.Models.AcademicModels
 {
-    public class Exam
+    public class Exam : BaseEntity
     {
-        public int ExamID { get; set; }
         public int CourseID { get; set; }
-        public string ExamName { get; set; }
         public ExamType ExamType { get; set; }
-        public DateTime ExamDate { get; set; }
-        public TimeSpan ExamTime { get; set; }
+        public DateOnly ExamDate { get; set; }
+        public TimeOnly ExamTime { get; set; }
         public string Location { get; set; }
 
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

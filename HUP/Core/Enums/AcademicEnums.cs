@@ -1,23 +1,5 @@
 ﻿namespace HUP.Core.Enums
 {
-    public enum AcademicStatus
-    {
-        Active,
-        Graduated
-    }
-
-    public enum Gender
-    {
-        Male,
-        Female
-    }
-
-    public enum ExamType
-    {
-        Midterm,
-        Final
-    }
-
     public enum EnrollmentStatus
     {
         Registered,
@@ -27,31 +9,20 @@
         Failed
     }
 
-    public enum DegreeType
+    public enum ExamType
     {
-        Bachelor,
-        Master,
-        PhD
+        Midterm,
+        Final,
+        Quiz,
+        Practical
     }
 
-    public enum UserRoles
+    public enum AcademicStatus
     {
-        Admin,
-        Student,
-        Instructor,
-        DepartmentHead,
-        FacultyDean
-    }
-
-    public enum Language
-    {
-        English,
-        Arabic
-    }
-
-    public enum AcademicTitle
-    {
-        Professor,
-        AssistantProfessor
+        Active,
+        Deferred,
+        Withdrawn,
+        Suspended,
+        Graduated
     }
 }
