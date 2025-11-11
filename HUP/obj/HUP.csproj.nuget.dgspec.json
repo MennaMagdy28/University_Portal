@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\HUP\\HUP.csproj": {}
+    "D:\\GitHub\\University_Portal\\HUP\\HUP.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\HUP\\HUP.csproj": {
+    "D:\\GitHub\\University_Portal\\HUP\\HUP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\HUP\\HUP.csproj",
+        "projectUniqueName": "D:\\GitHub\\University_Portal\\HUP\\HUP.csproj",
         "projectName": "HUP",
-        "projectPath": "D:\\Projects\\HUP\\HUP.csproj",
+        "projectPath": "D:\\GitHub\\University_Portal\\HUP\\HUP.csproj",
         "packagesPath": "C:\\Users\\3bdo3\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\HUP\\obj\\",
+        "outputPath": "D:\\GitHub\\University_Portal\\HUP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

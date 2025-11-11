@@ -1,6 +1,6 @@
-﻿using HUP.Core.DTOs.AcademicDtos;
+﻿using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.Services.Interfaces;
 using HUP.Core.Models.AcademicModels;
-using HUP.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

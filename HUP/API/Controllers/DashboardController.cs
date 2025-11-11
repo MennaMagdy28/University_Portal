@@ -1,5 +1,5 @@
-﻿using HUP.Core.DTOs.DashboardDTOs;
-using HUP.Services.Interfaces;
+﻿using HUP.Application.DTOs.DashboardDTOs;
+using HUP.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

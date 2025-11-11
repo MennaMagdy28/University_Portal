@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "courseDto",
-        "Type": "HUP.Core.DTOs.AcademicDtos.CourseCreateDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.CourseCreateDto",
         "IsRequired": true
       }
     ],
@@ -55,7 +55,7 @@
     "Parameters": [
       {
         "Name": "departmentDto",
-        "Type": "HUP.Core.DTOs.AcademicDtos.DepartmentCreateDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.DepartmentCreateDto",
         "IsRequired": true
       }
     ],
@@ -101,7 +101,7 @@
     "Parameters": [
       {
         "Name": "facultyDto",
-        "Type": "HUP.Core.DTOs.AcademicDtos.FacultyCreateDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.FacultyCreateDto",
         "IsRequired": true
       }
     ],
@@ -147,7 +147,7 @@
     "Parameters": [
       {
         "Name": "programDto",
-        "Type": "HUP.Core.DTOs.AcademicDtos.ProgramCreateDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.ProgramCreateDto",
         "IsRequired": true
       }
     ],
@@ -193,7 +193,7 @@
     "Parameters": [
       {
         "Name": "loginDto",
-        "Type": "HUP.Core.DTOs.LoginDtos.LoginRequestDto",
+        "Type": "HUP.Application.DTOs.LoginDtos.LoginRequestDto",
         "IsRequired": true
       }
     ],
@@ -209,7 +209,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.DTOs.DashboardDTOs.AcademicReportDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Application.DTOs.DashboardDTOs.AcademicReportDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -229,7 +229,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.DashboardDTOs.DashboardStatsDto",
+        "Type": "HUP.Application.DTOs.DashboardDTOs.DashboardStatsDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -249,7 +249,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.DTOs.AcademicDtos.StudentResponseDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Application.DTOs.AcademicDtos.StudentResponseDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,13 +269,13 @@
     "Parameters": [
       {
         "Name": "studentDto",
-        "Type": "HUP.Core.DTOs.AcademicDtos.StudentCreateDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.StudentCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.AcademicDtos.StudentResponseDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.StudentResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -301,7 +301,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.AcademicDtos.StudentResponseDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.StudentResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -348,7 +348,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.AcademicDtos.StudentResponseDto",
+        "Type": "HUP.Application.DTOs.AcademicDtos.StudentResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -368,7 +368,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.DTOs.UserDtos.UserResponseDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Application.DTOs.UserDtos.UserResponseDto, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -388,13 +388,13 @@
     "Parameters": [
       {
         "Name": "userDto",
-        "Type": "HUP.Core.DTOs.UserDtos.UserCreateDto",
+        "Type": "HUP.Application.DTOs.UserDtos.UserCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.UserDtos.UserResponseDto",
+        "Type": "HUP.Application.DTOs.UserDtos.UserResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -420,7 +420,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.DTOs.UserDtos.UserResponseDto",
+        "Type": "HUP.Application.DTOs.UserDtos.UserResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -445,7 +445,7 @@
       },
       {
         "Name": "userDto",
-        "Type": "HUP.Core.DTOs.UserDtos.UserUpdateDto",
+        "Type": "HUP.Application.DTOs.UserDtos.UserUpdateDto",
         "IsRequired": true
       }
     ],
@@ -482,7 +482,7 @@
       },
       {
         "Name": "changePasswordDto",
-        "Type": "HUP.Core.DTOs.LoginDtos.ChangePasswordDto",
+        "Type": "HUP.Application.DTOs.LoginDtos.ChangePasswordDto",
         "IsRequired": true
       }
     ],

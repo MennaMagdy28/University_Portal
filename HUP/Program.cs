@@ -1,8 +1,8 @@
+using HUP.Application.Services.Implementations;
+using HUP.Application.Services.Interfaces;
 using HUP.Data;
 using HUP.Repositories.Implementations;
 using HUP.Repositories.Interfaces;
-using HUP.Services.Implementations;
-using HUP.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

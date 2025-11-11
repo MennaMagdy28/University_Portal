@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using HUP.Core.DTOs.AcademicDtos;
-using HUP.Core.DTOs.UserDtos;
+using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.UserDtos;
 using HUP.Core.Enums;
 using HUP.Core.Models.AcademicModels;
 using HUP.Core.Models.UserModels;

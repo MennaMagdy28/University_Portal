@@ -1,5 +1,5 @@
-﻿using HUP.Core.DTOs.LoginDtos;
-using HUP.Core.DTOs.UserDtos;
+﻿using HUP.Application.DTOs.LoginDtos;
+using HUP.Application.DTOs.UserDtos;
 using HUP.Core.Models.UserModels;
 using HUP.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;

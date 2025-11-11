@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6LgbUWH51MM=",
+  "dgSpecHash": "Armb2AgfrQA=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\HUP\\HUP.csproj",
+  "projectFilePath": "D:\\GitHub\\University_Portal\\HUP\\HUP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\3bdo3\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\3bdo3\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
