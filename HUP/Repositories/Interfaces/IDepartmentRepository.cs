@@ -1,4 +1,4 @@
-﻿using HUP.Core.Models.AcademicModels;
+﻿using HUP.Core.Entities.AcademicModels;
 
 namespace HUP.Repositories.Interfaces
 {

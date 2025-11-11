@@ -25,7 +25,7 @@ namespace HUP.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Course", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace HUP.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Department", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,7 +103,7 @@ namespace HUP.Migrations
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Enrollment", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Enrollment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,7 +148,7 @@ namespace HUP.Migrations
                     b.ToTable("Enrollments");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Exam", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Exam", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,7 +189,7 @@ namespace HUP.Migrations
                     b.ToTable("Exams");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Faculty", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Faculty", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +223,7 @@ namespace HUP.Migrations
                     b.ToTable("Faculties");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Instructor", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Instructor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -260,7 +260,7 @@ namespace HUP.Migrations
                     b.ToTable("Instructors");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.ProgramEntity", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.ProgramEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -301,7 +301,7 @@ namespace HUP.Migrations
                     b.ToTable("Programs");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Student", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Student", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -367,7 +367,7 @@ namespace HUP.Migrations
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.StudentContacts", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.StudentContacts", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -411,7 +411,7 @@ namespace HUP.Migrations
                     b.ToTable("StudentContacts");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.StudentPersonal", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.StudentPersonal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -457,7 +457,7 @@ namespace HUP.Migrations
                     b.ToTable("StudentPersonals");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.Page", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.Page", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -487,7 +487,7 @@ namespace HUP.Migrations
                     b.ToTable("Pages");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.Permission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.Permission", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -517,7 +517,7 @@ namespace HUP.Migrations
                     b.ToTable("Permissions");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.RolePagePermission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.RolePagePermission", b =>
                 {
                     b.Property<int>("RoleID")
                         .HasColumnType("int");
@@ -549,7 +549,7 @@ namespace HUP.Migrations
                     b.ToTable("RolePagePermissions");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.Role", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -582,7 +582,7 @@ namespace HUP.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.User", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -634,7 +634,7 @@ namespace HUP.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.UserPagePermission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.UserPagePermission", b =>
                 {
                     b.Property<int>("UserID")
                         .HasColumnType("int");
@@ -666,7 +666,7 @@ namespace HUP.Migrations
                     b.ToTable("UserPagePermissions");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.UserRole", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.UserRole", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -704,15 +704,15 @@ namespace HUP.Migrations
                     b.ToTable("UserRoles");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Course", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Course", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Department", "Department")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Department", "Department")
                         .WithMany("Courses")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.AcademicModels.Course", "Prerequisite")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Course", "Prerequisite")
                         .WithMany("PrerequisitesFor")
                         .HasForeignKey("PrerequisiteID")
                         .OnDelete(DeleteBehavior.Restrict);
@@ -722,9 +722,9 @@ namespace HUP.Migrations
                     b.Navigation("Prerequisite");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Department", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Department", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Faculty", "Faculty")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Faculty", "Faculty")
                         .WithMany("Departments")
                         .HasForeignKey("FacultyID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -733,15 +733,15 @@ namespace HUP.Migrations
                     b.Navigation("Faculty");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Enrollment", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Enrollment", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Course", "Course")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Course", "Course")
                         .WithMany("Enrollments")
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.AcademicModels.Student", "Student")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Student", "Student")
                         .WithMany("Enrollments")
                         .HasForeignKey("StudentID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -752,9 +752,9 @@ namespace HUP.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Exam", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Exam", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Course", "Course")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Course", "Course")
                         .WithMany("Exams")
                         .HasForeignKey("CourseID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -763,17 +763,17 @@ namespace HUP.Migrations
                     b.Navigation("Course");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Instructor", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Instructor", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Department", "Department")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Department", "Department")
                         .WithMany("Instructors")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.UserModels.User", "User")
+                    b.HasOne("HUP.Core.Entities.UserModels.User", "User")
                         .WithOne("Instructor")
-                        .HasForeignKey("HUP.Core.Models.AcademicModels.Instructor", "UserID")
+                        .HasForeignKey("HUP.Core.Entities.AcademicModels.Instructor", "UserID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -782,9 +782,9 @@ namespace HUP.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.ProgramEntity", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.ProgramEntity", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Department", "Department")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Department", "Department")
                         .WithMany("Programs")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -793,23 +793,23 @@ namespace HUP.Migrations
                     b.Navigation("Department");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Student", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Student", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Faculty", "Faculty")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Faculty", "Faculty")
                         .WithMany("Students")
                         .HasForeignKey("FacultyID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.AcademicModels.ProgramEntity", "Program")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.ProgramEntity", "Program")
                         .WithMany("Students")
                         .HasForeignKey("ProgramID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.UserModels.User", "User")
+                    b.HasOne("HUP.Core.Entities.UserModels.User", "User")
                         .WithOne("Student")
-                        .HasForeignKey("HUP.Core.Models.AcademicModels.Student", "UserID")
+                        .HasForeignKey("HUP.Core.Entities.AcademicModels.Student", "UserID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -820,43 +820,43 @@ namespace HUP.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.StudentContacts", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.StudentContacts", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Student", "Student")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Student", "Student")
                         .WithOne("StudentContacts")
-                        .HasForeignKey("HUP.Core.Models.AcademicModels.StudentContacts", "StudentID")
+                        .HasForeignKey("HUP.Core.Entities.AcademicModels.StudentContacts", "StudentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.StudentPersonal", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.StudentPersonal", b =>
                 {
-                    b.HasOne("HUP.Core.Models.AcademicModels.Student", "Student")
+                    b.HasOne("HUP.Core.Entities.AcademicModels.Student", "Student")
                         .WithOne("StudentPersonal")
-                        .HasForeignKey("HUP.Core.Models.AcademicModels.StudentPersonal", "StudentID")
+                        .HasForeignKey("HUP.Core.Entities.AcademicModels.StudentPersonal", "StudentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.RolePagePermission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.RolePagePermission", b =>
                 {
-                    b.HasOne("HUP.Core.Models.ServiceModels.Page", "Page")
+                    b.HasOne("HUP.Core.Entities.ServiceModels.Page", "Page")
                         .WithMany("RolePagePermissions")
                         .HasForeignKey("PageID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.ServiceModels.Permission", "Permission")
+                    b.HasOne("HUP.Core.Entities.ServiceModels.Permission", "Permission")
                         .WithMany("RolePagePermissions")
                         .HasForeignKey("PermissionID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.UserModels.Role", "Role")
+                    b.HasOne("HUP.Core.Entities.UserModels.Role", "Role")
                         .WithMany("RolePagePermissions")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -869,21 +869,21 @@ namespace HUP.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.UserPagePermission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.UserPagePermission", b =>
                 {
-                    b.HasOne("HUP.Core.Models.ServiceModels.Page", "Page")
+                    b.HasOne("HUP.Core.Entities.ServiceModels.Page", "Page")
                         .WithMany("UserPagePermissions")
                         .HasForeignKey("PageID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.ServiceModels.Permission", "Permission")
+                    b.HasOne("HUP.Core.Entities.ServiceModels.Permission", "Permission")
                         .WithMany("UserPagePermissions")
                         .HasForeignKey("PermissionID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.UserModels.User", "User")
+                    b.HasOne("HUP.Core.Entities.UserModels.User", "User")
                         .WithMany("UserPagePermissions")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -896,15 +896,15 @@ namespace HUP.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.UserRole", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.UserRole", b =>
                 {
-                    b.HasOne("HUP.Core.Models.UserModels.Role", "Role")
+                    b.HasOne("HUP.Core.Entities.UserModels.Role", "Role")
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Models.UserModels.User", "User")
+                    b.HasOne("HUP.Core.Entities.UserModels.User", "User")
                         .WithMany("UserRoles")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -915,7 +915,7 @@ namespace HUP.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Course", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Course", b =>
                 {
                     b.Navigation("Enrollments");
 
@@ -924,7 +924,7 @@ namespace HUP.Migrations
                     b.Navigation("PrerequisitesFor");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Department", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Department", b =>
                 {
                     b.Navigation("Courses");
 
@@ -933,19 +933,19 @@ namespace HUP.Migrations
                     b.Navigation("Programs");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Faculty", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Faculty", b =>
                 {
                     b.Navigation("Departments");
 
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.ProgramEntity", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.ProgramEntity", b =>
                 {
                     b.Navigation("Students");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.AcademicModels.Student", b =>
+            modelBuilder.Entity("HUP.Core.Entities.AcademicModels.Student", b =>
                 {
                     b.Navigation("Enrollments");
 
@@ -956,28 +956,28 @@ namespace HUP.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.Page", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.Page", b =>
                 {
                     b.Navigation("RolePagePermissions");
 
                     b.Navigation("UserPagePermissions");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.ServiceModels.Permission", b =>
+            modelBuilder.Entity("HUP.Core.Entities.ServiceModels.Permission", b =>
                 {
                     b.Navigation("RolePagePermissions");
 
                     b.Navigation("UserPagePermissions");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.Role", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.Role", b =>
                 {
                     b.Navigation("RolePagePermissions");
 
                     b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("HUP.Core.Models.UserModels.User", b =>
+            modelBuilder.Entity("HUP.Core.Entities.UserModels.User", b =>
                 {
                     b.Navigation("Instructor")
                         .IsRequired();

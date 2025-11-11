@@ -1,6 +1,6 @@
 ﻿using HUP.Application.DTOs.LoginDtos;
 using HUP.Application.DTOs.UserDtos;
-using HUP.Core.Models.UserModels;
+using HUP.Core.Entities.UserModels;
 using HUP.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

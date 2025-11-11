@@ -1,6 +1,6 @@
-﻿using HUP.Core.Models.AcademicModels;
-using HUP.Core.Models.ServiceModels;
-using HUP.Core.Models.UserModels;
+﻿using HUP.Core.Entities.AcademicModels;
+using HUP.Core.Entities.ServiceModels;
+using HUP.Core.Entities.UserModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace HUP.Data

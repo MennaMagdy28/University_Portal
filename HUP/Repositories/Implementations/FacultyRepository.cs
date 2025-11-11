@@ -1,4 +1,4 @@
-﻿using HUP.Core.Models.AcademicModels;
+﻿using HUP.Core.Entities.AcademicModels;
 using HUP.Data;
 using HUP.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;

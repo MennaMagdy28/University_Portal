@@ -1,8 +1,8 @@
 ﻿using HUP.Core.Enums;
-using HUP.Core.Models.AcademicModels;
-using HUP.Core.Models.Shared;
+using HUP.Core.Entities.AcademicModels;
+using HUP.Core.Entities.Shared;
 
-namespace HUP.Core.Models.UserModels
+namespace HUP.Core.Entities.UserModels
 {
     public class User : BaseEntity
     {

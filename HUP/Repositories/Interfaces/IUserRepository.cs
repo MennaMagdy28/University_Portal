@@ -1,5 +1,5 @@
 ﻿using HUP.Core.Enums;
-using HUP.Core.Models.UserModels;
+using HUP.Core.Entities.UserModels;
 
 namespace HUP.Repositories.Interfaces
 {

@@ -2,7 +2,7 @@
 using HUP.Application.DTOs.UserDtos;
 using HUP.Application.Services.Interfaces;
 using HUP.Core.Enums;
-using HUP.Core.Models.UserModels;
+using HUP.Core.Entities.UserModels;
 using HUP.Repositories.Interfaces;
 
 namespace HUP.Application.Services.Implementations

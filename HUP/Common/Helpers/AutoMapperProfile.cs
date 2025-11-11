@@ -2,8 +2,8 @@
 using HUP.Application.DTOs.AcademicDtos;
 using HUP.Application.DTOs.UserDtos;
 using HUP.Core.Enums;
-using HUP.Core.Models.AcademicModels;
-using HUP.Core.Models.UserModels;
+using HUP.Core.Entities.AcademicModels;
+using HUP.Core.Entities.UserModels;
 
 namespace HUP.Common.Helpers
 {

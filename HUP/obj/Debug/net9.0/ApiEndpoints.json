@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.Models.AcademicModels.Course",
+        "Type": "HUP.Core.Entities.AcademicModels.Course",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +35,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Models.AcademicModels.Course, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Entities.AcademicModels.Course, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.Models.AcademicModels.Department",
+        "Type": "HUP.Core.Entities.AcademicModels.Department",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -81,7 +81,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Models.AcademicModels.Department, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Entities.AcademicModels.Department, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -107,7 +107,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.Models.AcademicModels.Faculty",
+        "Type": "HUP.Core.Entities.AcademicModels.Faculty",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -127,7 +127,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Models.AcademicModels.Faculty, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Entities.AcademicModels.Faculty, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -153,7 +153,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "HUP.Core.Models.AcademicModels.ProgramEntity",
+        "Type": "HUP.Core.Entities.AcademicModels.ProgramEntity",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -173,7 +173,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Models.AcademicModels.ProgramEntity, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[HUP.Core.Entities.AcademicModels.ProgramEntity, HUP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

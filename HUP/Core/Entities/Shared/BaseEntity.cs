@@ -1,4 +1,4 @@
-﻿namespace HUP.Core.Models.Shared
+﻿namespace HUP.Core.Entities.Shared
 {
     public abstract class BaseEntity
     {

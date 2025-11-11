@@ -1,6 +1,6 @@
-﻿using HUP.Core.Models.Shared;
+﻿using HUP.Core.Entities.Shared;
 
-namespace HUP.Core.Models.AcademicModels
+namespace HUP.Core.Entities.AcademicModels
 {
     public class Faculty : BaseEntity
     {

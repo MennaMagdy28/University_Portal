@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\GitHub\\University_Portal\\HUP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\core\\entities\\academics\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\core\\entities\\academics\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\core\\entities\\shared\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\shared\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\api\\controllers\\academiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:api\\controllers\\academiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|d:\\github\\university_portal\\hup\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,6 +43,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Enrollment.cs",
+              "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Enrollment.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Enrollment.cs",
+              "ToolTip": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Enrollment.cs",
+              "RelativeToolTip": "Core\\Entities\\Academics\\Enrollment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:52:44.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Department.cs",
+              "ToolTip": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs*",
+              "RelativeToolTip": "Core\\Entities\\Academics\\Department.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:52:05.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Shared\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Shared\\BaseEntity.cs",
+              "ToolTip": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Shared\\BaseEntity.cs",
+              "RelativeToolTip": "Core\\Entities\\Shared\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:51:19.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Course.cs",
+              "ToolTip": "D:\\GitHub\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs*",
+              "RelativeToolTip": "Core\\Entities\\Academics\\Course.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:51:04.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AcademicController.cs",
+              "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\API\\Controllers\\AcademicController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AcademicController.cs",
+              "ToolTip": "D:\\GitHub\\University_Portal\\HUP\\API\\Controllers\\AcademicController.cs*",
+              "RelativeToolTip": "API\\Controllers\\AcademicController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T13:50:35.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\GitHub\\University_Portal\\HUP\\API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\AuthController.cs",

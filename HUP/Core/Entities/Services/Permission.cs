@@ -1,7 +1,7 @@
-﻿using HUP.Core.Models.Shared;
-using HUP.Core.Models.UserModels;
+﻿using HUP.Core.Entities.Shared;
+using HUP.Core.Entities.UserModels;
 
-namespace HUP.Core.Models.ServiceModels
+namespace HUP.Core.Entities.ServiceModels
 {
     public class Permission : BaseEntity
     {
