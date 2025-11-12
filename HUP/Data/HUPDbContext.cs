@@ -48,7 +48,7 @@ namespace HUP.Data
             // User ↔ Role (Many-to-One)
             modelBuilder.Entity<User>()
                 .HasOne(u => u.UserRole)
-                .WithMany(r=> r.Users)
+                .WithMany(r => r.Users)
                 .HasForeignKey(u => u.RoleId)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -91,12 +91,6 @@ namespace HUP.Data
                 .HasOne(f => f.Dean)
                 .WithOne()
                 .HasForeignKey<Faculty>(f => f.DeanID)
-                .OnDelete(DeleteBehavior.Restrict);
-
-            // Role ↔ User (One-to-Many Users)
-            modelBuilder.Entity<Role>()
-                .HasMany(r => r.Users)
-                .WithOne()
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Role ↔ User (CreatedBy)
@@ -159,7 +153,7 @@ namespace HUP.Data
             modelBuilder.Entity<CourseOffering>()
                 .HasOne(co => co.Semester)
                 .WithMany()
-                .HasForeignKey(co => co.Semester)
+                .HasForeignKey(co => co.SemesterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Student ↔ Program (Many-to-One)
@@ -180,7 +174,7 @@ namespace HUP.Data
             modelBuilder.Entity<Enrollment>()
                 .HasOne(e => e.CourseOffering)
                 .WithMany()
-                .HasForeignKey(e => e.CourseOffering)
+                .HasForeignKey(e => e.CourseOfferingId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // CourseOffering ↔ Exam (One-to-Many)

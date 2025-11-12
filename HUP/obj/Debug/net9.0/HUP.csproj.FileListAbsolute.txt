@@ -164,18 +164,6 @@ D:\Projects\HUP\obj\Debug\net9.0\HUP.pdb
 D:\Projects\HUP\obj\Debug\net9.0\HUP.genruntimeconfig.cache
 D:\Projects\HUP\obj\Debug\net9.0\ref\HUP.dll
 D:\Projects\HUP\bin\Debug\net9.0\AutoMapper.dll
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.csproj.AssemblyReference.cache
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\rpswa.dswa.cache.json
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.AssemblyInfoInputs.cache
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.AssemblyInfo.cs
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.csproj.CoreCompileInputs.cache
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.sourcelink.json
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.dll
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\refint\HUP.dll
-C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.pdb
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\API\appsettings.Development.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\API\appsettings.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\HUP.staticwebassets.endpoints.json
@@ -317,6 +305,15 @@ C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\n
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.csproj.AssemblyReference.cache
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.AssemblyInfoInputs.cache
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.AssemblyInfo.cs
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.csproj.CoreCompileInputs.cache
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.sourcelink.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
@@ -327,5 +324,8 @@ C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\n
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\staticwebassets.build.endpoints.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.csproj.Up2Date
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.dll
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\refint\HUP.dll
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.pdb
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\HUP.genruntimeconfig.cache
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\ref\HUP.dll
