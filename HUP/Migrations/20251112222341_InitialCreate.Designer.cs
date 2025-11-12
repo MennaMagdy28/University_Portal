@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HUP.Migrations
 {
     [DbContext(typeof(HUPDbContext))]
-    [Migration("20251112214402_InitialCreate")]
+    [Migration("20251112222341_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -220,17 +220,12 @@ namespace HUP.Migrations
                     b.Property<Guid>("UserID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentID");
 
                     b.HasIndex("UserID")
                         .IsUnique();
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Instructors");
                 });
@@ -356,14 +351,9 @@ namespace HUP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("UserID");
 
                     b.HasIndex("ProgramID");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Students");
                 });
@@ -640,10 +630,6 @@ namespace HUP.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Entities.Identity.User", null)
-                        .WithMany("Instructors")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Department");
 
                     b.Navigation("User");
@@ -692,10 +678,6 @@ namespace HUP.Migrations
                         .HasForeignKey("HUP.Core.Entities.Academics.Student", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("HUP.Core.Entities.Identity.User", null)
-                        .WithMany("Students")
-                        .HasForeignKey("UserId");
 
                     b.Navigation("Program");
 
@@ -796,10 +778,6 @@ namespace HUP.Migrations
             modelBuilder.Entity("HUP.Core.Entities.Identity.User", b =>
                 {
                     b.Navigation("CreatedRoles");
-
-                    b.Navigation("Instructors");
-
-                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Permissions.Permission", b =>

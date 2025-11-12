@@ -225,8 +225,7 @@ namespace HUP.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DepartmentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AcademicTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    AcademicTitle = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -307,8 +306,7 @@ namespace HUP.Migrations
                     AcademicStatus = table.Column<int>(type: "int", nullable: false),
                     ProgramID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false),
-                    CGPA = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    CGPA = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -325,11 +323,6 @@ namespace HUP.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Students_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -437,11 +430,6 @@ namespace HUP.Migrations
                 column: "DepartmentID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Instructors_UserId",
-                table: "Instructors",
-                column: "UserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Instructors_UserID",
                 table: "Instructors",
                 column: "UserID",
@@ -481,11 +469,6 @@ namespace HUP.Migrations
                 name: "IX_Students_ProgramID",
                 table: "Students",
                 column: "ProgramID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Students_UserId",
-                table: "Students",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_RoleId",
@@ -547,13 +530,6 @@ namespace HUP.Migrations
                 principalTable: "Users",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Instructors_Users_UserId",
-                table: "Instructors",
-                column: "UserId",
-                principalTable: "Users",
-                principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_RolePermissions_Roles_RoleId",
