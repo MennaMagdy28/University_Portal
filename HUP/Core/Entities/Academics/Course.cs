@@ -1,3 +1,4 @@
+using HUP.Core.Entities.Shared;
 
 namespace HUP.Core.Entities.Academics
 {

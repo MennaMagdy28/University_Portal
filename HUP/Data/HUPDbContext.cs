@@ -1,9 +1,8 @@
-﻿using HUP.Core.Enums;
-using HUP.Core.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using HUP.Core.Entities.Academics;
 using HUP.Core.Entities.Identity;
 using HUP.Core.Entities.Permissions;
+
 
 namespace HUP.Data
 {
@@ -27,7 +26,7 @@ namespace HUP.Data
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<CourseOffering> courseOfferings { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
-        public DbSet<Program> Programs { get; set; }
+        public DbSet<ProgramEntity> Programs { get; set; }
         public DbSet<Semester> Semesters { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -49,7 +48,7 @@ namespace HUP.Data
             // User ↔ Role (Many-to-One)
             modelBuilder.Entity<User>()
                 .HasOne(u => u.UserRole)
-                .WithMany()
+                .WithMany(r=> r.Users)
                 .HasForeignKey(u => u.RoleId)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -94,10 +93,16 @@ namespace HUP.Data
                 .HasForeignKey<Faculty>(f => f.DeanID)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Role ↔ User (One-to-Many Users)
+            modelBuilder.Entity<Role>()
+                .HasMany(r => r.Users)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Restrict);
+
             // Role ↔ User (CreatedBy)
             modelBuilder.Entity<Role>()
-                .HasOne(r => r.User)
-                .WithMany()
+                .HasOne(r => r.CreatedByUser)
+                .WithMany(u => u.CreatedRoles)
                 .HasForeignKey(r => r.CreatedBy)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -123,7 +128,7 @@ namespace HUP.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Department ↔ Program (One-to-Many)
-            modelBuilder.Entity<Program>()
+            modelBuilder.Entity<ProgramEntity>()
                 .HasOne(p => p.Department)
                 .WithMany()
                 .HasForeignKey(p => p.DepartmentId)

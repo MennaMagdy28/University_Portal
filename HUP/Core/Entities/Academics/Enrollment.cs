@@ -1,3 +1,4 @@
+using HUP.Core.Entities.Shared;
 using HUP.Core.Enums;
 
 namespace HUP.Core.Entities.Academics
@@ -5,7 +6,7 @@ namespace HUP.Core.Entities.Academics
     public class Enrollment : BaseEntity
     {
         public Guid StudentID { get; set; }
-        public Guid CourseOffering { get; set; }
+        public Guid CourseOfferingId { get; set; }
         public DateTime EnrollmentDate { get; set; }
         
         public decimal PercentGrade { get; set; } 

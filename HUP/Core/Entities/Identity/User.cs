@@ -1,3 +1,7 @@
+using HUP.Core.Entities.Shared;
+using HUP.Core.Entities.Academics;
+
+
 namespace HUP.Core.Entities.Identity
 {
     public class User : BaseEntity
@@ -9,8 +13,11 @@ namespace HUP.Core.Entities.Identity
         public string Phone { get; set; }
         public bool IsActive { get; set; } = true;
         public Guid RoleId { get; set; }
+        public Role UserRole { get; set; }
 
-        public Role UserRole { get; set; };
-        public ICollection<UserPagePermission> UserPagePermissions { get; set; } = new List<UserPagePermission>();
+        public ICollection<Role> CreatedRoles { get; set; } = new List<Role>();
+        public ICollection<Instructor> Instructors { get; set; } = new List<Instructor>();
+        public ICollection<Student> Students { get; set; } = new List<Student>();
+
     }
 }

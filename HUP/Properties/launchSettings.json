@@ -17,6 +17,10 @@
       "applicationUrl": "https://localhost:7240;http://localhost:5267",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+
+      "ConnectionStrings": {
+        "DefaultConnection": "Server=MOS3AD;Database=HUP;Trusted_Connection=True;TrustServerCertificate=True;"
       }
     }
   }

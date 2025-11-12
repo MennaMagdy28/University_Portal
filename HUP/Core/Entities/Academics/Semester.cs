@@ -1,3 +1,5 @@
+using HUP.Core.Entities.Shared;
+
 namespace HUP.Core.Entities.Academics
 {
     public class Semester : BaseEntity

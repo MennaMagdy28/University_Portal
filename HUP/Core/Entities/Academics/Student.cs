@@ -16,6 +16,6 @@ namespace HUP.Core.Entities.Academics
         public decimal CGPA { get; set; } //<<=== general?
 
         public User User { get; set; }
-        public Program Program { get; set; }
+        public ProgramEntity Program { get; set; }
     }
 }

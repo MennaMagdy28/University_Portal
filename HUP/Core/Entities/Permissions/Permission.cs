@@ -1,4 +1,3 @@
-using HUP.Core.Entities.Identity;
 using HUP.Core.Entities.Shared;
 
 namespace HUP.Core.Entities.Permissions
