@@ -105,4 +105,8 @@ obj/
 bin/
 obj/*
 bin/*
+
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
 # End of file
