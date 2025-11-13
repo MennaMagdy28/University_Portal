@@ -4,8 +4,8 @@ namespace HUP.Core.Entities.Academics
 {
     public class CourseOffering : BaseEntity
     {
-        public Guid CourseID { get; set; }
-        public Guid InstructorID { get; set; }
+        public Guid CourseId { get; set; }
+        public Guid InstructorId { get; set; }
         public Guid SemesterId { get; set; }
 
         public Course Course { get; set; }

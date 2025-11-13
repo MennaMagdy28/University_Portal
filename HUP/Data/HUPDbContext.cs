@@ -17,14 +17,14 @@ namespace HUP.Data
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
-        public DbSet<Course> courses { get; set; }
+        public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Exam> Exams { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
-        public DbSet<CourseOffering> courseOfferings { get; set; }
+        public DbSet<CourseOffering> CourseOfferings { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<ProgramEntity> Programs { get; set; }
         public DbSet<Semester> Semesters { get; set; }
@@ -111,7 +111,7 @@ namespace HUP.Data
             modelBuilder.Entity<Course>()
                 .HasOne(c => c.Department)
                 .WithMany(d => d.Courses)
-                .HasForeignKey(c => c.DepartmentID)
+                .HasForeignKey(c => c.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Department ↔ Instructor (One-to-Many)
@@ -132,21 +132,21 @@ namespace HUP.Data
             modelBuilder.Entity<Course>()
                 .HasOne(c => c.Prerequisite)
                 .WithMany()
-                .HasForeignKey(c => c.PrerequisiteID)
+                .HasForeignKey(c => c.PrerequisiteId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Course ↔ CourseOffering (One-to-Many)
             modelBuilder.Entity<CourseOffering>()
                 .HasOne(co => co.Course)
                 .WithMany()
-                .HasForeignKey(co => co.CourseID)
+                .HasForeignKey(co => co.CourseId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Instructor ↔ CourseOffering (One-to-Many)
             modelBuilder.Entity<CourseOffering>()
                 .HasOne(co => co.Instructor)
                 .WithMany()
-                .HasForeignKey(co => co.InstructorID)
+                .HasForeignKey(co => co.InstructorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Semester ↔ CourseOffering (One-to-Many)

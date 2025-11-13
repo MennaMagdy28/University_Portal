@@ -22,8 +22,6 @@
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Repositories\Interfaces\" />
-    <Folder Include="Repositories\Implementations\" />
     <Folder Include="Services\Implementations\" />
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>
