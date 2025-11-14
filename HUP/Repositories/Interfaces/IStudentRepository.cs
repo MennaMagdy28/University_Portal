@@ -1,0 +1,15 @@
+﻿using HUP.Core.Entities.Academics;
+using HUP.Core.Enums;
+
+namespace HUP.Repositories.Interfaces
+{
+    // Extends the generic repository interface for basic CRUD operations
+    // and adds updating academic status and CGPA, and retrieving students by faculty or department
+    public interface IStudentRepository :  IGenericRepository<Student>
+    {
+        Task UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status);
+        Task UpdateCGPAAsync(Guid studentId, decimal cgpa);
+        Task<IEnumerable<Student>> GetByFacultyAsync(Guid facultyId);
+        Task<IEnumerable<Student>> GetByDepartmentAsync(Guid departmentId);
+    }
+}

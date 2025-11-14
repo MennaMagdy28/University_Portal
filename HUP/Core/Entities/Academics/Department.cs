@@ -8,10 +8,13 @@ namespace HUP.Core.Entities.Academics
         public string DepartmentCode { get; set; }
         public Guid FacultyID { get; set; }
         public string HeadOfDepartment { get; set; }
+        public int DurationInYears { get; set; }
+        public int CompulsoryHours { get; set; }
+        public int ElectiveHours { get; set; }
 
         public Faculty Faculty { get; set; }
-        public ICollection<Course> Courses { get; set; }
+        public ICollection<ProgramPlan> ProgramPlan { get; set; }
         public ICollection<Instructor> Instructors { get; set; }
-        public ICollection<ProgramEntity> Programs { get; set; }
+        public ICollection<ProgramPlan> Programs { get; set; }
     }
 }

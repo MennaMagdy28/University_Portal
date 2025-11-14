@@ -3,86 +3,66 @@
   "WorkspaceRootPath": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\implementations\\enrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\implementations\\enrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\implementations\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\implementations\\courserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\enrollment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\implementations\\courseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\implementations\\courseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\shared\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\shared\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\data\\hupdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:data\\hupdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\courseoffering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\courseoffering.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\icourserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\programplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\programplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\ischedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\ischedulerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\iprogramplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\iprogramplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\iexamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\ienrollmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\idepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\idepartmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\interfaces\\icourseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\interfaces\\icourseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\semester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\semester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\core\\entities\\academics\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:core\\entities\\academics\\faculty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:automapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|c:\\users\\menna magdy\\source\\repos\\mennamagdy28\\university_portal\\hup\\repositories\\implementations\\courseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED257794-37D5-46A5-8D71-8A58C25ECB59}|HUP.csproj|solutionrelative:repositories\\implementations\\courseofferingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 111,
+      "VerticalTabListWidth": 226,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,158 +70,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Enrollment.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Enrollment.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Enrollment.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Enrollment.cs",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Enrollment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:37:40.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CourseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\CourseRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\CourseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:36:51.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EnrollmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\EnrollmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\EnrollmentRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\EnrollmentRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\EnrollmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:35:01.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Course.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Course.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Course.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:17:46.587Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "CourseOffering.cs",
               "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\CourseOffering.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Academics\\CourseOffering.cs",
               "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\CourseOffering.cs",
               "RelativeToolTip": "Core\\Entities\\Academics\\CourseOffering.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:17:09.809Z",
+              "WhenOpened": "2025-11-14T22:33:10.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Course.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Course.cs",
+              "RelativeToolTip": "Core\\Entities\\Academics\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T22:32:20.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Department.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs",
+              "RelativeToolTip": "Core\\Entities\\Academics\\Department.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T22:31:44.678Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CourseOfferingRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseOfferingRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Implementations\\CourseOfferingRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseOfferingRepository.cs",
-              "RelativeToolTip": "Repositories\\Implementations\\CourseOfferingRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Title": "ProgramPlan.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\ProgramPlan.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\ProgramPlan.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\ProgramPlan.cs",
+              "RelativeToolTip": "Core\\Entities\\Academics\\ProgramPlan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAB5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T22:09:21.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Shared\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Shared\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Shared\\BaseEntity.cs",
-              "RelativeToolTip": "Core\\Entities\\Shared\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T21:27:57.492Z",
+              "WhenOpened": "2025-11-14T22:29:01.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "HUPDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Data\\HUPDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\HUPDbContext.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Data\\HUPDbContext.cs",
-              "RelativeToolTip": "Data\\HUPDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
+              "Title": "IScheduleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IScheduleRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IScheduleRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IScheduleRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IScheduleRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T21:07:01.254Z",
+              "WhenOpened": "2025-11-14T22:28:10.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "IEnrollmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IEnrollmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IEnrollmentRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IEnrollmentRepository.cs*",
-              "RelativeToolTip": "Repositories\\Interfaces\\IEnrollmentRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABLAAAAAAAAAA==",
+              "Title": "IProgramPlanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IProgramPlanRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProgramPlanRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IProgramPlanRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IProgramPlanRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T20:49:58.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Semester.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Semester.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Semester.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Semester.cs*",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Semester.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T20:43:40.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ICourseOfferingRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseOfferingRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICourseOfferingRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseOfferingRepository.cs*",
-              "RelativeToolTip": "Repositories\\Interfaces\\ICourseOfferingRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T20:22:01.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ICourseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICourseRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseRepository.cs*",
-              "RelativeToolTip": "Repositories\\Interfaces\\ICourseRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T20:19:44.961Z",
+              "WhenOpened": "2025-11-14T22:27:19.832Z",
               "EditorCaption": ""
             },
             {
@@ -250,76 +152,89 @@
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IGenericRepository.cs*",
-              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T19:54:37.119Z",
+              "WhenOpened": "2025-11-14T22:26:52.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IExamRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IExamRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IExamRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IExamRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IExamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T12:50:20.01Z",
+              "WhenOpened": "2025-11-14T22:26:47.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IEnrollmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IEnrollmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IEnrollmentRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IEnrollmentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IEnrollmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T22:26:41.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Department.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Department.cs",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IDepartmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IDepartmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IDepartmentRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IDepartmentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IDepartmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T22:41:44.933Z",
+              "WhenOpened": "2025-11-14T22:26:22.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Exam.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Exam.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Exam.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Exam.cs",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Exam.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "ICourseOfferingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseOfferingRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ICourseOfferingRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\ICourseOfferingRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ICourseOfferingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAB6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T22:41:43.013Z",
+              "WhenOpened": "2025-11-14T22:23:24.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Faculty.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Faculty.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Academics\\Faculty.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Core\\Entities\\Academics\\Faculty.cs",
-              "RelativeToolTip": "Core\\Entities\\Academics\\Faculty.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IStudentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IStudentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IStudentRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Interfaces\\IStudentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IStudentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T22:41:30.349Z",
+              "WhenOpened": "2025-11-14T22:21:20.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AutoMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\AutoMapper.cs",
-              "RelativeDocumentMoniker": "AutoMapper.cs",
-              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\AutoMapper.cs",
-              "RelativeToolTip": "AutoMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABUAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "CourseOfferingRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseOfferingRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implementations\\CourseOfferingRepository.cs",
+              "ToolTip": "C:\\Users\\Menna Magdy\\source\\repos\\MennaMagdy28\\University_Portal\\HUP\\Repositories\\Implementations\\CourseOfferingRepository.cs",
+              "RelativeToolTip": "Repositories\\Implementations\\CourseOfferingRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T22:32:44.975Z",
+              "WhenOpened": "2025-11-14T22:23:16.384Z",
               "EditorCaption": ""
             }
           ]

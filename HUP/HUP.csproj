@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Application\NewFolder\**" />
+    <Content Remove="Application\NewFolder\**" />
+    <EmbeddedResource Remove="Application\NewFolder\**" />
+    <None Remove="Application\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
@@ -15,15 +22,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Riok.Mapperly" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="API\Controllers\" />
+    <Folder Include="Application\Mappers\" />
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Services\Implementations\" />
-    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Application\Services\Implementations\" />
+    <Folder Include="Application\Services\Interfaces\" />
   </ItemGroup>
 
 </Project>

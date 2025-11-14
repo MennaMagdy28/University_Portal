@@ -2,6 +2,8 @@ using HUP.Core.Entities.Shared;
 
 namespace HUP.Core.Entities.Academics
 {
+    // To offer a course to be available for students to enroll in a given semester
+    // Used to create class schedules, exams and manage enrollments
     public class CourseOffering : BaseEntity
     {
         public Guid CourseId { get; set; }

@@ -329,3 +329,4 @@ C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\n
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\obj\Debug\net9.0\ref\HUP.dll
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\appsettings.json
+C:\Users\Menna Magdy\source\repos\MennaMagdy28\University_Portal\HUP\bin\Debug\net9.0\Riok.Mapperly.Abstractions.dll

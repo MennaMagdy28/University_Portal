@@ -71,6 +71,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "Riok.Mapperly": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [

@@ -4,6 +4,6 @@ namespace HUP.Repositories.Interfaces
 {
     public interface ICourseRepository : IGenericRepository<Course>
     {
-        Task<IEnumerable<Course>> GetByDepartmentIdAsync(Guid departmentId);
+        //to discuss (q: course might be available for many departments at the same faculty => University Requirements & Faculty Requirements)
     }
 }

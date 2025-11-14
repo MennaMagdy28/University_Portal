@@ -12,17 +12,9 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
-        public async Task<IEnumerable<Course>> GetByDepartmentIdAsync(Guid departmentId)
-        {
-            return await _context.Courses
-                .Include(c => c.Department)
-                .Include(c => c.Prerequisite)
-                .ToListAsync();
-        }
 
         public async Task<Course> GetByIdAsync(Guid id) {
             var Course = await _context.Courses
-                .Include(c => c.Department)
                 .Include(c => c.Prerequisite)
                 .FirstOrDefaultAsync(c => c.Id == id);
             return Course;
@@ -31,7 +23,6 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<Course>> GetAllAsync() 
         {
             return await _context.Courses
-                .Include(c => c.Department)
                 .Include(c => c.Prerequisite)
                 .ToListAsync();
         }

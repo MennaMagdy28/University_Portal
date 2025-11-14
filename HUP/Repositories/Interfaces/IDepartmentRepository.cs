@@ -2,7 +2,7 @@
 namespace HUP.Repositories.Interfaces
 {
     // Extends the generic repository interface for basic CRUD operations
-    public interface IEnrollmentRepository : IGenericRepository<Enrollment>
+    public interface IDepartmentRepository : IGenericRepository<Department>
     {
 
     }

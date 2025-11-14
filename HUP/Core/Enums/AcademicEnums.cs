@@ -26,12 +26,11 @@
         Dropped,
         Failed
     }
-
-    public enum DegreeType
+    public enum RequirementType
     {
-        Bachelor,
-        Master,
-        PhD
+       University,
+       Faculty,
+       Specialization
     }
 
     public enum UserRoles
