@@ -20,7 +20,7 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<Enrollment>> GetAllAsync()
         {
             return await _context.Enrollments
-                .Include(e => e.CourseOffering)
+                .Include(e => e.Course)
                 .Include(e => e.Student)
                 .ToListAsync();
         }
@@ -32,7 +32,8 @@ namespace HUP.Repositories.Implementations
         }
         public void Remove(Guid enrollmentId)
         {
-           _context.Enrollments.Remove(new Enrollment { Id = enrollmentId });
+            var enrollment = _context.Enrollments.Find(enrollmentId);
+            if (enrollment != null) _context.Enrollments.Remove(enrollment);
         }
         public async Task SaveChangesAsync()
         {

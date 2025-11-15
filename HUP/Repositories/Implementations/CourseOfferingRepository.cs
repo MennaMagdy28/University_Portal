@@ -12,13 +12,21 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
-        //public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId)
+        {
+            var courseOfferings = await _context.CourseOfferings
+                .Include(co => co.Course)
+                .Include(co => co.Instructor)
+                .Include(co => co.Semester)
+                .Where(co => co.DepartmentId == DepartmentId && co.SemesterId == SemesterId && !co.IsDeleted)
+                .ToListAsync();
+            return courseOfferings;
+            
+        }
         public async Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid DepartmentId, Guid SemesterId)
         {
-           throw new NotImplementedException();
+            throw new NotImplementedException();
+
         }
 
         public async Task AddAsync(CourseOffering entity)

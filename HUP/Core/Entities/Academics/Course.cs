@@ -10,5 +10,6 @@ namespace HUP.Core.Entities.Academics
         public Guid? PrerequisiteId { get; set; }
 
         public Course Prerequisite { get; set; }
+        public ICollection<Enrollment> Enrollments { get; set; }
     }
 }

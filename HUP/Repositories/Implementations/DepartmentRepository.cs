@@ -14,7 +14,7 @@ namespace HUP.Repositories.Implementations
         }
         public async Task AddAsync(Department entity)
         {
-            if (entity == null) throw new ArgumentNullException(nameof(entity));
+            entity.CreatedAt = DateTime.UtcNow;
             await _context.Departments.AddAsync(entity);
         }
 
@@ -53,11 +53,13 @@ namespace HUP.Repositories.Implementations
             var entity = _context.Departments.Find(id);
             if (entity == null) return;
             entity.IsDeleted = true;
+            entity.UpdatedAt = DateTime.UtcNow;
             _context.Departments.Update(entity);
         }
 
         public void Update(Department entity)
         {
+            entity.UpdatedAt = DateTime.UtcNow;
             _context.Departments.Update(entity);
         }
     }
