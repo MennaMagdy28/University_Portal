@@ -9,7 +9,9 @@ namespace HUP.Core.Entities.Academics
         public Guid CourseId { get; set; }
         public Guid InstructorId { get; set; }
         public Guid SemesterId { get; set; }
+        public Guid DepartmentId { get; set; }
 
+        public Department Department { get; set; }
         public Course Course { get; set; }
         public Instructor Instructor { get; set; }
         public Semester Semester { get; set; }

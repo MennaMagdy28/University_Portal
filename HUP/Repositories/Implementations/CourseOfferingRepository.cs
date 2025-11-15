@@ -12,10 +12,10 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
-        public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId)
+        //{
+        //    throw new NotImplementedException();
+        //}
         public async Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid DepartmentId, Guid SemesterId)
         {
            throw new NotImplementedException();

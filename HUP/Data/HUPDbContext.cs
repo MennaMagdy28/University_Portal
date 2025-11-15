@@ -159,6 +159,13 @@ namespace HUP.Data
                 .HasForeignKey(co => co.SemesterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // CourseOffering ↔ Department (Many-to-One)
+            modelBuilder.Entity<CourseOffering>()
+                .HasOne(co => co.Department)
+                .WithMany()
+                .HasForeignKey(co => co.DepartmentId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             // Student ↔ Department (Many-to-One)
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.Department)
