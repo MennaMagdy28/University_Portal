@@ -5,7 +5,7 @@ namespace HUP.Core.Entities.Academics
 {
     public class Enrollment : BaseEntity
     {
-        public Guid StudentID { get; set; }
+        public Guid StudentId { get; set; }
         public Guid CourseId { get; set; }
         public DateTime EnrollmentDate { get; set; }
         
@@ -13,6 +13,6 @@ namespace HUP.Core.Entities.Academics
         public EnrollmentStatus Status { get; set; }
 
         public Student Student { get; set; }
-        public CourseOffering Course { get; set; }
+        public Course Course { get; set; }
     }
 }

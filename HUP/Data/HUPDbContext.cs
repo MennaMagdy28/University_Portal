@@ -177,7 +177,7 @@ namespace HUP.Data
             modelBuilder.Entity<Enrollment>()
                 .HasOne(e => e.Student)
                 .WithMany()
-                .HasForeignKey(e => e.StudentID)
+                .HasForeignKey(e => e.StudentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // CourseOffering ↔ Enrollment (One-to-Many)

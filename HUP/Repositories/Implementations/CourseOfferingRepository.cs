@@ -1,6 +1,7 @@
-﻿using HUP.Repositories.Interfaces;
-using HUP.Core.Entities.Academics;
+﻿using HUP.Core.Entities.Academics;
+using HUP.Core.Enums;
 using HUP.Data;
+using HUP.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace HUP.Repositories.Implementations
@@ -23,10 +24,21 @@ namespace HUP.Repositories.Implementations
             return courseOfferings;
             
         }
-        public async Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid DepartmentId, Guid SemesterId)
+        public async Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid studentId)
         {
-            throw new NotImplementedException();
-
+            return await _context.CourseOfferings
+               .Where(co => co.Semester.IsActive &&   // Filter by active semester
+                    !_context.Enrollments    // Exclusion sub-query 
+                        .Where(e => e.StudentId == studentId &&
+                            (e.Status == EnrollmentStatus.Completed ||
+                             e.Status == EnrollmentStatus.Registered ||
+                             e.Status == EnrollmentStatus.InProgress))
+                        .Select(e => e.CourseId)
+                        .Contains(co.Id)
+               ).Include(co => co.Course)
+                .Include(co => co.Instructor)
+                .Include(co => co.Schedules)
+                .ToListAsync();
         }
 
         public async Task AddAsync(CourseOffering entity)

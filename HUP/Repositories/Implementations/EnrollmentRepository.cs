@@ -30,6 +30,14 @@ namespace HUP.Repositories.Implementations
                 .FirstOrDefaultAsync(e => e.Id == id);
             return enrollment;
         }
+        public async Task<IEnumerable<Enrollment>> GetByStudentAndCourseAsync(Guid studentId)
+        {
+            var enrollments = await _context.Enrollments
+                .Include(e => e.Course)
+                .Where(e => e.StudentId == studentId && !e.IsDeleted)
+                .ToListAsync();
+            return enrollments;
+        }
         public void Remove(Guid enrollmentId)
         {
             var enrollment = _context.Enrollments.Find(enrollmentId);
