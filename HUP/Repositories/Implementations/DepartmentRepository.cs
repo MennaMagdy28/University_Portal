@@ -14,6 +14,7 @@ namespace HUP.Repositories.Implementations
         }
         public async Task AddAsync(Department entity)
         {
+            entity.Id = Guid.NewGuid();
             entity.CreatedAt = DateTime.UtcNow;
             await _context.Departments.AddAsync(entity);
         }

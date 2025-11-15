@@ -7,8 +7,8 @@ namespace HUP.Repositories.Interfaces
     // and adds updating academic status and CGPA, and retrieving students by faculty or department
     public interface IStudentRepository :  IGenericRepository<Student>
     {
-        Task UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status);
-        Task UpdateCGPAAsync(Guid studentId, decimal cgpa);
+        void UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status);
+        void UpdateCGPAAsync(Guid studentId, decimal cgpa);
         Task<IEnumerable<Student>> GetByFacultyAsync(Guid facultyId);
         Task<IEnumerable<Student>> GetByDepartmentAsync(Guid departmentId);
     }

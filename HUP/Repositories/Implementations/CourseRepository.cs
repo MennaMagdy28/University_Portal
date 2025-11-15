@@ -29,6 +29,7 @@ namespace HUP.Repositories.Implementations
 
         public async Task AddAsync(Course course)
         {
+            course.Id = Guid.NewGuid();
             course.CreatedAt = DateTime.UtcNow;
             await _context.Courses.AddAsync(course);
         }
