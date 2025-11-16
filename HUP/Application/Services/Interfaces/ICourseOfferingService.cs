@@ -8,7 +8,7 @@ namespace HUP.Application.Services.Interfaces
     public interface ICourseOfferingService : IGenericService<CourseOffering>
     {
         // Basic CRUD operations
-        Task<CourseOfferingDto?> GetByIdAsync(Guid id);
+        Task<CourseOfferingDto> GetByIdAsync(Guid id);
         Task<IEnumerable<CourseOfferingDto>> GetAllAsync();
         Task AddAsync(CourseOffering entity);
         void Update(CourseOffering entity);

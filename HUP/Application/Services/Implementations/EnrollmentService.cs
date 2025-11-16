@@ -9,17 +9,15 @@ namespace HUP.Application.Services.Implementations
     public class EnrollmentService : IEnrollmentService
     {
         private readonly IEnrollmentRepository _repository;
-        private readonly EnrollmentMapper _mapper;
-        public EnrollmentService(IEnrollmentRepository repository, EnrollmentMapper mapper)
+        public EnrollmentService(IEnrollmentRepository repository)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
-        public Task AddAsync(CreateEnrollmentDto dto)
+        public async Task AddAsync(CreateEnrollmentDto dto)
         {
-            var enrollment = _mapper.ToEntity(dto);
-            _repository.AddAsync(enrollment);
+            var enrollment = EnrollmentMapper.ToEntity(dto);
+            await _repository.AddAsync(enrollment);
         }
 
         public Task AddAsync(Enrollment entity)

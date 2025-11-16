@@ -5,14 +5,15 @@ using HUP.Core.Entities.Academics;
 namespace HUP.Application.Mappers
 {
     [Mapper]
-    public partial class CourseOfferingMapper
+    public static partial class CourseOfferingMapper
     {
         [MapProperty(nameof(CourseOffering.Course.CourseCode), nameof(CourseOfferingDto.CourseCode))]
         [MapProperty(nameof(CourseOffering.Course.CourseName), nameof(CourseOfferingDto.CourseName))]
         [MapProperty(nameof(CourseOffering.Course.Credits), nameof(CourseOfferingDto.Credits))]
-        public partial CourseOfferingDto ToDto(CourseOffering courseOffering);
+        public static partial CourseOfferingDto ToDto(CourseOffering courseOffering);
 
-        public partial CourseOffering ToEntity(CreateCourseOfferingDto createDto);
+        public static partial List<CourseOfferingDto> ToDto(IEnumerable<CourseOffering> offerings);
+
+        public static partial CourseOffering ToEntity(CreateCourseOfferingDto dto);
     }
 }
-

@@ -1,4 +1,5 @@
-﻿using HUP.Core.Entities.Academics;
+﻿using HUP.Core.DTOs.AcademicDtos;
+using HUP.Core.Entities.Academics;
 
 namespace HUP.Application.Services.Interfaces
 {
