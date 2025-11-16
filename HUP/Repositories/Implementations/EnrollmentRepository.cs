@@ -12,8 +12,29 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
+        
+        public async Task<IEnumerable<Enrollment>> GetbyStudentId(Guid studentId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId)
+                .Include(e => e.Course)
+                .Include(e => e.Student)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Enrollment>> GetbySemster(Semester semester, Guid studentId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.EnrollmentDate >= semester.StartDate && e.EnrollmentDate <= semester.EndDate
+                && e.StudentId == studentId)
+                .Include(e => e.Course)
+                .Include(e => e.Student)
+                .ToListAsync();
+        }
+
         public async Task AddAsync(Enrollment entity)
         {
+            entity.Id = Guid.NewGuid();
             entity.CreatedAt = DateTime.UtcNow;
             await _context.Enrollments.AddAsync(entity);
         }
@@ -30,14 +51,7 @@ namespace HUP.Repositories.Implementations
                 .FirstOrDefaultAsync(e => e.Id == id);
             return enrollment;
         }
-        public async Task<IEnumerable<Enrollment>> GetByStudentAndCourseAsync(Guid studentId)
-        {
-            var enrollments = await _context.Enrollments
-                .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && !e.IsDeleted)
-                .ToListAsync();
-            return enrollments;
-        }
+
         public void Remove(Guid enrollmentId)
         {
             var enrollment = _context.Enrollments.Find(enrollmentId);

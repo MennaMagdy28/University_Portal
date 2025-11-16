@@ -13,24 +13,32 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
+
+
         public async Task AddAsync(Schedule entity)
         {
-            throw new NotImplementedException();
+            entity.Id = Guid.NewGuid();
+            entity.CreatedAt = DateTime.UtcNow;
+            await _context.Schedules.AddAsync(entity);
         }
-
         public async Task<IEnumerable<Schedule>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Schedules.ToListAsync();
         }
 
         public async Task<Schedule> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var s = await _context.Schedules.FindAsync(id);
+            return s;
         }
 
         public void Remove(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = _context.Schedules.Find(id);
+            if (entity != null)
+            {
+                _context.Schedules.Remove(entity);
+            }
         }
 
         public async Task SaveChangesAsync()
@@ -40,12 +48,21 @@ namespace HUP.Repositories.Implementations
 
         public void SoftDelete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = _context.Schedules.Find(id);
+            if (entity != null)
+            {
+                entity.IsDeleted = true;
+                entity.UpdatedAt = DateTime.UtcNow;
+                _context.Schedules.Update(entity);
+            }
         }
 
         public void Update(Schedule entity)
         {
-            throw new NotImplementedException();
+            entity.UpdatedAt = DateTime.UtcNow;
+            _context.Schedules.Update(entity);
         }
+
+  
     }
 }

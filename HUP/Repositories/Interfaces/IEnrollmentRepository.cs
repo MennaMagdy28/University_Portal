@@ -5,5 +5,6 @@ namespace HUP.Repositories.Interfaces
     public interface IEnrollmentRepository : IGenericRepository<Enrollment>
     {
         Task<IEnumerable<Enrollment>> GetbyStudentId(Guid studentId);
+        Task<IEnumerable<Enrollment>> GetbySemster(Semester semester, Guid studentId);
     }
 }
