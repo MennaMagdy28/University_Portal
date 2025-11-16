@@ -10,11 +10,10 @@ namespace HUP.Application.Services.Interfaces
         // CRUD queries + soft delete
         Task<CourseOfferingDto?> GetByIdAsync(Guid id);
         Task<IEnumerable<CourseOfferingDto>> GetAllAsync();
-        Task AddAsync(CourseOfferingDto courseOfferingDto);
-        void Update(CourseOfferingDto courseOfferingDto);
-        void SoftDelete(Guid id);
-        void Remove(Guid id);
-        Task SaveChangesAsync();
+        Task AddAsync(CreateCourseOfferingDto courseOfferingDto);
+        Task Update(CreateCourseOfferingDto courseOfferingDto);
+        Task SoftDelete(Guid id);
+        Task Remove(Guid id);
 
         // Specific CourseOffering queries
         Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId);

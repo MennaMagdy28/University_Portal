@@ -9,9 +9,8 @@ namespace HUP.Application.Services.Interfaces
         Task<CreateEnrollmentDto?> GetByIdAsync(Guid id);
         Task<IEnumerable<CreateEnrollmentDto>> GetAllAsync();
         Task AddAsync(CreateEnrollmentDto createEnrollmentDto);
-        void Update(CreateEnrollmentDto createEnrollmentDto);
-        void SoftDelete(Guid id);
-        void Remove(Guid id);
-        Task SaveChangesAsync();
+        Task Update(CreateEnrollmentDto createEnrollmentDto);
+        Task SoftDelete(Guid id);
+        Task Remove(Guid id);
     }
 }

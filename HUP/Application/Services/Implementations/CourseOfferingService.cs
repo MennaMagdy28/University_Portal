@@ -3,6 +3,7 @@ using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using HUP.Application.Services.Interfaces;
+using System.Threading.Tasks;
 
 
 namespace HUP.Application.Services.Implementations
@@ -31,31 +32,33 @@ namespace HUP.Application.Services.Implementations
             return CourseOfferingMapper.ToDto(entities);
         }
 
-        public async Task AddAsync(CourseOffering entity)
+        public async Task AddAsync(CreateCourseOfferingDto dto)
         {
+            var entity = CourseOfferingMapper.ToEntity(dto);
             entity.Id = Guid.NewGuid();
             await _repository.AddAsync(entity);
-        }
-
-        public void Update(CourseOffering entity)
-        {
-            _repository.Update(entity);
-        }
-
-        public void SoftDelete(Guid id)
-        {
-            _repository.SoftDelete(id);
-        }
-
-        public void Remove(Guid id)
-        {
-            _repository.Remove(id);
-        }
-
-        public async Task SaveChangesAsync()
-        {
             await _repository.SaveChangesAsync();
         }
+
+        public async Task Update(CreateCourseOfferingDto dto)
+        {
+            var entity = CourseOfferingMapper.ToEntity(dto);
+            _repository.Update(entity);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task SoftDelete(Guid id)
+        {
+            _repository.SoftDelete(id);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task Remove(Guid id)
+        {
+            _repository.Remove(id);
+            await _repository.SaveChangesAsync();
+        }
+
 
         public async Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId)
         {

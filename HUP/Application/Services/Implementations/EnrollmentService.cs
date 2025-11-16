@@ -3,7 +3,9 @@ using HUP.Application.Services.Interfaces;
 using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
+using System.Threading.Tasks;
 
+using HUP.Core.Enums;
 namespace HUP.Application.Services.Implementations
 {
     public class EnrollmentService : IEnrollmentService
@@ -16,43 +18,44 @@ namespace HUP.Application.Services.Implementations
 
         public async Task AddAsync(CreateEnrollmentDto dto)
         {
+            dto.Status = EnrollmentStatus.Registered;
+            dto.Id = Guid.NewGuid();
+            dto.EnrollmentDate = DateTime.UtcNow;
             var enrollment = EnrollmentMapper.ToEntity(dto);
             await _repository.AddAsync(enrollment);
+            await _repository.SaveChangesAsync();
         }
 
-        public Task AddAsync(Enrollment entity)
+        public async Task<IEnumerable<CreateEnrollmentDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var entities =  await _repository.GetAllAsync();
+            var dtos = entities.Select(e => EnrollmentMapper.ToDto(e));
+            return dtos;
         }
 
-        public Task<IEnumerable<Enrollment>> GetAllAsync()
+        public async Task<CreateEnrollmentDto> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = await _repository.GetByIdAsync(id);
+            var dto = EnrollmentMapper.ToDto(entity);
+            return dto;
         }
 
-        public Task<Enrollment> GetByIdAsync(Guid id)
+        public async Task Remove(Guid id)
         {
-            throw new NotImplementedException();
+            _repository.Remove(id);
+            await _repository.SaveChangesAsync();
+        }
+        public async Task SoftDelete(Guid id)
+        {
+            _repository.SoftDelete(id);
+            await _repository.SaveChangesAsync();
         }
 
-        public void Remove(Guid id)
+        public async Task Update(CreateEnrollmentDto dto)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SoftDelete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Enrollment entity)
-        {
-            throw new NotImplementedException();
+            var entity = EnrollmentMapper.ToEntity(dto);
+            _repository.Update(entity);
+            await _repository.SaveChangesAsync();
         }
     }
 }
