@@ -14,6 +14,7 @@ namespace HUP.Core.Entities.Academics
         public Guid DepartmentId { get; set; }
         public int Level { get; set; }
         public decimal CGPA { get; set; } //<<=== general?
+        public string Group { get; set; }
 
         public User User { get; set; }
         public Department Department { get; set; }
