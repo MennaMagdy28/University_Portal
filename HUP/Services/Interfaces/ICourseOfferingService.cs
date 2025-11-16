@@ -1,3 +1,4 @@
+using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 
 namespace HUP.Services.Interfaces
@@ -7,8 +8,8 @@ namespace HUP.Services.Interfaces
     public interface ICourseOfferingService
     {
         // Basic CRUD operations
-        Task<CourseOffering> GetByIdAsync(Guid id);
-        Task<IEnumerable<CourseOffering>> GetAllAsync();
+        Task<CourseOfferingDto?> GetByIdAsync(Guid id);
+        Task<IEnumerable<CourseOfferingDto>> GetAllAsync();
         Task AddAsync(CourseOffering entity);
         void Update(CourseOffering entity);
         void SoftDelete(Guid id);
@@ -16,8 +17,8 @@ namespace HUP.Services.Interfaces
         Task SaveChangesAsync();
 
         // Specific CourseOffering queries
-        Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId);
-        Task<IEnumerable<CourseOffering>> GetAvailableToRegisterAsync(Guid studentId);
+        Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId);
+        Task<IEnumerable<CourseOfferingDto>> GetAvailableToRegisterAsync(Guid studentId);
     }
 }
 
