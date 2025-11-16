@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HUP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e162f72ac0e23a3bad5b8b807fab29b1489032c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42b4a95cc9f1b34643158209e99dea5de1fa500b")]
 [assembly: System.Reflection.AssemblyProductAttribute("HUP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HUP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
