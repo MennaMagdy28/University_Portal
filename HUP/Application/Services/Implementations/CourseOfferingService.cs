@@ -1,6 +1,6 @@
+using HUP.Application.Services.Interfaces;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
-using HUP.Services.Interfaces;
 
 namespace HUP.Services.Implementations
 {
@@ -55,7 +55,7 @@ namespace HUP.Services.Implementations
 
         public async Task<IEnumerable<CourseOffering>> GetAvailableToRegisterAsync(Guid studentId)
         {
-            return await _repository.GetAvailbleToRegisterAsync(studentId);
+            return await _repository.GetAvailableToRegisterAsync(studentId);
         }
     }
 }

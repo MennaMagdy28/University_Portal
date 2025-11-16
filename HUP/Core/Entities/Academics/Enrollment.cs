@@ -9,7 +9,7 @@ namespace HUP.Core.Entities.Academics
         public Guid CourseId { get; set; }
         public DateTime EnrollmentDate { get; set; }
         
-        public decimal PercentGrade { get; set; } 
+        public decimal? PercentGrade { get; set; } 
         public EnrollmentStatus Status { get; set; }
 
         public Student Student { get; set; }

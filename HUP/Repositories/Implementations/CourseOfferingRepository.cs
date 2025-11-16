@@ -48,7 +48,6 @@ namespace HUP.Repositories.Implementations
 
         public async Task AddAsync(CourseOffering entity)
         {
-            entity.Id = Guid.NewGuid();
             entity.CreatedAt = DateTime.UtcNow;
             await _context.CourseOfferings.AddAsync(entity);
         }

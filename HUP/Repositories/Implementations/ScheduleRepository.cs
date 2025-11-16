@@ -14,18 +14,7 @@ namespace HUP.Repositories.Implementations
             _context = context;
         }
 
-        public async Task<Schedule> GetByCourseOfferingIdAndGroupAsync(Guid courseOfferingId, string group)
-        {
-            var lecture = await _context.Schedules
-                  .Where(s => s.CourseOfferingId == courseOfferingId &&
-                         s.Group == group &&
-                         s.CourseOffering.Semester.IsActive)
-                  .Include(s => s.CourseOffering)
-                  .ThenInclude(co => co.Course)
-                  .Include(s => s.CourseOffering)
-                  .ThenInclude(co => co.Instructor).FirstOrDefaultAsync();
-            return lecture;
-        }
+
 
         public async Task AddAsync(Schedule entity)
         {
