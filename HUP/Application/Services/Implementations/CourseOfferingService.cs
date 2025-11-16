@@ -2,8 +2,10 @@ using HUP.Application.Mappers;
 using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
+using HUP.Application.Services.Interfaces;
 
-namespace HUP.Services.Implementations
+
+namespace HUP.Application.Services.Implementations
 {
     public class CourseOfferingService : ICourseOfferingService
     {
@@ -65,7 +67,9 @@ namespace HUP.Services.Implementations
 
         public async Task<IEnumerable<CourseOfferingDto>> GetAvailableToRegisterAsync(Guid studentId)
         {
-            return await _repository.GetAvailbleToRegisterAsync(studentId);
+            var courses = await _repository.GetAvailableToRegisterAsync(studentId);
+            var dtos = _mapper.ToDto(courses);
+            return dtos;
         }
     }
 }

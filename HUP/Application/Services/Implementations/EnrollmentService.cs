@@ -19,7 +19,12 @@ namespace HUP.Application.Services.Implementations
         public Task AddAsync(CreateEnrollmentDto dto)
         {
             var enrollment = _mapper.ToEntity(dto);
-            return _repository.AddAsync(enrollment);
+            _repository.AddAsync(enrollment);
+        }
+
+        public Task AddAsync(Enrollment entity)
+        {
+            throw new NotImplementedException();
         }
 
         public Task<IEnumerable<Enrollment>> GetAllAsync()

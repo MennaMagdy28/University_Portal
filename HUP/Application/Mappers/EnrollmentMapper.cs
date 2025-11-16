@@ -8,7 +8,7 @@ namespace HUP.Application.Mappers
     public partial class EnrollmentMapper
     {
 
-        public partial Enrollment ToEntity(CreateCourseDto dto);
+        public partial Enrollment ToEntity(CreateEnrollmentDto dto);
         public partial CreateEnrollmentDto ToDto(Enrollment entity);
     }
 }
