@@ -29,7 +29,7 @@ namespace HUP.Services.Implementations
         public async Task<IEnumerable<CourseOfferingDto>> GetAllAsync()
         {
             var entities = await _repository.GetAllAsync();
-            return _mapper.ToDto(entities);
+            return entities.Select(e => _mapper.ToDto(e));
         }
 
         public async Task AddAsync(CourseOffering entity)
@@ -61,13 +61,13 @@ namespace HUP.Services.Implementations
         public async Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId)
         {
             var entities = await _repository.GetActiveCourseOfferingAsync(departmentId, semesterId);
-            return _mapper.ToDto(entities);
+            return entities.Select(e => _mapper.ToDto(e));
         }
 
         public async Task<IEnumerable<CourseOfferingDto>> GetAvailableToRegisterAsync(Guid studentId)
         {
-            var entities = await _repository.GetAvailbleToRegisterAsync(studentId);
-            return _mapper.ToDto(entities);
+            var entities = await _repository.GetAvailableToRegisterAsync(studentId);
+            return entities.Select(e => _mapper.ToDto(e));
         }
     }
 }
