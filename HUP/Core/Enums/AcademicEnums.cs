@@ -23,7 +23,7 @@
         Registered,
         InProgress,
         Completed,
-        Dropped,
+        Incomplete,
         Failed
     }
     public enum RequirementType

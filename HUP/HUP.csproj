@@ -27,12 +27,9 @@
 
   <ItemGroup>
     <Folder Include="API\Controllers\" />
-    <Folder Include="Application\Mappers\" />
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Application\Services\Implementations\" />
-    <Folder Include="Application\Services\Interfaces\" />
   </ItemGroup>
 
 </Project>

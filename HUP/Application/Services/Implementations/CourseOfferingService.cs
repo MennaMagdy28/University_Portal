@@ -2,19 +2,18 @@ using HUP.Application.Mappers;
 using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
-using HUP.Services.Interfaces;
+using HUP.Application.Services.Interfaces;
 
-namespace HUP.Services.Implementations
+
+namespace HUP.Application.Services.Implementations
 {
     public class CourseOfferingService : ICourseOfferingService
     {
         private readonly ICourseOfferingRepository _repository;
-        private readonly CourseOfferingMapper _mapper;
 
-        public CourseOfferingService(ICourseOfferingRepository repository, CourseOfferingMapper mapper)
+        public CourseOfferingService(ICourseOfferingRepository repository)
         {
             _repository = repository;
-            _mapper = mapper;
         }
 
         public async Task<CourseOfferingDto?> GetByIdAsync(Guid id)
@@ -23,13 +22,13 @@ namespace HUP.Services.Implementations
             if (entity == null)
                 return null;
             
-            return _mapper.ToDto(entity);
+            return CourseOfferingMapper.ToDto(entity);
         }
 
         public async Task<IEnumerable<CourseOfferingDto>> GetAllAsync()
         {
             var entities = await _repository.GetAllAsync();
-            return entities.Select(e => _mapper.ToDto(e));
+            return CourseOfferingMapper.ToDto(entities);
         }
 
         public async Task AddAsync(CourseOffering entity)
@@ -61,13 +60,14 @@ namespace HUP.Services.Implementations
         public async Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId)
         {
             var entities = await _repository.GetActiveCourseOfferingAsync(departmentId, semesterId);
-            return entities.Select(e => _mapper.ToDto(e));
+            return CourseOfferingMapper.ToDto(entities);
         }
 
         public async Task<IEnumerable<CourseOfferingDto>> GetAvailableToRegisterAsync(Guid studentId)
         {
-            var entities = await _repository.GetAvailableToRegisterAsync(studentId);
-            return entities.Select(e => _mapper.ToDto(e));
+            var courses = await _repository.GetAvailableToRegisterAsync(studentId);
+            var dtos = CourseOfferingMapper.ToDto(courses);
+            return dtos;
         }
     }
 }
