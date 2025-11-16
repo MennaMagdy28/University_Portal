@@ -5,13 +5,13 @@ namespace HUP.Application.Services.Interfaces
 {
     // Service interface for managing CourseOffering business logic
     // Provides methods for CRUD operations and specific CourseOffering queries
-    public interface ICourseOfferingService : IGenericService<CourseOffering>
+    public interface ICourseOfferingService
     {
-        // Basic CRUD operations
-        Task<CourseOfferingDto> GetByIdAsync(Guid id);
+        // CRUD queries + soft delete
+        Task<CourseOfferingDto?> GetByIdAsync(Guid id);
         Task<IEnumerable<CourseOfferingDto>> GetAllAsync();
-        Task AddAsync(CourseOffering entity);
-        void Update(CourseOffering entity);
+        Task AddAsync(CourseOfferingDto courseOfferingDto);
+        void Update(CourseOfferingDto courseOfferingDto);
         void SoftDelete(Guid id);
         void Remove(Guid id);
         Task SaveChangesAsync();
