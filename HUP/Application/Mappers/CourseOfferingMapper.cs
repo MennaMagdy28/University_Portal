@@ -11,6 +11,8 @@ namespace HUP.Application.Mappers
         [MapProperty(nameof(CourseOffering.Course.CourseName), nameof(CourseOfferingDto.CourseName))]
         [MapProperty(nameof(CourseOffering.Course.Credits), nameof(CourseOfferingDto.Credits))]
         public partial CourseOfferingDto ToDto(CourseOffering courseOffering);
+
+        public partial CourseOffering ToEntity(CreateCourseOfferingDto createDto);
     }
 }
 
