@@ -61,8 +61,7 @@ namespace HUP.API
            {
                return BadRequest(ModelState);
            }
-
-           var createdCourseOffering = await _service.AddAsync(createDto);
+           var createdCourseOffering = _service.AddAsync(createDto);
            return CreatedAtAction(nameof(GetById), new { id = createdCourseOffering.Id }, createdCourseOffering);
        }
 
@@ -94,10 +93,7 @@ namespace HUP.API
            {
                return NotFound();
            }
-
            _service.SoftDelete(id);
-           await _service.SaveChangesAsync();
-
            return NoContent();
        }
 
@@ -110,10 +106,7 @@ namespace HUP.API
            {
                return NotFound();
            }
-
            _service.Remove(id);
-           await _service.SaveChangesAsync();
-
            return NoContent();
        }
    }
