@@ -24,21 +24,26 @@ namespace HUP.Repositories.Implementations
             return courseOfferings;
             
         }
-        public async Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid studentId)
+        public async Task<IEnumerable<CourseOffering>> GetAvailableToRegisterAsync(Guid studentId)
         {
-            return await _context.CourseOfferings
-               .Where(co => co.Semester.IsActive &&   // Filter by active semester
-                    !_context.Enrollments    // Exclusion sub-query 
+            var availableCourses = await _context.CourseOfferings
+                .Where(co => co.Semester.IsActive)
+                .Where(co => !_context.Enrollments  // Exclude courses the student is already registered / done / in progress
                         .Where(e => e.StudentId == studentId &&
                             (e.Status == EnrollmentStatus.Completed ||
                              e.Status == EnrollmentStatus.Registered ||
                              e.Status == EnrollmentStatus.InProgress))
                         .Select(e => e.CourseId)
-                        .Contains(co.Id)
-               ).Include(co => co.Course)
+                        .Contains(co.CourseId))
+                .Where(co => co.Course.PrerequisiteId == null || // If course has no prerequisite → allowed
+                        _context.Enrollments.Any(e => e.StudentId == studentId &&
+                                                 e.CourseId == co.Course.PrerequisiteId &&
+                                                 e.Status == EnrollmentStatus.Completed)) // If has prerequisite → student must have COMPLETED it
+                .Include(co => co.Course)
                 .Include(co => co.Instructor)
                 .Include(co => co.Schedules)
                 .ToListAsync();
+            return availableCourses;
         }
 
         public async Task AddAsync(CourseOffering entity)

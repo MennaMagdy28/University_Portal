@@ -10,7 +10,7 @@ namespace HUP.Repositories.Interfaces
         //All course offerings for a specific department and semester
         Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId);
         // Retrieves course offerings that are available for the student to register in a specific department and semester
-        Task<IEnumerable<CourseOffering>> GetAvailbleToRegisterAsync(Guid studentId);
+        Task<IEnumerable<CourseOffering>> GetAvailableToRegisterAsync(Guid studentId);
 
     }
 }
