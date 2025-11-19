@@ -1,0 +1,16 @@
+﻿using HUP.Core.Entities.Permissions;
+
+namespace HUP.Repositories.Interfaces;
+
+public interface IPermissionRepository
+{
+    Task<IEnumerable<Permission>> GetAllPermissions();
+    Task<IEnumerable<RolePermission>> GetAllPermissionsForRole(Guid roleId);
+    Task AddPermission(Permission permission);
+    void UpdatePermission(Permission permission);
+    void DeletePermission(Guid id);
+    Task AddRolePermission(Guid permissionId, Guid roleId);
+    void DeleteRolePermission(Guid permissionId, Guid roleId);
+    public Task SaveChangesAsync();
+
+}

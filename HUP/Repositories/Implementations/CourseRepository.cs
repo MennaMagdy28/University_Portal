@@ -29,14 +29,11 @@ namespace HUP.Repositories.Implementations
 
         public async Task AddAsync(Course course)
         {
-            course.Id = Guid.NewGuid();
-            course.CreatedAt = DateTime.UtcNow;
             await _context.Courses.AddAsync(course);
         }
 
         public void Update(Course course) 
         {
-            course.UpdatedAt = DateTime.UtcNow;
             _context.Courses.Update(course);
         }
 

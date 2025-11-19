@@ -14,8 +14,6 @@ namespace HUP.Repositories.Implementations
         }
         public async Task AddAsync(Exam entity)
         {
-            entity.Id = Guid.NewGuid();
-            entity.CreatedAt = DateTime.UtcNow;
             await _context.Exams.AddAsync(entity);
         }
 
@@ -57,7 +55,6 @@ namespace HUP.Repositories.Implementations
 
         public void Update(Exam entity)
         {
-           entity.UpdatedAt = DateTime.UtcNow;
            _context.Exams.Update(entity);
         }
     }

@@ -17,7 +17,6 @@ namespace HUP.Repositories.Implementations
         {
             var courseOfferings = await _context.CourseOfferings
                 .Include(co => co.Course)
-                .Include(co => co.Instructor)
                 .Include(co => co.Semester)
                 .Where(co => co.DepartmentId == DepartmentId && co.SemesterId == SemesterId && !co.IsDeleted)
                 .ToListAsync();
@@ -40,7 +39,6 @@ namespace HUP.Repositories.Implementations
                                                  e.CourseId == co.Course.PrerequisiteId &&
                                                  e.Status == EnrollmentStatus.Completed)) // If has prerequisite → student must have COMPLETED it
                 .Include(co => co.Course)
-                .Include(co => co.Instructor)
                 .Include(co => co.Schedules)
                 .ToListAsync();
             return availableCourses;
@@ -48,7 +46,6 @@ namespace HUP.Repositories.Implementations
 
         public async Task AddAsync(CourseOffering entity)
         {            
-            entity.CreatedAt = DateTime.UtcNow;
             await _context.CourseOfferings.AddAsync(entity);
         }
 
@@ -56,7 +53,6 @@ namespace HUP.Repositories.Implementations
         {
             return await _context.CourseOfferings
                 .Include(co => co.Course)
-                .Include(co => co.Instructor)
                 .Include(co => co.Semester)
                 .ToListAsync();
         }
@@ -65,7 +61,6 @@ namespace HUP.Repositories.Implementations
         {
             var co = await _context.CourseOfferings
                 .Include(co => co.Course)
-                .Include(co => co.Instructor)
                 .Include(co => co.Semester)
                 .FirstOrDefaultAsync(co => co.Id == id);
             return co;
@@ -93,7 +88,6 @@ namespace HUP.Repositories.Implementations
 
         public void Update(CourseOffering entity)
         {
-            entity.UpdatedAt = DateTime.UtcNow;
             _context.CourseOfferings.Update(entity);
         }
     }
