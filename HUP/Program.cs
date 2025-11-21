@@ -1,5 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text;
+using HUP.Core.Entities.Identity;
+using Microsoft.EntityFrameworkCore;
 using HUP.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using StackExchange.Redis;
 
@@ -13,7 +18,6 @@ builder.Services.AddDbContext<HUPDbContext>(options =>
     options.UseSqlServer(connectionString)
 );
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
-
 
 // Add services to the container.
 

@@ -5,7 +5,7 @@ namespace HUP.Repositories.Interfaces;
 public interface IPermissionRepository
 {
     Task<IEnumerable<Permission>> GetAllPermissions();
-    Task<IEnumerable<RolePermission>> GetAllPermissionsForRole(Guid roleId);
+    Task<List<string>> GetAllPermissionsForRole(Guid roleId);
     Task AddPermission(Permission permission);
     void UpdatePermission(Permission permission);
     void DeletePermission(Guid id);
