@@ -17,7 +17,7 @@ public class PermissionRepository : IPermissionRepository
         return await _context.Permissions.ToListAsync();
     }
 
-    public async Task<IEnumerable<RolePermission>> GetAllPermissionsForRole(Guid roleId)
+    public async Task<List<string>> GetAllPermissionsForRole(Guid roleId)
     {
         var permissionNames = await _context.RolePermissions.Where(r => r.RoleId == roleId)
             .Select(r => r.Permission.Name).ToListAsync();
