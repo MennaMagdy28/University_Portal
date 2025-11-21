@@ -18,8 +18,6 @@ namespace HUP.Repositories.Implementations
 
         public async Task AddAsync(Schedule entity)
         {
-            entity.Id = Guid.NewGuid();
-            entity.CreatedAt = DateTime.UtcNow;
             await _context.Schedules.AddAsync(entity);
         }
         public async Task<IEnumerable<Schedule>> GetAllAsync()
@@ -60,7 +58,6 @@ namespace HUP.Repositories.Implementations
 
         public void Update(Schedule entity)
         {
-            entity.UpdatedAt = DateTime.UtcNow;
             _context.Schedules.Update(entity);
         }
 

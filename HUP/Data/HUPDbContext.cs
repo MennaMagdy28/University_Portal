@@ -28,6 +28,7 @@ namespace HUP.Data
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<ProgramPlan> ProgramPlan { get; set; }
         public DbSet<Semester> Semesters { get; set; }
+        public DbSet<CourseOfferingInstructor> CourseOfferingInstructors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -145,13 +146,18 @@ namespace HUP.Data
                 .HasForeignKey(co => co.CourseId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Instructor ↔ CourseOffering (One-to-Many)
-            modelBuilder.Entity<CourseOffering>()
-                .HasOne(co => co.Instructor)
-                .WithMany()
-                .HasForeignKey(co => co.InstructorId)
-                .OnDelete(DeleteBehavior.Restrict);
-
+            // Instructor ↔ CourseOffering (Many-to-Many)
+            modelBuilder.Entity<CourseOfferingInstructor>()
+                .HasKey(coi => new { coi.CourseOfferingId, coi.InstructorId });
+            modelBuilder.Entity<CourseOfferingInstructor>()
+                .HasOne(coi => coi.CourseOffering)
+                .WithMany(coi => coi.Instructors)
+                .HasForeignKey(coi => coi.CourseOfferingId);
+            modelBuilder.Entity<CourseOfferingInstructor>()
+                .HasOne(coi => coi.Instructor)
+                .WithMany(coi => coi.courseOfferings)
+                .HasForeignKey(coi => coi.InstructorId);
+            
             // Semester ↔ CourseOffering (One-to-Many)
             modelBuilder.Entity<CourseOffering>()
                 .HasOne(co => co.Semester)
