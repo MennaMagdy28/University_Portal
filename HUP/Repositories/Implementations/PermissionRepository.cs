@@ -19,7 +19,9 @@ public class PermissionRepository : IPermissionRepository
 
     public async Task<IEnumerable<RolePermission>> GetAllPermissionsForRole(Guid roleId)
     {
-        return await  _context.RolePermissions.Where(r => r.RoleId == roleId).ToListAsync();
+        var permissionNames = await _context.RolePermissions.Where(r => r.RoleId == roleId)
+            .Select(r => r.Permission.Name).ToListAsync();
+        return permissionNames;
     }
 
     public async Task AddPermission(Permission permission)
@@ -28,7 +30,7 @@ public class PermissionRepository : IPermissionRepository
     }
 
     public void UpdatePermission(Permission permission)
-    { 
+    {
         _context.Permissions.Update(permission);
     }
 
@@ -53,6 +55,7 @@ public class PermissionRepository : IPermissionRepository
                                                                      && rp.RoleId == roleId);
         _context.RolePermissions.Remove(relation);
     }
+
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
