@@ -23,7 +23,7 @@ public class PermissinService : IPermissionService
         if (cachedPermissions != null)
             return cachedPermissions;
 
-        var dbPermissions =await _repository.GetAllPermissionsForRole(roleId);
+        var dbPermissions = await _repository.GetAllPermissionsForRole(roleId);
         await _cache.SetAsync(key, dbPermissions, 30);
         return dbPermissions;
     }
