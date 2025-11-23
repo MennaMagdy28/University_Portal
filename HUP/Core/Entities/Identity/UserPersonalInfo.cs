@@ -4,7 +4,7 @@ namespace HUP.Core.Entities.Identity
 {
     public class UserPersonalInfo
     {
-        public Guid UserID { get; set; }
+        public Guid UserId { get; set; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string Religion { get; set; }

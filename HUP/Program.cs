@@ -20,7 +20,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
 
 
-builder.Services.AddDbContext<HUPDbContext>(options =>
+builder.Services.AddDbContext<HupDbContext>(options =>
     options.UseSqlServer(connectionString)
 );
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));

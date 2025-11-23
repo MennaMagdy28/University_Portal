@@ -6,7 +6,7 @@ namespace HUP.Core.Entities.Academics
     {
         public string DepartmentName { get; set; }
         public string DepartmentCode { get; set; }
-        public Guid FacultyID { get; set; }
+        public Guid FacultyId { get; set; }
         public string HeadOfDepartment { get; set; }
         public int DurationInYears { get; set; }
         public int CompulsoryHours { get; set; }

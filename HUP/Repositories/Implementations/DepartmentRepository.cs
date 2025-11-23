@@ -7,8 +7,8 @@ namespace HUP.Repositories.Implementations
 {
     public class DepartmentRepository : IDepartmentRepository
     {
-        private readonly HUPDbContext _context;
-        public DepartmentRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public DepartmentRepository(HupDbContext context)
         {
             _context = context;
         }

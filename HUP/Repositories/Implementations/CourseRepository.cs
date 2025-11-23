@@ -7,17 +7,17 @@ namespace HUP.Repositories.Implementations
 {
     public class CourseRepository : ICourseRepository
     {
-        private readonly HUPDbContext _context;
-        public CourseRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public CourseRepository(HupDbContext context)
         {
             _context = context;
         }
 
         public async Task<Course> GetByIdAsync(Guid id) {
-            var Course = await _context.Courses
+            var course = await _context.Courses
                 .Include(c => c.Prerequisite)
                 .FirstOrDefaultAsync(c => c.Id == id);
-            return Course;
+            return course;
         }
 
         public async Task<IEnumerable<Course>> GetAllAsync() 

@@ -8,8 +8,8 @@ namespace HUP.Repositories.Implementations
 {
     public class StudentRepository : IStudentRepository
     {
-        private readonly HUPDbContext _context;
-        public StudentRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public StudentRepository(HupDbContext context)
         {
             _context = context;
         }
@@ -26,7 +26,7 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<Student>> GetByFacultyAsync(Guid facultyId)
         {
             return await _context.Students
-                .Where(s => s.Department.FacultyID == facultyId)
+                .Where(s => s.Department.FacultyId == facultyId)
                 .ToListAsync();
         }
 
@@ -73,11 +73,11 @@ namespace HUP.Repositories.Implementations
                 .ExecuteUpdate(s => s.SetProperty(st => st.AcademicStatus, status));
         }
 
-        public void UpdateCGPAAsync(Guid studentId, decimal cgpa)
+        public void UpdateCgpaAsync(Guid studentId, decimal cgpa)
         {
             _context.Students
                 .Where(s => s.UserId == studentId)
-                .ExecuteUpdate(s => s.SetProperty(st => st.CGPA, cgpa));
+                .ExecuteUpdate(s => s.SetProperty(st => st.Cgpa, cgpa));
         }
         public void SoftDelete(Guid id)
         {

@@ -5,7 +5,7 @@ namespace HUP.Core.Entities.Academics
 {
     public class Exam : BaseEntity
     {
-        public Guid CousreOfferingId { get; set; }
+        public Guid CourseOfferingId { get; set; }
         public ExamType ExamType { get; set; }
         public DateTime ExamDate { get; set; }
         public TimeSpan ExamTime { get; set; }

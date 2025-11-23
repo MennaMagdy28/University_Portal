@@ -53,4 +53,34 @@
         Professor,
         AssistantProfessor
     }
+
+    public enum FacultyTitle
+    {
+        FacultyOfArts,
+        FacultyOfHomeEconomics,
+        FacultyOfEducation,
+        FacultyOfNursing,
+        FacultyOfComputingAndAI,
+        FacultyOfSocialWork,
+        FacultyOfPharmacy,
+        FacultyOfMedicine,
+        FacultyOfScience,
+        FacultyOfAppliedArts,
+        FacultyOfFineArts,
+        FacultyOfSportsScience,
+        FacultyOfEngineeringMataria,
+        FacultyOfEngineering,
+        FacultyOfCommerceAndBusinessAdministration,
+        FacultyOfArtEducation,
+        TechnicalInstituteOfNursing,
+        FacultyOfTechnologyAndEducation,
+        FacultyOfLaw,
+        FacultyOfMusicEducation,
+        FacultyOfTourismAndHotels,
+        FacultyOfNutritionScience
+        
+        
+        
+        
+    }
 }

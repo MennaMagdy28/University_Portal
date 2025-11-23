@@ -7,8 +7,8 @@ namespace HUP.Repositories.Implementations
 {
     public class EnrollmentRepository : IEnrollmentRepository
     {
-        private readonly HUPDbContext _context;
-        public EnrollmentRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public EnrollmentRepository(HupDbContext context)
         {
             _context = context;
         }

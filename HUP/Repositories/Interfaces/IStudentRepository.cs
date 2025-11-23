@@ -8,7 +8,7 @@ namespace HUP.Repositories.Interfaces
     public interface IStudentRepository :  IGenericRepository<Student>
     {
         void UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status);
-        void UpdateCGPAAsync(Guid studentId, decimal cgpa);
+        void UpdateCgpaAsync(Guid studentId, decimal cgpa);
         Task<IEnumerable<Student>> GetByFacultyAsync(Guid facultyId);
         Task<IEnumerable<Student>> GetByDepartmentAsync(Guid departmentId);
     }

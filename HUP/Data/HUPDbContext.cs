@@ -6,14 +6,12 @@ using HUP.Core.Entities.Permissions;
 
 namespace HUP.Data
 {
-    public class HUPDbContext : DbContext
+    public class HupDbContext : DbContext
     {
-        public HUPDbContext(DbContextOptions<HUPDbContext> options) : base(options)
+        public HupDbContext(DbContextOptions<HupDbContext> options) : base(options)
         {
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<UserContact> UserContacts { get; set; }
-        public DbSet<UserPersonalInfo> UserPersonalInfos { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
@@ -54,22 +52,11 @@ namespace HUP.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             // User ↔ UserContact (One-to-One)
-            modelBuilder.Entity<UserContact>()
-                .HasKey(uc => uc.UserID);
-            modelBuilder.Entity<UserContact>()
-                .HasOne(uc => uc.User)
-                .WithOne()
-                .HasForeignKey<UserContact>(uc => uc.UserID)
-                .OnDelete(DeleteBehavior.Cascade);
-
             // User ↔ UserPersonalInfo (One-to-One)
-            modelBuilder.Entity<UserPersonalInfo>()
-                .HasKey(upi => upi.UserID);
-            modelBuilder.Entity<UserPersonalInfo>()
-                .HasOne(upi => upi.User)
-                .WithOne()
-                .HasForeignKey<UserPersonalInfo>(upi => upi.UserID)
-                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<User>()
+                .OwnsOne<UserPersonalInfo>(u => u.PersonalInfo);
+            modelBuilder.Entity<User>()
+                .OwnsOne<UserContact>(u => u.ContactInfo);
 
             // User ↔ Student (One-to-One)
             modelBuilder.Entity<Student>()
@@ -84,14 +71,14 @@ namespace HUP.Data
             modelBuilder.Entity<Instructor>()
                 .HasOne(i => i.User)
                 .WithOne()
-                .HasForeignKey<Instructor>(i => i.UserID)
+                .HasForeignKey<Instructor>(i => i.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // User ↔ Faculty (One-to-One - Dean)
             modelBuilder.Entity<Faculty>()
                 .HasOne(f => f.Dean)
                 .WithOne()
-                .HasForeignKey<Faculty>(f => f.DeanID)
+                .HasForeignKey<Faculty>(f => f.DeanId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Role ↔ User (CreatedBy)
@@ -105,14 +92,14 @@ namespace HUP.Data
             modelBuilder.Entity<Department>()
                 .HasOne(d => d.Faculty)
                 .WithMany(f => f.Departments)
-                .HasForeignKey(d => d.FacultyID)
+                .HasForeignKey(d => d.FacultyId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Department ↔ Instructor (One-to-Many)
             modelBuilder.Entity<Instructor>()
                 .HasOne(i => i.Department)
                 .WithMany(d => d.Instructors)
-                .HasForeignKey(i => i.DepartmentID)
+                .HasForeignKey(i => i.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<ProgramPlan>()
@@ -155,7 +142,7 @@ namespace HUP.Data
                 .HasForeignKey(coi => coi.CourseOfferingId);
             modelBuilder.Entity<CourseOfferingInstructor>()
                 .HasOne(coi => coi.Instructor)
-                .WithMany(coi => coi.courseOfferings)
+                .WithMany(coi => coi.CourseOfferings)
                 .HasForeignKey(coi => coi.InstructorId);
             
             // Semester ↔ CourseOffering (One-to-Many)
@@ -197,7 +184,7 @@ namespace HUP.Data
             modelBuilder.Entity<Exam>()
                 .HasOne(e => e.CourseOffering)
                 .WithMany()
-                .HasForeignKey(e => e.CousreOfferingId)
+                .HasForeignKey(e => e.CourseOfferingId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // CourseOffering ↔ Schedule (One-to-Many)

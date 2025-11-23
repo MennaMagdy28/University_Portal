@@ -11,8 +11,8 @@ namespace HUP.Repositories.Implementations
     //ProgramPlan table has composite primary key (DepartmentId, CourseId) no single Id for entity both are foreign keys
     public class ProgramPlanRepository : IProgramPlanRepository
     {
-        private readonly HUPDbContext _context;
-        public ProgramPlanRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public ProgramPlanRepository(HupDbContext context)
         {
             _context = context;
         }

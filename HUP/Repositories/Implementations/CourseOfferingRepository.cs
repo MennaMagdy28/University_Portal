@@ -8,17 +8,17 @@ namespace HUP.Repositories.Implementations
 {
     public class CourseOfferingRepository : ICourseOfferingRepository
     {
-        private readonly HUPDbContext _context;
-        public CourseOfferingRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public CourseOfferingRepository(HupDbContext context)
         {
             _context = context;
         }
-        public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid DepartmentId, Guid SemesterId)
+        public async Task<IEnumerable<CourseOffering>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId)
         {
             var courseOfferings = await _context.CourseOfferings
                 .Include(co => co.Course)
                 .Include(co => co.Semester)
-                .Where(co => co.DepartmentId == DepartmentId && co.SemesterId == SemesterId && !co.IsDeleted)
+                .Where(co => co.DepartmentId == departmentId && co.SemesterId == semesterId && !co.IsDeleted)
                 .ToListAsync();
             return courseOfferings;
             

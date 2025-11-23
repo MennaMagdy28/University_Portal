@@ -8,8 +8,8 @@ namespace HUP.Repositories.Implementations
     public class ScheduleRepository : IScheduleRepository
     {
 
-        private readonly HUPDbContext _context;
-        public ScheduleRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public ScheduleRepository(HupDbContext context)
         {
             _context = context;
         }

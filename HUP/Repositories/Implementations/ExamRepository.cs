@@ -7,8 +7,8 @@ namespace HUP.Repositories.Implementations
 {
     public class ExamRepository : IExamRepository
     {
-        private readonly HUPDbContext _context;
-        public ExamRepository(HUPDbContext context)
+        private readonly HupDbContext _context;
+        public ExamRepository(HupDbContext context)
         {
             _context = context;
         }

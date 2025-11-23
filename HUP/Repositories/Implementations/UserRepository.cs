@@ -7,8 +7,8 @@ namespace HUP.Repositories.Implementations;
 
 public class UserRepository : IUserRepository
 {
-    private readonly HUPDbContext _context;
-    public UserRepository(HUPDbContext context)
+    private readonly HupDbContext _context;
+    public UserRepository(HupDbContext context)
     {
         _context = context;
     }
@@ -21,7 +21,7 @@ public class UserRepository : IUserRepository
     // return: null if not found or user (success)
     public async Task<User> GetByCredentialsAsync(string nationalId)
     {
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.NationalID == nationalId && u.IsActive);
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.NationalId == nationalId && u.IsActive);
         if (user == null)
             return null;
         return user;

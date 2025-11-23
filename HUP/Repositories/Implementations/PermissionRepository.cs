@@ -7,8 +7,8 @@ namespace HUP.Repositories.Implementations;
 
 public class PermissionRepository : IPermissionRepository
 {
-    private readonly HUPDbContext _context;
-    public PermissionRepository(HUPDbContext context)
+    private readonly HupDbContext _context;
+    public PermissionRepository(HupDbContext context)
     {
         _context = context;
     }

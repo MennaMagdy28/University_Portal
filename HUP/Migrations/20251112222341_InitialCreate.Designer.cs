@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HUP.Migrations
 {
-    [DbContext(typeof(HUPDbContext))]
+    [DbContext(typeof(HupDbContext))]
     [Migration("20251112222341_InitialCreate")]
     partial class InitialCreate
     {

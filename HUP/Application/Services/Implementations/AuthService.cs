@@ -48,7 +48,7 @@ namespace HUP.Application.Services.Implementations
         {
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.NationalID),
+                new Claim(JwtRegisteredClaimNames.Sub, user.NationalId),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim("roleId", user.RoleId.ToString())
