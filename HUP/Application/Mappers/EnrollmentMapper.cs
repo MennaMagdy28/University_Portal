@@ -7,8 +7,12 @@ namespace HUP.Application.Mappers
     [Mapper]
     public static partial class EnrollmentMapper
     {
+        // Mapping for CreateEnrollmentDto
+        public static partial Enrollment ToEntityFromCreateDto(CreateEnrollmentDto dto);
+        public static partial CreateEnrollmentDto ToCreateDto(Enrollment entity);
 
-        public static partial Enrollment ToEntity(CreateEnrollmentDto dto);
-        public static partial CreateEnrollmentDto ToDto(Enrollment entity);
+        // Mapping for EnrollmentResponseDto
+        public static partial Enrollment ToEntityFromResponseDto(EnrollmentResponseDto dto);
+        public static partial EnrollmentResponseDto ToResponseDto(Enrollment entity);
     }
 }

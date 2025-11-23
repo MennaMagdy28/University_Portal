@@ -4,13 +4,14 @@ using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using System.Threading.Tasks;
-
 using HUP.Core.Enums;
+
 namespace HUP.Application.Services.Implementations
 {
     public class EnrollmentService : IEnrollmentService
     {
         private readonly IEnrollmentRepository _repository;
+
         public EnrollmentService(IEnrollmentRepository repository)
         {
             _repository = repository;
@@ -21,22 +22,22 @@ namespace HUP.Application.Services.Implementations
             dto.Status = EnrollmentStatus.Registered;
             dto.Id = Guid.NewGuid();
             dto.EnrollmentDate = DateTime.UtcNow;
-            var enrollment = EnrollmentMapper.ToEntity(dto);
+            var enrollment = EnrollmentMapper.ToEntityFromCreateDto(dto);
             await _repository.AddAsync(enrollment);
             await _repository.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<CreateEnrollmentDto>> GetAllAsync()
+        public async Task<IEnumerable<EnrollmentResponseDto>> GetAllAsync()
         {
             var entities =  await _repository.GetAllAsync();
-            var dtos = entities.Select(e => EnrollmentMapper.ToDto(e));
+            var dtos = entities.Select(e => EnrollmentMapper.ToResponseDto(e));
             return dtos;
         }
 
-        public async Task<CreateEnrollmentDto> GetByIdAsync(Guid id)
+        public async Task<EnrollmentResponseDto> GetByIdAsync(Guid id)
         {
             var entity = await _repository.GetByIdAsync(id);
-            var dto = EnrollmentMapper.ToDto(entity);
+            var dto = EnrollmentMapper.ToResponseDto(entity);
             return dto;
         }
 
@@ -51,9 +52,9 @@ namespace HUP.Application.Services.Implementations
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(CreateEnrollmentDto dto)
+        public async Task Update(EnrollmentResponseDto dto)
         {
-            var entity = EnrollmentMapper.ToEntity(dto);
+            var entity = EnrollmentMapper.ToEntityFromResponseDto(dto);
             _repository.Update(entity);
             await _repository.SaveChangesAsync();
         }

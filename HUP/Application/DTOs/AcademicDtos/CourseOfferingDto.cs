@@ -7,4 +7,3 @@ namespace HUP.Application.DTOs.AcademicDtos
         public int Credits { get; set; }
     }
 }
-
