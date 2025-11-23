@@ -1,3 +1,4 @@
+using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 

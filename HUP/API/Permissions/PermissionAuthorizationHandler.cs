@@ -1,6 +1,7 @@
 ﻿using System.Security.Claims;
-using HUP.Core.Entities.Permissions;
+using HUP.Application.Services.Interfaces;
 using HUP.Core.Interfaces;
+using HUP.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 
 namespace HUP.API.Permissions;
@@ -8,10 +9,14 @@ namespace HUP.API.Permissions;
 public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionRequirement>
 {
     private readonly ICacheService _cache;
+    private readonly IUserRepository _repository;
+    private readonly IPermissionService _permissionService;
 
-    public PermissionAuthorizationHandler(ICacheService cacheService)
+    public PermissionAuthorizationHandler(ICacheService cacheService, IUserRepository userRepository,  IPermissionService permissionService)
     {
         _cache = cacheService;
+        _repository = userRepository;
+        _permissionService = permissionService;
     }
 
     protected override async Task HandleRequirementAsync(
@@ -25,10 +30,33 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
             context.Fail();
             return;
         }
-        var permissions = await _cache.GetAsync<Permission[]>(userId);
-        var permissionStrings = permissions.Select(p => p.Name).ToArray();
+        //user:{id}:permissions
+        //$"user:{id}:role"
+        string permissionKey = $"user:{userId}:permissions",
+            roleKey = $"user:{userId}:role";
         
-        if (permissionStrings.Contains(requirement.Permission))
+        // get cached permissions and role id
+        var permissions = await _cache.GetAsync<string[]>(permissionKey);
+        var role =  await _cache.GetAsync<string>(roleKey);
+        
+        // role cached value is null (expired)
+        // set the value in cache
+        if (role == null)
+        {
+            var user = await _repository.GetByIdAsync(Guid.Parse(userId));
+            role = user.RoleId.ToString();
+            await _cache.SetAsync(roleKey, role, 2);
+        }
+        // if permissions value == null (expired)
+        // set the permissions in cache and return them 
+        if (permissions == null)
+        {
+            permissions = (await _permissionService.SetUserPermissionsAsync(Guid.Parse(userId), Guid.Parse(role))).ToArray();
+        }
+        
+        var tokenRoleId = context.User.FindFirst("roleId")?.Value;
+        
+        if (permissions.Contains(requirement.Permission) && role == tokenRoleId)
         {
             context.Succeed(requirement);
         }

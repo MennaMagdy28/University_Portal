@@ -1,12 +1,13 @@
-using HUP.Core.DTOs.IdentityDtos;
 using System.Threading.Tasks;
-using HUP.Core.DTOs.AuthDtos;
+using HUP.Application.DTOs.AuthDtos;
+using HUP.Application.DTOs.IdentityDtos;
+using HUP.Core.Entities.Identity;
 
 namespace HUP.Application.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<UserDTO> LoginAsync(LoginDto loginDto);
-        Task<string> GenerateJwtToken(UserDTO userDto);
+        Task<AuthResponseDto> LoginAsync(LoginDto loginDto);
+        string GenerateJwtToken(User userDto);
     }
 }

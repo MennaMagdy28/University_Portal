@@ -1,4 +1,4 @@
-namespace HUP.Core.DTOs.IdentityDtos
+namespace HUP.Application.DTOs.IdentityDtos
 {
     public class UserDto
     {
@@ -8,6 +8,5 @@ namespace HUP.Core.DTOs.IdentityDtos
         public string Phone { get; set; }
         public bool IsActive { get; set; }
         public Guid RoleId { get; set; }
-        public RoleDto Role { get; set; }
     }
 }

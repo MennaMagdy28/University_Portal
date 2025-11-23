@@ -4,6 +4,7 @@ using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using HUP.Application.Services.Interfaces;
 using System.Threading.Tasks;
+using HUP.Application.DTOs.AcademicDtos;
 
 
 namespace HUP.Application.Services.Implementations

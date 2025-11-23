@@ -1,6 +1,6 @@
+using HUP.Application.DTOs.IdentityDtos;
 using HUP.Core.Entities.Identity;
 using Riok.Mapperly.Abstractions;
-using HUP.Core.DTOs.IdentityDtos;
 
 namespace HUP.Application.Mappers
 {

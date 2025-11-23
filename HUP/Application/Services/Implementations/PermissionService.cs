@@ -4,17 +4,17 @@ using HUP.Repositories.Interfaces;
 
 namespace HUP.Application.Services.Implementations;
 
-public class PermissinService : IPermissionService
+public class PermissionService : IPermissionService
 {
     private readonly ICacheService _cache;
     private readonly IPermissionRepository _repository;
 
-    public PermissinService(ICacheService cache, IPermissionRepository repository)
+    public PermissionService(ICacheService cache, IPermissionRepository repository)
     {
         _cache = cache;
         _repository = repository;
     }
-    public async Task<List<string>> GetUserPermissionsAsync(Guid userId,  Guid roleId)
+    public async Task<List<string>> SetUserPermissionsAsync(Guid userId,  Guid roleId)
     {
         var id = userId.ToString();
         var key = $"user:{id}:permissions";
@@ -22,9 +22,9 @@ public class PermissinService : IPermissionService
         var cachedPermissions = await _cache.GetAsync<List<string>>(key);
         if (cachedPermissions != null)
             return cachedPermissions;
-
+        
         var dbPermissions = await _repository.GetAllPermissionsForRole(roleId);
-        await _cache.SetAsync(key, dbPermissions, 30);
+        await _cache.SetAsync(key, dbPermissions, 60);
         return dbPermissions;
     }
 }

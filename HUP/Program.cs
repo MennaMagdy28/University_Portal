@@ -7,6 +7,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using StackExchange.Redis;
+using HUP.Core.Interfaces;
+using HUP.Application.Services.Caching;
+using HUP.Application.Services.Implementations;
+using HUP.Application.Services.Interfaces;
+using HUP.Repositories.Implementations;
+using HUP.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +24,13 @@ builder.Services.AddDbContext<HUPDbContext>(options =>
     options.UseSqlServer(connectionString)
 );
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
+
+builder.Services.AddSingleton<ICacheService, CacheService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICacheService, CacheService>();
+builder.Services.AddScoped<IPermissionService, PermissionService>();
 
 // Add services to the container.
 

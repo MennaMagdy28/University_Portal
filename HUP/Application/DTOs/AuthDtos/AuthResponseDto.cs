@@ -1,0 +1,9 @@
+﻿using HUP.Application.DTOs.IdentityDtos;
+
+namespace HUP.Application.DTOs.AuthDtos;
+
+public class AuthResponseDto 
+{ 
+    public string Token { get; set; } 
+    public UserDto User { get; set; }
+}

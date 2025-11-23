@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Services.Interfaces;
-using HUP.Core.DTOs.AuthDtos;
 using System.Threading.Tasks;
+using System.Security.Authentication;
+using HUP.Application.DTOs.AuthDtos;
 
 namespace HUP.API.Controllers
 {
@@ -21,12 +22,14 @@ namespace HUP.API.Controllers
             if (string.IsNullOrEmpty(loginDto.NationalId) || string.IsNullOrEmpty(loginDto.Password))
                 return BadRequest("National Id and Password are required.");
 
-            var userDto = await _authService.LoginAsync(loginDto);
-            if (userDto == null)
-                return Unauthorized("Invalid credentials.");
+            var response = await _authService.LoginAsync(loginDto);
+            if (response == null)
+            {
+                return Unauthorized(new { message = "Invalid National ID or Password." });
+            }
 
-            var token = await _authService.GenerateJwtToken(userDto);
-            return Ok(new { token, user = userDto });
+            // 3. Return Result
+            return Ok(response);
         }
     }
 }

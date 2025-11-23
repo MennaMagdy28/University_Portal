@@ -1,4 +1,4 @@
-namespace HUP.Core.DTOs.AuthDtos
+namespace HUP.Application.DTOs.AuthDtos
 {
     public class LoginDto
     {
