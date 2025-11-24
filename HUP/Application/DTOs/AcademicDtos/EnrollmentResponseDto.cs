@@ -12,3 +12,4 @@ namespace HUP.Core.DTOs.AcademicDtos
         public decimal grade { get; set; }
     }
 }
+  

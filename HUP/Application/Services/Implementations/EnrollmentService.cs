@@ -19,10 +19,11 @@ namespace HUP.Application.Services.Implementations
 
         public async Task AddAsync(CreateEnrollmentDto dto)
         {
-            dto.Status = EnrollmentStatus.Registered;
-            dto.Id = Guid.NewGuid();
-            dto.EnrollmentDate = DateTime.UtcNow;
             var enrollment = EnrollmentMapper.ToEntityFromCreateDto(dto);
+            enrollment.Id = Guid.NewGuid();
+            enrollment.EnrollmentDate = DateTime.Now;
+            enrollment.CreatedAt = DateTime.Now;
+            enrollment.Status = EnrollmentStatus.Registered;
             await _repository.AddAsync(enrollment);
             await _repository.SaveChangesAsync();
         }

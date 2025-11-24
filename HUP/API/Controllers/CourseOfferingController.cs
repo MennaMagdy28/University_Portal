@@ -62,8 +62,8 @@ namespace HUP.API
            {
                return BadRequest(ModelState);
            }
-           var createdCourseOffering = _service.AddAsync(createDto);
-           return CreatedAtAction(nameof(GetById), new { id = createdCourseOffering.Id }, createdCourseOffering);
+           await _service.AddAsync(createDto);
+           return Ok("Created Successfully");
        }
 
        // PUT: api/CourseOffering/{id}
