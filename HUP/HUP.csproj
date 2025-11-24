@@ -29,11 +29,7 @@
 
   <ItemGroup>
     <Folder Include="API\Controllers\" />
-    <Folder Include="Application\DTOs\CommonDtos\" />
     <Folder Include="Application\DTOs\AcademicDtos\" />
-    <Folder Include="Application\DTOs\ServiceDtos\" />
-    <Folder Include="Application\DTOs\UserDtos\" />
-    <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Migrations\" />
   </ItemGroup>

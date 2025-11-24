@@ -1,9 +1,9 @@
 ﻿using HUP.Application.Mappers;
 using HUP.Application.Services.Interfaces;
-using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using System.Threading.Tasks;
+using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.Enums;
 
 namespace HUP.Application.Services.Implementations

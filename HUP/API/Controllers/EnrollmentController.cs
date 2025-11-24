@@ -1,6 +1,6 @@
+using HUP.Application.DTOs.AcademicDtos;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Services.Interfaces;
-using HUP.Core.DTOs.AcademicDtos;
 
 namespace HUP.API
 {

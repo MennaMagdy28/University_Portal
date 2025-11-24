@@ -46,6 +46,11 @@ namespace HUP.Repositories.Implementations
             return _context.SaveChangesAsync();
         }
 
+        public Task<IEnumerable<Department>> GetByFacultyIdAsync(Guid facultyId)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SoftDelete(Guid id)
         {
             if (id == Guid.Empty) return;

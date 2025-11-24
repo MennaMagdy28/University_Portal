@@ -11,6 +11,7 @@ using HUP.Core.Interfaces;
 using HUP.Application.Services.Caching;
 using HUP.Application.Services.Implementations;
 using HUP.Application.Services.Interfaces;
+using HUP.Common.Extensions;
 using HUP.Repositories.Implementations;
 using HUP.Repositories.Interfaces;
 
@@ -23,19 +24,12 @@ var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
 builder.Services.AddDbContext<HupDbContext>(options =>
     options.UseSqlServer(connectionString)
 );
+// redis connection
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(redisConnectionString));
-
+//cache service (singleton)
 builder.Services.AddSingleton<ICacheService, CacheService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ICacheService, CacheService>();
-builder.Services.AddScoped<IPermissionService, PermissionService>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ICourseOfferingService, CourseOfferingService>();
-builder.Services.AddScoped<IEnrollmentService, EnrollmentService>();
-builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
-builder.Services.AddScoped<ICourseOfferingRepository, CourseOfferingRepository>();
+//tracks all services and repositories (DI)
+builder.Services.AddApplicationServices();
 
 // Add services to the container.
 

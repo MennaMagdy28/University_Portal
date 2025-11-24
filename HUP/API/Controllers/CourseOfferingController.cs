@@ -1,7 +1,6 @@
 using HUP.Application.DTOs.AcademicDtos;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Mappers;
-using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Application.Services.Interfaces;
 
