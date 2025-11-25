@@ -1,6 +1,7 @@
 using HUP.Application.DTOs.AcademicDtos;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Services.Interfaces;
+using HUP.Application.DTOs.AcademicDtos.Enrollment;
 
 namespace HUP.API
 {
@@ -47,14 +48,14 @@ namespace HUP.API
 
         // PUT: api/Enrollment/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromBody] EnrollmentResponseDto updateDto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateEnrollmentDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var existing = await _service.GetByIdAsync(updateDto.Id);
+            var existing = await _service.GetByIdAsync(id);
             if (existing == null)
                 return NotFound();
-            await _service.Update(updateDto);
+            await _service.Update(id, updateDto);
             return NoContent();
         }
 

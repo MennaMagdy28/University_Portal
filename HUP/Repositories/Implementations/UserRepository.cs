@@ -26,28 +26,19 @@ public class UserRepository : IUserRepository
             return null;
         return user;
     }
+    
 
-    public async  Task<IEnumerable<User>> GetAllAsync()
-    {
-        return await _context.Users.ToListAsync();
-    }
-
-    public async  Task AddAsync(User entity)
-    {
-        await _context.Users.AddAsync(entity);
-    }
-
-    public void Update(User entity)
-    {
-        _context.Users.Update(entity);
-    }
-
-    public void SoftDelete(Guid id)
+    public Task<IEnumerable<User>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public void Remove(Guid id)
+    public Task AddAsync(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public async Task RemoveAsync(Guid id)
     {
         throw new NotImplementedException();
     }
@@ -56,6 +47,4 @@ public class UserRepository : IUserRepository
     {
         throw new NotImplementedException();
     }
-
-    
 }

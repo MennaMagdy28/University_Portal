@@ -32,29 +32,11 @@ namespace HUP.Repositories.Implementations
             await _context.Courses.AddAsync(course);
         }
 
-        public void Update(Course course) 
+        public async Task RemoveAsync(Guid courseId)
         {
-            _context.Courses.Update(course);
-        }
-
-        public void SoftDelete(Guid courseId) 
-        {
-            var course = _context.Courses.Where(c => c.Id == courseId).FirstOrDefault();
+            var course = await _context.Courses.FindAsync(courseId);
             if (course != null)
-            {
-                course.IsDeleted = true;
-                course.UpdatedAt = DateTime.UtcNow;
-                _context.Courses.Update(course);
-            }
-        }
-
-        public void Remove(Guid courseId)
-        {
-            var course = _context.Courses.Where(c => c.Id == courseId).FirstOrDefault();
-            if (course != null)
-            {
                 _context.Courses.Remove(course);
-            }
         }
 
         public async Task SaveChangesAsync()

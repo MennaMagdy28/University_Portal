@@ -11,7 +11,7 @@ namespace HUP.Repositories.Interfaces
         Task<IEnumerable<ProgramPlan>> GetAllAsync();
         Task<IEnumerable<ProgramPlan>> GetByDepartmentAsync(Guid departmentId);
         Task<ProgramPlan> GetByIdAsync(Guid deptId, Guid courseId);
-        void Remove(Guid deptId, Guid courseId);
+        Task RemoveAsync(Guid deptId, Guid courseId);
         Task SaveChangesAsync();
         void Update(ProgramPlan entity);
     }

@@ -8,7 +8,7 @@ public interface IPermissionRepository
     Task<List<string>> GetAllPermissionsForRole(Guid roleId);
     Task AddPermission(Permission permission);
     void UpdatePermission(Permission permission);
-    void DeletePermission(Guid id);
+    Task DeletePermissionAsync(Guid id);
     Task AddRolePermission(Guid permissionId, Guid roleId);
     void DeleteRolePermission(Guid permissionId, Guid roleId);
     public Task SaveChangesAsync();

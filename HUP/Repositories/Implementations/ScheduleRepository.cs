@@ -14,8 +14,6 @@ namespace HUP.Repositories.Implementations
             _context = context;
         }
 
-
-
         public async Task AddAsync(Schedule entity)
         {
             await _context.Schedules.AddAsync(entity);
@@ -31,36 +29,17 @@ namespace HUP.Repositories.Implementations
             return s;
         }
 
-        public void Remove(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
-            var entity = _context.Schedules.Find(id);
+            var entity = await _context.Schedules.FindAsync(id);
+            
             if (entity != null)
-            {
                 _context.Schedules.Remove(entity);
-            }
         }
 
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
-        }
-
-        public void SoftDelete(Guid id)
-        {
-            var entity = _context.Schedules.Find(id);
-            if (entity != null)
-            {
-                entity.IsDeleted = true;
-                entity.UpdatedAt = DateTime.UtcNow;
-                _context.Schedules.Update(entity);
-            }
-        }
-
-        public void Update(Schedule entity)
-        {
-            _context.Schedules.Update(entity);
-        }
-
-  
+        }  
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using Riok.Mapperly.Abstractions;
+using HUP.Application.DTOs.AcademicDtos.Enrollment;
 
 namespace HUP.Application.Mappers
 {
@@ -14,5 +15,9 @@ namespace HUP.Application.Mappers
         // Mapping for EnrollmentResponseDto
         public static partial Enrollment ToEntityFromResponseDto(EnrollmentResponseDto dto);
         public static partial EnrollmentResponseDto ToResponseDto(Enrollment entity);
+
+        //Mapping for UpdateEnrollmentDto
+        public static partial Enrollment ToEntityFromUpdateDto(UpdateEnrollmentDto dto);
+        public static partial UpdateEnrollmentDto ToUpdateDto(Enrollment entity);
     }
 }

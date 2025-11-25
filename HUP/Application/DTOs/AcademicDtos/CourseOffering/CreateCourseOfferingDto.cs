@@ -1,4 +1,4 @@
-namespace HUP.Application.DTOs.AcademicDtos
+namespace HUP.Application.DTOs.AcademicDtos.CourseOffering
 {
     public class CreateCourseOfferingDto
     {

@@ -33,37 +33,16 @@ namespace HUP.Repositories.Implementations
             return dept;
         }
 
-        public void Remove(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
-            var entity = _context.Departments.Find(id);
-            if (entity == null) return;
-            _context.Departments.Remove(entity);
+            var entity = await _context.Departments.FindAsync(id);
+            if (entity != null)
+                _context.Departments.Remove(entity);
         }
 
-        public async Task SaveChangesAsync()
+        public Task SaveChangesAsync()
         {
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task<IEnumerable<Department>> GetByFacultyIdAsync(Guid facultyId)
-        {
-             var departments = await _context.Departments.Where(d => d.FacultyId == facultyId)
-                 .ToListAsync();
-             return departments;
-        }
-
-        public void SoftDelete(Guid id)
-        {
-            var entity = _context.Departments.Find(id);
-            if (entity == null) return;
-            entity.IsDeleted = true;
-            entity.UpdatedAt = DateTime.UtcNow;
-            _context.Departments.Update(entity);
-        }
-
-        public void Update(Department entity)
-        {
-            _context.Departments.Update(entity);
+            return _context.SaveChangesAsync();
         }
     }
 }

@@ -43,11 +43,9 @@ namespace HUP.Repositories.Implementations
             return p;
         }
 
-        public void Remove(Guid deptId, Guid courseId)
+        public async Task RemoveAsync(Guid deptId, Guid courseId)
         {
-            var entity = _context.ProgramPlan
-                                 .FirstOrDefault(pp => pp.DepartmentId == deptId 
-                                 && pp.CourseId == courseId);
+            var entity = await _context.ProgramPlan.FindAsync(deptId, courseId); // deptId and courseId need to be in this order
             if (entity != null)
             {
                 _context.ProgramPlan.Remove(entity);

@@ -1,4 +1,4 @@
-using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.AcademicDtos.CourseOffering;
 using Riok.Mapperly.Abstractions;
 using HUP.Core.Entities.Academics;
 

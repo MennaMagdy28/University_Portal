@@ -3,7 +3,7 @@ using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using HUP.Application.Services.Interfaces;
 using System.Threading.Tasks;
-using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.AcademicDtos.CourseOffering;
 
 
 namespace HUP.Application.Services.Implementations
@@ -40,22 +40,21 @@ namespace HUP.Application.Services.Implementations
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(CreateCourseOfferingDto dto)
+        public async Task Update(Guid id, CreateCourseOfferingDto dto)
         {
-            var entity = CourseOfferingMapper.ToEntity(dto);
-            _repository.Update(entity);
+            // Need to be implemented
             await _repository.SaveChangesAsync();
         }
 
         public async Task SoftDelete(Guid id)
         {
-            _repository.SoftDelete(id);
+            // Need to be implemented
             await _repository.SaveChangesAsync();
         }
 
         public async Task Remove(Guid id)
         {
-            _repository.Remove(id);
+            await _repository.RemoveAsync(id);
             await _repository.SaveChangesAsync();
         }
 

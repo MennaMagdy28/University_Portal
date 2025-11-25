@@ -66,30 +66,18 @@ namespace HUP.Repositories.Implementations
             return co;
         }
 
-        public void Remove(Guid courseId)
+        public async Task RemoveAsync(Guid courseId)
         {
-           _context.CourseOfferings.Remove(new CourseOffering { Id = courseId });
-        }
+            var entity = await _context.CourseOfferings.FindAsync(courseId);
 
+            if (entity != null)
+                _context.CourseOfferings.Remove(entity);
+        }
+ 
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
-
-        public void SoftDelete(Guid courseId)
-        {
-            var courseOffering = _context.CourseOfferings.Find(courseId);
-            if (courseOffering != null)
-            {
-                courseOffering.IsDeleted = true;
-                courseOffering.UpdatedAt = DateTime.UtcNow;
-                _context.CourseOfferings.Update(courseOffering);
-            }
-        }
-
-        public void Update(CourseOffering entity)
-        {
-            _context.CourseOfferings.Update(entity);
-        }
     }
 }
+    

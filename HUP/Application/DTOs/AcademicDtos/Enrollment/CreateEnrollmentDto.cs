@@ -1,4 +1,6 @@
-﻿namespace HUP.Application.DTOs.AcademicDtos
+using HUP.Core.Enums;
+
+namespace HUP.Application.DTOs.AcademicDtos.Enrollment
 {
     public class CreateEnrollmentDto
     {

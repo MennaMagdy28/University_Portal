@@ -1,5 +1,6 @@
 ﻿using HUP.Application.Mappers;
 using HUP.Application.Services.Interfaces;
+using HUP.Application.DTOs.AcademicDtos.Enrollment;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using System.Threading.Tasks;
@@ -44,19 +45,18 @@ namespace HUP.Application.Services.Implementations
 
         public async Task Remove(Guid id)
         {
-            _repository.Remove(id);
+            await _repository.RemoveAsync(id);
             await _repository.SaveChangesAsync();
         }
         public async Task SoftDelete(Guid id)
         {
-            _repository.SoftDelete(id);
+            // to be implemented
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(EnrollmentResponseDto dto)
+        public async Task Update(Guid id, UpdateEnrollmentDto dto)
         {
-            var entity = EnrollmentMapper.ToEntityFromResponseDto(dto);
-            _repository.Update(entity);
+            // to be implemented
             await _repository.SaveChangesAsync();
         }
     }
