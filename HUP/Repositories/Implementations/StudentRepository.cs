@@ -47,41 +47,17 @@ namespace HUP.Repositories.Implementations
             return students;
         }
 
-        public void Remove(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
-            var entity = _context.Students.Find(id);
+            var entity = await _context.Students.FindAsync(id);
+
             if (entity != null)
-            {
                 _context.Students.Remove(entity);
-            }
         }
 
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
-        }
-
-        public void Update(Student entity)
-        {
-            _context.Students.Update(entity);
-        }
-
-        public void UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status)
-        {
-            _context.Students
-                .Where(s => s.UserId == studentId)
-                .ExecuteUpdate(s => s.SetProperty(st => st.AcademicStatus, status));
-        }
-
-        public void UpdateCgpaAsync(Guid studentId, decimal cgpa)
-        {
-            _context.Students
-                .Where(s => s.UserId == studentId)
-                .ExecuteUpdate(s => s.SetProperty(st => st.Cgpa, cgpa));
-        }
-        public void SoftDelete(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

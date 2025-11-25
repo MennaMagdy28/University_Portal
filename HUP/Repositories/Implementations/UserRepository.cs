@@ -38,17 +38,7 @@ public class UserRepository : IUserRepository
         throw new NotImplementedException();
     }
 
-    public void Update(User entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void SoftDelete(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Remove(Guid id)
+    public async Task RemoveAsync(Guid id)
     {
         throw new NotImplementedException();
     }
@@ -57,6 +47,4 @@ public class UserRepository : IUserRepository
     {
         throw new NotImplementedException();
     }
-
-    
 }

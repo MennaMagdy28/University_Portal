@@ -36,6 +36,7 @@ namespace HUP.Repositories.Implementations
         {
             await _context.Enrollments.AddAsync(entity);
         }
+
         public async Task<IEnumerable<Enrollment>> GetAllAsync()
         {
             return await _context.Enrollments
@@ -43,6 +44,7 @@ namespace HUP.Repositories.Implementations
                 .Include(e => e.Student)
                 .ToListAsync();
         }
+
         public async Task<Enrollment> GetByIdAsync(Guid id)
         {
             var enrollment = await _context.Enrollments
@@ -50,28 +52,17 @@ namespace HUP.Repositories.Implementations
             return enrollment;
         }
 
-        public void Remove(Guid enrollmentId)
+        public async Task RemoveAsync(Guid enrollmentId)
         {
-            var enrollment = _context.Enrollments.Find(enrollmentId);
-            if (enrollment != null) _context.Enrollments.Remove(enrollment);
+            var enrollment = await _context.Enrollments.FindAsync(enrollmentId);
+
+            if (enrollment != null) 
+                _context.Enrollments.Remove(enrollment);
         }
+        
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
-        }
-        public void SoftDelete(Guid enrollmentId)
-        {
-            var enrollment = _context.Enrollments.Find(enrollmentId);
-            if (enrollment != null)
-            {
-                enrollment.IsDeleted = true;
-                enrollment.UpdatedAt = DateTime.UtcNow;
-                _context.Enrollments.Update(enrollment);
-            }
-        }
-        public void Update(Enrollment entity)
-        {
-            _context.Enrollments.Update(entity);
         }
     }
 }

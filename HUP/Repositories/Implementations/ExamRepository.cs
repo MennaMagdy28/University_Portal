@@ -28,34 +28,17 @@ namespace HUP.Repositories.Implementations
             return exam;
         }
 
-        public void Remove(Guid id)
+        public async Task RemoveAsync(Guid id)
         {
-            var entity = _context.Exams.Find(id);
+            var entity = await _context.Exams.FindAsync(id);
+
             if (entity != null)
-            {
                 _context.Exams.Remove(entity);
-            }
         }
 
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
-        }
-
-        public void SoftDelete(Guid id)
-        {
-            var entity = _context.Exams.Find(id);
-            if (entity != null)
-            {
-                entity.IsDeleted = true;
-                entity.UpdatedAt = DateTime.UtcNow;
-                _context.Exams.Update(entity);
-            }
-        }
-
-        public void Update(Exam entity)
-        {
-           _context.Exams.Update(entity);
         }
     }
 }

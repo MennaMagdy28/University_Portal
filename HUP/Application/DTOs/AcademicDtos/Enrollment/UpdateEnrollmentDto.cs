@@ -1,10 +1,9 @@
 using HUP.Core.Enums;
 
-namespace HUP.Core.DTOs.AcademicDtos
+namespace HUP.Application.DTOs.AcademicDtos.Enrollment
 {
-    public class EnrollmentResponseDto
+    public class UpdateEnrollmentDto
     {
-        public Guid Id { get; set; }
         public Guid StudentId { get; set; }
         public Guid CourseId { get; set; }
         public DateTime EnrollmentDate { get; set; }
@@ -12,4 +11,3 @@ namespace HUP.Core.DTOs.AcademicDtos
         public decimal grade { get; set; }
     }
 }
-  

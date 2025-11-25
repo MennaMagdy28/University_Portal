@@ -1,7 +1,6 @@
-using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.AcademicDtos.CourseOffering;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Mappers;
-using HUP.Core.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
 using HUP.Application.Services.Interfaces;
 
@@ -81,7 +80,7 @@ namespace HUP.API
                return NotFound();
            }
 
-           await _service.Update(updateDto);
+           await _service.Update(id, updateDto);
            return NoContent();
        }
 
@@ -94,7 +93,7 @@ namespace HUP.API
            {
                return NotFound();
            }
-           _service.SoftDelete(id);
+           await _service.SoftDelete(id);
            return NoContent();
        }
 
@@ -107,7 +106,7 @@ namespace HUP.API
            {
                return NotFound();
            }
-           _service.Remove(id);
+           await _service.Remove(id);
            return NoContent();
        }
    }

@@ -34,9 +34,10 @@ public class PermissionRepository : IPermissionRepository
         _context.Permissions.Update(permission);
     }
 
-    public void DeletePermission(Guid id)
+    public async Task DeletePermissionAsync(Guid id)
     {
-        var entity = _context.Permissions.FirstOrDefault(p => p.Id == id);
+        var entity = await _context.Permissions.FindAsync(id);
+        
         if (entity != null)
             _context.Permissions.Remove(entity);
     }
