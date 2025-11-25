@@ -27,9 +27,11 @@ namespace HUP.Repositories.Implementations
             return await _context.ProgramPlan.AsNoTracking().ToListAsync();
         }
 
-        public Task<IEnumerable<ProgramPlan>> GetByDepartmentAsync(Guid departmentId)
+        public async Task<IEnumerable<ProgramPlan>> GetByDepartmentAsync(Guid departmentId)
         {
-            throw new NotImplementedException();
+            var entities = await _context.ProgramPlan.Where(p => p.DepartmentId == departmentId)
+                .AsNoTracking().ToListAsync();
+            return entities;
         }
 
         public async Task<ProgramPlan> GetByIdAsync(Guid deptId, Guid courseId)

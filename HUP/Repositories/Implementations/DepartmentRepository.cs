@@ -35,25 +35,25 @@ namespace HUP.Repositories.Implementations
 
         public void Remove(Guid id)
         {
-            if (id == Guid.Empty) return;
             var entity = _context.Departments.Find(id);
             if (entity == null) return;
             _context.Departments.Remove(entity);
         }
 
-        public Task SaveChangesAsync()
+        public async Task SaveChangesAsync()
         {
-            return _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Department>> GetByFacultyIdAsync(Guid facultyId)
+        public async Task<IEnumerable<Department>> GetByFacultyIdAsync(Guid facultyId)
         {
-            throw new NotImplementedException();
+             var departments = await _context.Departments.Where(d => d.FacultyId == facultyId)
+                 .ToListAsync();
+             return departments;
         }
 
         public void SoftDelete(Guid id)
         {
-            if (id == Guid.Empty) return;
             var entity = _context.Departments.Find(id);
             if (entity == null) return;
             entity.IsDeleted = true;

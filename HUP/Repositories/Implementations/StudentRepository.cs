@@ -81,7 +81,14 @@ namespace HUP.Repositories.Implementations
         }
         public void SoftDelete(Guid id)
         {
-            throw new NotImplementedException();
+            var entity = _context.Students.Find(id);
+            if (entity != null)
+            {
+                entity.User.IsDeleted = true;
+                entity.User.UpdatedAt = DateTime.Now;
+                _context.Students.Update(entity);
+            }
+            
         }
     }
 }

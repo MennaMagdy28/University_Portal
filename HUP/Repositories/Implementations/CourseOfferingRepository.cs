@@ -82,6 +82,7 @@ namespace HUP.Repositories.Implementations
             if (courseOffering != null)
             {
                 courseOffering.IsDeleted = true;
+                courseOffering.UpdatedAt = DateTime.UtcNow;
                 _context.CourseOfferings.Update(courseOffering);
             }
         }

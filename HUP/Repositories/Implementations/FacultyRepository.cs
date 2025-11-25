@@ -1,42 +1,61 @@
 ﻿using HUP.Core.Entities.Academics;
+using HUP.Data;
 using HUP.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace HUP.Repositories.Implementations;
 
 public class FacultyRepository : IFacultyRepository
 {
-    public Task<Faculty> GetByIdAsync(Guid id)
+    private readonly HupDbContext _context;
+
+    public FacultyRepository(HupDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+    public async Task<Faculty> GetByIdAsync(Guid id)
+    {
+        var faculty = await _context.Faculties.FindAsync(id);
+        return faculty;
     }
 
-    public Task<IEnumerable<Faculty>> GetAllAsync()
+    public async Task<IEnumerable<Faculty>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var faculties =await _context.Faculties.Where(f =>f.IsDeleted == false).ToListAsync();
+        return faculties;
     }
 
-    public Task AddAsync(Faculty entity)
+    public async Task AddAsync(Faculty entity)
     {
-        throw new NotImplementedException();
+        await _context.Faculties.AddAsync(entity);
     }
 
     public void Update(Faculty entity)
     {
-        throw new NotImplementedException();
+        _context.Faculties.Update(entity);
     }
 
     public void SoftDelete(Guid id)
     {
-        throw new NotImplementedException();
+        var faculty = _context.Faculties.Find(id);
+        if (faculty != null)
+        {
+            faculty.IsDeleted = true;
+            _context.Faculties.Update(faculty);
+        }
     }
 
     public void Remove(Guid id)
     {
-        throw new NotImplementedException();
+        var entity = _context.Faculties.Find(id);
+        if (entity != null)
+        {
+            _context.Faculties.Remove(entity);
+        }
     }
 
-    public Task SaveChangesAsync()
+    public async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await _context.SaveChangesAsync();
     }
 }
