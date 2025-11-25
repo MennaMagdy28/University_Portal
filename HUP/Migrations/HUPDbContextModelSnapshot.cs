@@ -55,7 +55,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("PrerequisiteId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.CourseOffering", b =>
@@ -95,7 +95,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("SemesterId");
 
-                    b.ToTable("CourseOfferings");
+                    b.ToTable("CourseOfferings", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.CourseOfferingInstructor", b =>
@@ -110,7 +110,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("InstructorId");
 
-                    b.ToTable("CourseOfferingInstructors");
+                    b.ToTable("CourseOfferingInstructors", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Department", b =>
@@ -156,7 +156,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("FacultyId");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Enrollment", b =>
@@ -200,7 +200,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("Enrollments");
+                    b.ToTable("Enrollments", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Exam", b =>
@@ -238,7 +238,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("CourseOfferingId");
 
-                    b.ToTable("Exams");
+                    b.ToTable("Exams", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Faculty", b =>
@@ -279,7 +279,7 @@ namespace HUP.Migrations
                     b.HasIndex("DeanId")
                         .IsUnique();
 
-                    b.ToTable("Faculties");
+                    b.ToTable("Faculties", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Instructor", b =>
@@ -313,7 +313,7 @@ namespace HUP.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Instructors");
+                    b.ToTable("Instructors", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.ProgramPlan", b =>
@@ -350,7 +350,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("DepartmentId2");
 
-                    b.ToTable("ProgramPlan");
+                    b.ToTable("ProgramPlan", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Schedule", b =>
@@ -393,7 +393,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("CourseOfferingId1");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("Schedules", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Semester", b =>
@@ -429,7 +429,7 @@ namespace HUP.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Semesters");
+                    b.ToTable("Semesters", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Student", b =>
@@ -468,7 +468,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Identity.Role", b =>
@@ -504,7 +504,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("CreatedBy");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Identity.User", b =>
@@ -553,7 +553,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Permissions.Permission", b =>
@@ -584,7 +584,7 @@ namespace HUP.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Permissions");
+                    b.ToTable("Permissions", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Permissions.RolePermission", b =>
@@ -599,7 +599,7 @@ namespace HUP.Migrations
 
                     b.HasIndex("PermissionId");
 
-                    b.ToTable("RolePermissions");
+                    b.ToTable("RolePermissions", (string)null);
                 });
 
             modelBuilder.Entity("HUP.Core.Entities.Academics.Course", b =>
@@ -836,7 +836,7 @@ namespace HUP.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("Users");
+                            b1.ToTable("Users", (string)null);
 
                             b1.WithOwner("User")
                                 .HasForeignKey("UserId");
@@ -869,7 +869,7 @@ namespace HUP.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("Users");
+                            b1.ToTable("Users", (string)null);
 
                             b1.WithOwner("User")
                                 .HasForeignKey("UserId");

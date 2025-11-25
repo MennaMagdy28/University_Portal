@@ -28,23 +28,25 @@ public class UserRepository : IUserRepository
     }
     
 
-    public Task<IEnumerable<User>> GetAllAsync()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Users.ToListAsync();
     }
 
-    public Task AddAsync(User entity)
+    public async Task AddAsync(User entity)
     {
-        throw new NotImplementedException();
+        await _context.Users.AddAsync(entity);
     }
 
     public async Task RemoveAsync(Guid id)
     {
-        throw new NotImplementedException();
+        var entity = await _context.Users.FindAsync(id);
+        if (entity != null)
+            _context.Users.Remove(entity);
     }
 
-    public Task SaveChangesAsync()
+    public async Task SaveChangesAsync()
     {
-        throw new NotImplementedException();
+        await _context.SaveChangesAsync();
     }
 }

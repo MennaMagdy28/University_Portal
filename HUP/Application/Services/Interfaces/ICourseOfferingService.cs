@@ -11,10 +11,11 @@ namespace HUP.Application.Services.Interfaces
         Task<CourseOfferingDto?> GetByIdAsync(Guid id);
         Task<IEnumerable<CourseOfferingDto>> GetAllAsync();
         Task AddAsync(CreateCourseOfferingDto courseOfferingDto);
-        Task Update(Guid id, CreateCourseOfferingDto courseOfferingDto);
+        // Task Update(Guid id, CreateCourseOfferingDto courseOfferingDto);
         Task SoftDelete(Guid id);
         Task Remove(Guid id);
 
+        Task<bool> Exists(CreateCourseOfferingDto dto);
         // Specific CourseOffering queries
         Task<IEnumerable<CourseOfferingDto>> GetActiveCourseOfferingAsync(Guid departmentId, Guid semesterId);
         Task<IEnumerable<CourseOfferingDto>> GetAvailableToRegisterAsync(Guid studentId);

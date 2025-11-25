@@ -30,6 +30,11 @@ public class FacultyRepository : IFacultyRepository
         await _context.Faculties.AddAsync(entity);
     }
 
+    public Task RemoveAsync(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
     public void Update(Faculty entity)
     {
         _context.Faculties.Update(entity);
@@ -42,15 +47,6 @@ public class FacultyRepository : IFacultyRepository
         {
             faculty.IsDeleted = true;
             _context.Faculties.Update(faculty);
-        }
-    }
-
-    public void Remove(Guid id)
-    {
-        var entity = _context.Faculties.Find(id);
-        if (entity != null)
-        {
-            _context.Faculties.Remove(entity);
         }
     }
 

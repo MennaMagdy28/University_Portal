@@ -43,6 +43,12 @@ namespace HUP.Application.Services.Implementations
             return dto;
         }
 
+        public async Task<bool> Exists(CreateEnrollmentDto dto)
+        {
+            var entity = await _repository.GetExistingAsync(dto.StudentId, dto.CourseId);
+            return entity != null;
+        }
+
         public async Task Remove(Guid id)
         {
             await _repository.RemoveAsync(id);
@@ -50,13 +56,19 @@ namespace HUP.Application.Services.Implementations
         }
         public async Task SoftDelete(Guid id)
         {
-            // to be implemented
+            var enrollment = await _repository.GetByIdAsync(id);
+            enrollment.IsDeleted = true;
+            enrollment.UpdatedAt = DateTime.Now;
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(Guid id, UpdateEnrollmentDto dto)
+        public async Task Update(Guid id, UpdateEnrollmentStatusDto dto)
         {
-            // to be implemented
+            var enrollment = await _repository.GetByIdAsync(id);
+            enrollment.UpdatedAt = DateTime.Now;
+            // the mapper will copy the values in it to the entity
+            // ef core tracks the changes and update only only specific attributes
+            EnrollmentMapper.ToUpdateStatus(dto, enrollment);
             await _repository.SaveChangesAsync();
         }
     }

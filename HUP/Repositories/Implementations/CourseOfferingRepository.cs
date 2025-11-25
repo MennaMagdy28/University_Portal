@@ -26,7 +26,7 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<CourseOffering>> GetAvailableToRegisterAsync(Guid studentId)
         {
             var availableCourses = await _context.CourseOfferings
-                .Where(co => co.Semester.IsActive)
+                .Where(co => co.Semester.IsActive && !co.IsDeleted)
                 .Where(co => !_context.Enrollments  // Exclude courses the student is already registered / done / in progress
                         .Where(e => e.StudentId == studentId &&
                             (e.Status == EnrollmentStatus.Completed ||
@@ -44,6 +44,15 @@ namespace HUP.Repositories.Implementations
             return availableCourses;
         }
 
+        public async Task<CourseOffering?> GetExistingAsync(Guid courseId, Guid deptId, Guid semesterId)
+        {
+            var entity = await _context.CourseOfferings.Where(co => co.CourseId == courseId
+                                                                    && co.DepartmentId == deptId
+                                                                    && co.SemesterId == semesterId
+                                                                    && !co.IsDeleted).FirstOrDefaultAsync();
+            return entity;
+        }
+
         public async Task AddAsync(CourseOffering entity)
         {            
             await _context.CourseOfferings.AddAsync(entity);
@@ -54,6 +63,7 @@ namespace HUP.Repositories.Implementations
             return await _context.CourseOfferings
                 .Include(co => co.Course)
                 .Include(co => co.Semester)
+                .Where(co => !co.IsDeleted)
                 .ToListAsync();
         }
 
@@ -62,7 +72,7 @@ namespace HUP.Repositories.Implementations
             var co = await _context.CourseOfferings
                 .Include(co => co.Course)
                 .Include(co => co.Semester)
-                .FirstOrDefaultAsync(co => co.Id == id);
+                .FirstOrDefaultAsync(co => co.Id == id && !co.IsDeleted);
             return co;
         }
 

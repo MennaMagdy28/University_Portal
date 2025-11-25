@@ -42,13 +42,16 @@ namespace HUP.API
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+            var exist = await _service.Exists(createDto);
+            if (exist)
+                return BadRequest("The Course is registered");
             await _service.AddAsync(createDto);
             return StatusCode(StatusCodes.Status201Created);
         }
 
         // PUT: api/Enrollment/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateEnrollmentDto updateDto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateEnrollmentStatusDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

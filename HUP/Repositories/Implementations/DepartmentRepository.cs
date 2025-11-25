@@ -44,5 +44,11 @@ namespace HUP.Repositories.Implementations
         {
             return _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Department>> GetByFacultyIdAsync(Guid facultyId)
+        {
+            var departments = await _context.Departments.Where(d => d.FacultyId == facultyId).ToListAsync();
+            return departments;
+        }
     }
 }

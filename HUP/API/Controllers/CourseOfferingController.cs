@@ -61,28 +61,32 @@ namespace HUP.API
            {
                return BadRequest(ModelState);
            }
+
+           var exist = await _service.Exists(createDto);
+           if (exist)
+               return BadRequest("Course offering already exists");
            await _service.AddAsync(createDto);
            return Ok("Created Successfully");
        }
 
        // PUT: api/CourseOffering/{id}
-       [HttpPut("{id}")]
-       public async Task<IActionResult> Update(Guid id, [FromBody] CreateCourseOfferingDto updateDto)
-       {
-           if (!ModelState.IsValid)
-           {
-               return BadRequest(ModelState);
-           }
-
-           var existingCourseOffering = await _service.GetByIdAsync(id);
-           if (existingCourseOffering == null)
-           {
-               return NotFound();
-           }
-
-           await _service.Update(id, updateDto);
-           return NoContent();
-       }
+       // [HttpPut("{id}")]
+       // public async Task<IActionResult> Update(Guid id, [FromBody] CreateCourseOfferingDto updateDto)
+       // {
+       //     if (!ModelState.IsValid)
+       //     {
+       //         return BadRequest(ModelState);
+       //     }
+       //
+       //     var existingCourseOffering = await _service.GetByIdAsync(id);
+       //     if (existingCourseOffering == null)
+       //     {
+       //         return NotFound();
+       //     }
+       //
+       //     await _service.Update(id, updateDto);
+       //     return NoContent();
+       // }
 
        // DELETE: api/CourseOffering/{id}
        [HttpDelete("{id}")]

@@ -4,7 +4,8 @@ namespace HUP.Repositories.Interfaces
     // Extends the generic repository interface for basic CRUD operations
     public interface IEnrollmentRepository : IGenericRepository<Enrollment>
     {
-        Task<IEnumerable<Enrollment>> GetbyStudentId(Guid studentId);
-        Task<IEnumerable<Enrollment>> GetbySemster(Semester semester, Guid studentId);
+        Task<IEnumerable<Enrollment>> GetByStudentId(Guid studentId);
+        Task<IEnumerable<Enrollment>> GetbySemester(Semester semester, Guid studentId);
+        Task<Enrollment?> GetExistingAsync(Guid studentId, Guid courseId);
     }
 }

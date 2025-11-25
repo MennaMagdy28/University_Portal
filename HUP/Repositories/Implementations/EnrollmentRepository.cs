@@ -13,23 +13,30 @@ namespace HUP.Repositories.Implementations
             _context = context;
         }
         
-        public async Task<IEnumerable<Enrollment>> GetbyStudentId(Guid studentId)
+        public async Task<IEnumerable<Enrollment>> GetByStudentId(Guid studentId)
         {
             return await _context.Enrollments
-                .Where(e => e.StudentId == studentId)
+                .Where(e => e.StudentId == studentId && !e.IsDeleted)
                 .Include(e => e.Course)
                 .Include(e => e.Student)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Enrollment>> GetbySemster(Semester semester, Guid studentId)
+        public async Task<IEnumerable<Enrollment>> GetbySemester(Semester semester, Guid studentId)
         {
             return await _context.Enrollments
                 .Where(e => e.EnrollmentDate >= semester.StartDate && e.EnrollmentDate <= semester.EndDate
-                && e.StudentId == studentId)
+                && e.StudentId == studentId && !e.IsDeleted)
                 .Include(e => e.Course)
                 .Include(e => e.Student)
                 .ToListAsync();
+        }
+
+        public async Task<Enrollment?> GetExistingAsync(Guid studentId, Guid courseId)
+        {
+            return await _context.Enrollments.Where(e => e.StudentId == studentId
+                                                         && e.CourseId == courseId && !e.IsDeleted)
+                .FirstOrDefaultAsync(); 
         }
 
         public async Task AddAsync(Enrollment entity)
@@ -42,13 +49,14 @@ namespace HUP.Repositories.Implementations
             return await _context.Enrollments
                 .Include(e => e.Course)
                 .Include(e => e.Student)
+                .Where(e => !e.IsDeleted)
                 .ToListAsync();
         }
 
         public async Task<Enrollment> GetByIdAsync(Guid id)
         {
             var enrollment = await _context.Enrollments
-                .FirstOrDefaultAsync(e => e.Id == id);
+                .FirstOrDefaultAsync(e => e.Id == id && !e.IsDeleted);
             return enrollment;
         }
 

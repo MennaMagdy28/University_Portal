@@ -32,6 +32,12 @@ namespace HUP.Application.Services.Implementations
             return CourseOfferingMapper.ToDto(entities);
         }
 
+        public async Task<bool> Exists(CreateCourseOfferingDto dto)
+        {
+            var entity = _repository.GetExistingAsync(dto.CourseId, dto.DepartmentId, dto.SemesterId);
+            return entity != null;
+        }
+
         public async Task AddAsync(CreateCourseOfferingDto dto)
         {
             var entity = CourseOfferingMapper.ToEntity(dto);
@@ -40,15 +46,17 @@ namespace HUP.Application.Services.Implementations
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(Guid id, CreateCourseOfferingDto dto)
-        {
-            // Need to be implemented
-            await _repository.SaveChangesAsync();
-        }
+        // public async Task Update(Guid id, CreateCourseOfferingDto dto)
+        // {
+        //     // Need to be implemented
+        //     await _repository.SaveChangesAsync();
+        // }
 
         public async Task SoftDelete(Guid id)
         {
-            // Need to be implemented
+            var entity = await _repository.GetByIdAsync(id);
+            entity.IsDeleted = true;
+            entity.UpdatedAt = DateTime.Now;
             await _repository.SaveChangesAsync();
         }
 
