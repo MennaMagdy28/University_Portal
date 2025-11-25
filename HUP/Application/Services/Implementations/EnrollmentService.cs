@@ -4,6 +4,7 @@ using HUP.Application.DTOs.AcademicDtos.Enrollment;
 using HUP.Core.Entities.Academics;
 using HUP.Repositories.Interfaces;
 using System.Threading.Tasks;
+using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.Enums;
 
 namespace HUP.Application.Services.Implementations

@@ -1,4 +1,4 @@
-﻿using HUP.Application.DTOs.AcademicDtos.Enrollment;
+using HUP.Application.DTOs.AcademicDtos.Enrollment;
 using HUP.Core.Entities.Academics;
 
 namespace HUP.Application.Services.Interfaces

@@ -1,4 +1,4 @@
-﻿using HUP.Core.Enums;
+using HUP.Core.Enums;
 
 namespace HUP.Application.DTOs.AcademicDtos.Enrollment
 {
