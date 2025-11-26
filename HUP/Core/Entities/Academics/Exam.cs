@@ -7,10 +7,14 @@ namespace HUP.Core.Entities.Academics
     {
         public Guid CourseOfferingId { get; set; }
         public ExamType ExamType { get; set; }
-        public DateTime ExamDate { get; set; }
-        public TimeSpan ExamTime { get; set; }
+        public DateOnly ExamDate { get; set; }
+        public TimeOnly ExamTime { get; set; }
         public string Location { get; set; }
 
         public CourseOffering CourseOffering { get; set; }
+
+        public Guid CourseID { get; set; }
+        public bool IsActive { get; set; } = true;
+        public virtual Course Course { get; set; }
     }
 }

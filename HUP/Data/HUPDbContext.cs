@@ -28,6 +28,8 @@ namespace HUP.Data
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<CourseOfferingInstructor> CourseOfferingInstructors { get; set; }
 
+        public DbSet<CourseSchedule> CourseSchedules { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

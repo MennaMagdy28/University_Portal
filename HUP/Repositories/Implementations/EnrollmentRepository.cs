@@ -72,5 +72,13 @@ namespace HUP.Repositories.Implementations
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Enrollment>> GetByStudentAndSemesterAsync(Guid studentId, string semester)
+        {
+            return await _context.Enrollments
+                .Include(e => e.Course)
+                .Where(e => e.StudentId == studentId && e.Semester == semester && e.IsActive)
+                .ToListAsync();
+        }
     }
 }

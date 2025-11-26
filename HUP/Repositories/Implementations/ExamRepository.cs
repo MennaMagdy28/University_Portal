@@ -40,5 +40,21 @@ namespace HUP.Repositories.Implementations
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Exam>> GetByCoursesAsync(List<Guid> courseIds)
+        {
+            if (!courseIds.Any())
+                return new List<Exam>();
+
+            return await _context.Exams
+                .Include(e => e.Course)
+                .ThenInclude(c => c.Department)
+                .ThenInclude(d => d.Instructors)
+                .ThenInclude(i => i.User)
+                .Where(e => courseIds.Contains(e.CourseID) && e.IsActive)
+                .OrderBy(e => e.ExamDate)
+                .ThenBy(e => e.ExamTime)
+                .ToListAsync();
+        }
     }
 }

@@ -4,5 +4,6 @@ namespace HUP.Repositories.Interfaces
     // Extends the generic repository interface for basic CRUD operations
     public interface IExamRepository : IGenericRepository<Exam>
     {
+        Task<IEnumerable<Exam>> GetByCoursesAsync(List<Guid> courseIds);
     }
 }

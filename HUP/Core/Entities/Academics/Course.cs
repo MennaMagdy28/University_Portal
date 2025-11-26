@@ -11,5 +11,11 @@ namespace HUP.Core.Entities.Academics
 
         public Course Prerequisite { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; }
+
+        public Guid DepartmentID { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<Course> PrerequisitesFor { get; set; }
+        public virtual ICollection<Exam> Exams { get; set; }
+
     }
 }

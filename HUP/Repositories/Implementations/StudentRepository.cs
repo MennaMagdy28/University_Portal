@@ -34,8 +34,10 @@ namespace HUP.Repositories.Implementations
         {
             var student = await _context.Students
                 .Include(s => s.User)
-                .Include(s => s.Department)
-                .FirstOrDefaultAsync(s => s.UserId == id);
+                .Include(s => s.Faculty)
+                .Include(s => s.Program)
+                .ThenInclude(p => p.Department)
+                .FirstOrDefaultAsync(s => s.Id == id);
             return student;
         }
 
