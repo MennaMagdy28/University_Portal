@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.Entities.Academics;
+using HUP.Core.Enums;
 
 namespace HUP.Common.Helpers
 {
@@ -42,6 +43,20 @@ namespace HUP.Common.Helpers
 
             CreateMap<CourseScheduleCreateDto, CourseSchedule>();
             CreateMap<CourseScheduleUpdateDto, CourseSchedule>();
+
+
+            CreateMap<Exam, ExamDto>()
+                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.Course.CourseCode))
+                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
+                .ForMember(dest => dest.ExamTypeArabic, opt => opt.MapFrom(src => GetArabicExamType(src.ExamType)))
+                .ForMember(dest => dest.ExamDate, opt => opt.MapFrom(src => src.ExamDate.ToDateTime(TimeOnly.MinValue)))
+                .ForMember(dest => dest.ExamTime, opt => opt.MapFrom(src => src.ExamTime.ToTimeSpan()))
+                .ForMember(dest => dest.Room, opt => opt.MapFrom(src => ExtractRoomNumber(src.Location)))
+                .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src =>
+                    src.Course.Department.Instructors.FirstOrDefault().User.FullName ?? "غير محدد"));
+
+            CreateMap<ExamCreateDto, Exam>();
+            CreateMap<ExamUpdateDto, Exam>();
         }
 
         private string GetArabicDay(DayOfWeek day)
@@ -57,6 +72,25 @@ namespace HUP.Common.Helpers
                 DayOfWeek.Saturday => "السبت",
                 _ => day.ToString()
             };
+        }
+
+        private string GetArabicExamType(ExamType examType)
+        {
+            return examType switch
+            {
+                ExamType.Midterm => "امتحان منتصف الفصل",
+                ExamType.Final => "امتحان نهاية الفصل",
+                _ => examType.ToString()
+            };
+        }
+
+        private string ExtractRoomNumber(string location)
+        {
+            if (string.IsNullOrEmpty(location))
+                return "غير محدد";
+
+            var roomMatch = System.Text.RegularExpressions.Regex.Match(location, @"قاعة\s*(\d+)");
+            return roomMatch.Success ? $"قاعة {roomMatch.Groups[1].Value}" : location;
         }
     }
 }
