@@ -6,4 +6,5 @@ public class AuthResponseDto
 { 
     public string Token { get; set; } 
     public UserDto User { get; set; }
+    public ProfileStatus Status { get; set; }
 }

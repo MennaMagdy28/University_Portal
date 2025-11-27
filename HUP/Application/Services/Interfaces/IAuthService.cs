@@ -9,5 +9,6 @@ namespace HUP.Application.Services.Interfaces
     {
         Task<AuthResponseDto> LoginAsync(LoginDto loginDto);
         string GenerateJwtToken(User userDto);
+        Task<bool> UpdatePassword(string currentPass, string newPass, Guid userId);
     }
 }

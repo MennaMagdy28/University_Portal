@@ -11,5 +11,7 @@ namespace HUP.Core.Entities.Academics
 
         public Course Prerequisite { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<ProgramPlan> Programs { get; set; }
+
     }
 }

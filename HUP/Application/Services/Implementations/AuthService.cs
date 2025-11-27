@@ -8,6 +8,7 @@ using HUP.Repositories.Interfaces;
 using HUP.Application.Mappers;
 using HUP.Core.Entities.Identity;
 using HUP.Core.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
 namespace HUP.Application.Services.Implementations
@@ -18,37 +19,47 @@ namespace HUP.Application.Services.Implementations
         private readonly IConfiguration _configuration;
         private readonly ICacheService _cache;
         private readonly IPermissionService _permission;
+        private readonly IUserService _userService;
+        private readonly IPasswordHasher<User> _hasher;
 
-        public AuthService(IUserRepository authRepository,  IConfiguration configuration,  ICacheService cache, IPermissionService permission)
+        public AuthService(IUserRepository authRepository,  IConfiguration configuration,
+            ICacheService cache, IPermissionService permission, IPasswordHasher<User> hasher, IUserService service)
         {
             _repository = authRepository;
             _configuration = configuration;
             _cache = cache;
             _permission = permission;
+            _hasher = hasher;
+            _userService = service;
         }
 
         public async Task<AuthResponseDto> LoginAsync(LoginDto loginDto)
         {
-            //add hashing technique
             var user = await _repository.GetByCredentialsAsync(loginDto.NationalId);
-            if (user == null || user.PasswordHash != loginDto.Password)
+            var pass = _hasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password);
+            if (user == null || pass == PasswordVerificationResult.Failed)
                 return null;
             
             var token = GenerateJwtToken(user);
             // role string format (key)
             // "user:{user.Id}:role"
-            string key = $"user:{user.Id}:role"; 
+            var key = $"user:{user.Id}:role"; 
             await _cache.SetAsync(key, user.RoleId.ToString(), 2); 
             await _permission.SetUserPermissionsAsync(user.Id, user.RoleId);
-            
-            return new AuthResponseDto{Token = token, User = UserMapper.ToDto(user)};
+ 
+            //profile status to navigate to update password or insert missing information
+            var isExpired = user.PasswordExpiryDate <= DateTime.Now;
+            var status = await _userService.GetProfileStatus(user.Id, isExpired);
+
+            return new AuthResponseDto{Token = token, User = UserMapper.ToDto(user), Status = status};
         }
 
         public string GenerateJwtToken(User user)
         {
             var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.NationalId),
+            { 
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim("NationalId", user.NationalId),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim("roleId", user.RoleId.ToString())
@@ -64,6 +75,21 @@ namespace HUP.Application.Services.Implementations
                 signingCredentials: creds
             );
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<bool> UpdatePassword(string currentPassword, string newPassword , Guid userId)
+        {
+            var user = await _repository.GetByIdAsync(userId);
+            if (user == null) return false;
+            // Verify current password
+            var verification = _hasher.VerifyHashedPassword(user, user.PasswordHash, currentPassword);
+            if (verification == PasswordVerificationResult.Failed) return false;
+            // hash the new password
+            var hashed = _hasher.HashPassword(user, newPassword);
+            //update password
+            user.PasswordHash = hashed;
+            await _repository.SaveChangesAsync();
+            return true;
         }
     }
 }

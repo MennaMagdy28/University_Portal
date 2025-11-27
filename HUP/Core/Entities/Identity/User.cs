@@ -9,6 +9,7 @@ namespace HUP.Core.Entities.Identity
         public string NationalId { get; set; }
         public string? Email { get; set; }
         public string PasswordHash { get; set; }
+        public DateTime PasswordExpiryDate { get; set; }
         public string FullName { get; set; }
         public string? FullEnglishName { get; set; }
         public string? Phone { get; set; }
