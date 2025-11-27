@@ -1,8 +1,6 @@
-﻿using HUP.Core.Entities.Shared;
-
-namespace HUP.Core.Entities.Academics
+﻿namespace HUP.Application.DTOs.AcademicDtos
 {
-    public class CourseSchedule : BaseEntity
+    public class CourseScheduleCreateDto
     {
         public Guid CourseID { get; set; }
         public Guid InstructorID { get; set; }
@@ -12,10 +10,5 @@ namespace HUP.Core.Entities.Academics
         public string Location { get; set; }
         public string Room { get; set; }
         public string Semester { get; set; }
-
-        public virtual Course Course { get; set; }
-        public virtual Instructor Instructor { get; set; }
-
-        public bool IsActive { get; set; } = true;
     }
 }

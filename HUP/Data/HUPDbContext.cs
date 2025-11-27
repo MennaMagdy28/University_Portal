@@ -62,11 +62,11 @@ namespace HUP.Data
 
             // User ↔ Student (One-to-One)
             modelBuilder.Entity<Student>()
-                .HasKey(s => s.UserId);
+                .HasKey(s => s.Id);
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.User)
                 .WithOne()
-                .HasForeignKey<Student>(s => s.UserId)
+                .HasForeignKey<Student>(s => s.Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // User ↔ Instructor (One-to-One)
@@ -110,7 +110,7 @@ namespace HUP.Data
             // Department ↔ ProgramPlan (One-to-Many)
             modelBuilder.Entity<ProgramPlan>()
                 .HasOne(p => p.Department)
-                .WithMany()
+                .WithMany(d => d.Programs)
                 .HasForeignKey(p => p.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 

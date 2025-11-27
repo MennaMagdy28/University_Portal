@@ -15,6 +15,15 @@ namespace HUP.Repositories.Implementations
             _context = context;
         }
 
+        public async Task<CourseSchedule> GetByIdAsync(Guid id)
+        {
+            return await _context.CourseSchedules
+                .Include(cs => cs.Course)
+                .Include(cs => cs.Instructor)
+                .ThenInclude(i => i.User)
+                .FirstOrDefaultAsync(cs => cs.Id == id);
+        }
+
         public async Task<IEnumerable<CourseSchedule>> GetByStudentAsync(Guid studentId)
         {
             var currentSemester = GetCurrentSemester();
@@ -38,6 +47,29 @@ namespace HUP.Repositories.Implementations
                 .OrderBy(cs => cs.DayOfWeek)
                 .ThenBy(cs => cs.StartTime)
                 .ToListAsync();
+        }
+        public async Task AddAsync(CourseSchedule schedule)
+        {
+            await _context.CourseSchedules.AddAsync(schedule);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(CourseSchedule schedule)
+        {
+            schedule.UpdatedAt = DateTime.UtcNow;
+            _context.CourseSchedules.Update(schedule);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var schedule = await GetByIdAsync(id);
+            if (schedule != null)
+            {
+                schedule.IsActive = false;
+                schedule.UpdatedAt = DateTime.UtcNow;
+                await UpdateAsync(schedule);
+            }
         }
 
         private string GetCurrentSemester()

@@ -45,6 +45,8 @@ builder.Services.AddScoped<IExamRepository, ExamRepository>();
 builder.Services.AddScoped<ICourseScheduleRepository, CourseScheduleRepository>();
 
 builder.Services.AddScoped<IStudentAcademicService, StudentAcademicService>();
+builder.Services.AddScoped<ICourseScheduleService, CourseScheduleService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 // ---
 
 builder.Services.AddControllers(); 

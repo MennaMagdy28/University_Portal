@@ -1,4 +1,5 @@
 using HUP.Core.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace HUP.Core.Entities.Academics
 {
     // Represents the program plan for a specific department, detailing required courses and their types
@@ -18,5 +19,7 @@ namespace HUP.Core.Entities.Academics
         public decimal CourseWorkGrade { get; set; }
         public Course Course { get; set; }
         public Department Department { get; set; }
+
+        public string ProgramName { get; set; }
     }
 }
