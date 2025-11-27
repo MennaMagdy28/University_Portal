@@ -5,5 +5,9 @@ namespace HUP.Repositories.Interfaces
     public interface IExamRepository : IGenericRepository<Exam>
     {
         Task<IEnumerable<Exam>> GetByCoursesAsync(List<Guid> courseIds);
+
+        Task<IEnumerable<Exam>> GetAllActiveAsync();
+        Task UpdateAsync(Exam exam);
+        Task DeleteAsync(Guid id);
     }
 }

@@ -30,6 +30,7 @@ namespace HUP.Repositories.Implementations
                 .ToListAsync();
         }
 
+        // ---
         public async Task<Student> GetByIdAsync(Guid id)
         {
             var student = await _context.Students
@@ -60,6 +61,26 @@ namespace HUP.Repositories.Implementations
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
+        }
+
+
+        // --- 
+        public async Task UpdateAsync(Student student)
+        {
+            student.UpdatedAt = DateTime.UtcNow;
+            _context.Students.Update(student);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status)
+        {
+            var student = await GetByIdAsync(studentId);
+            if (student != null)
+            {
+                student.AcademicStatus = status;
+                student.UpdatedAt = DateTime.UtcNow;
+                await UpdateAsync(student);
+            }
         }
     }
 }

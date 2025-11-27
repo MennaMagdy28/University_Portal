@@ -12,9 +12,11 @@ namespace HUP.Repositories.Implementations
         {
             _context = context;
         }
-        public async Task AddAsync(Exam entity)
+        public async Task AddAsync(Exam exam)
         {
-            await _context.Exams.AddAsync(entity);
+            //await _context.Exams.AddAsync(entity);
+            await _context.Exams.AddAsync(exam);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Exam>> GetAllAsync()
@@ -24,7 +26,11 @@ namespace HUP.Repositories.Implementations
 
         public Task<Exam> GetByIdAsync(Guid id)
         {
-            var exam = _context.Exams.FirstOrDefaultAsync(e => e.Id == id);
+            var exam = _context.Exams.Include(e => e.Course)
+                .ThenInclude(c => c.Department)
+                .ThenInclude(d => d.Instructors)
+                .ThenInclude(i => i.User)
+                .FirstOrDefaultAsync(e => e.Id == id);
             return exam;
         }
 
@@ -41,6 +47,8 @@ namespace HUP.Repositories.Implementations
             await _context.SaveChangesAsync();
         }
 
+
+
         public async Task<IEnumerable<Exam>> GetByCoursesAsync(List<Guid> courseIds)
         {
             if (!courseIds.Any())
@@ -55,6 +63,37 @@ namespace HUP.Repositories.Implementations
                 .OrderBy(e => e.ExamDate)
                 .ThenBy(e => e.ExamTime)
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Exam>> GetAllActiveAsync()
+        {
+            return await _context.Exams
+                .Include(e => e.Course)
+                .ThenInclude(c => c.Department)
+                .ThenInclude(d => d.Instructors)
+                .ThenInclude(i => i.User)
+                .Where(e => e.IsActive)
+                .OrderBy(e => e.ExamDate)
+                .ThenBy(e => e.ExamTime)
+                .ToListAsync();
+        }
+
+        public async Task UpdateAsync(Exam exam)
+        {
+            exam.UpdatedAt = DateTime.UtcNow;
+            _context.Exams.Update(exam);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Guid id)
+        {
+            var exam = await GetByIdAsync(id);
+            if (exam != null)
+            {
+                exam.IsActive = false;
+                exam.UpdatedAt = DateTime.UtcNow;
+                await UpdateAsync(exam);
+            }
         }
     }
 }
