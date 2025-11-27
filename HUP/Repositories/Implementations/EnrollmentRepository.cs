@@ -2,6 +2,7 @@
 using HUP.Core.Entities.Academics;
 using HUP.Data;
 using Microsoft.EntityFrameworkCore;
+using HUP.Core.Models;
 
 namespace HUP.Repositories.Implementations
 {
@@ -77,8 +78,31 @@ namespace HUP.Repositories.Implementations
         {
             return await _context.Enrollments
                 .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && e.Semester == semester && e.IsActive)
+                .Where(e => e.StudentId == studentId && e.SemesterName == semester && e.IsActive)
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<IGrouping<String, SemesterGrades>>> GetEnrollmentCourseGradesGroupedBySemester(Guid StudentId)
+        {
+        var data = await _context.Enrollments
+        .Include(e => e.Course)
+        .Include(e => e.Semester)
+        .Where(e => e.StudentId == StudentId)
+        .Select(e => new SemesterGrades
+        {
+            SemesterId = e.SemesterId,
+            SemesterName = e.Semester.SemesterName,
+
+            CourseCode = e.Course.CourseCode,
+            CourseName = e.Course.CourseName,
+
+            TotalGrade = (e.ClassGrade ?? 0) +
+                         (e.MidtermGrade ?? 0) +
+                         (e.finalGrade ?? 0)
+        })        
+        .ToListAsync();
+
+        return data.GroupBy(e => e.SemesterName);
         }
     }
 }

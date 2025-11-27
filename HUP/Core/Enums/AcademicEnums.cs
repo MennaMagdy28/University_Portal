@@ -24,8 +24,10 @@
         InProgress,
         Completed,
         Incomplete,
-        Failed
+        Failed,
+        Dropped
     }
+
     public enum RequirementType
     {
        University,
@@ -77,10 +79,6 @@
         FacultyOfLaw,
         FacultyOfMusicEducation,
         FacultyOfTourismAndHotels,
-        FacultyOfNutritionScience
-        
-        
-        
-        
+        FacultyOfNutritionScience        
     }
 }

@@ -21,7 +21,7 @@ namespace HUP.Repositories.Implementations
 
             var studentEnrollments = await _context.Enrollments
                 .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && e.Semester == currentSemester && e.IsActive &&
+                .Where(e => e.StudentId == studentId && e.SemesterName == currentSemester && e.IsActive &&
                            (e.Status == EnrollmentStatus.Registered || e.Status == EnrollmentStatus.InProgress))
                 .Select(e => e.CourseId)
                 .ToListAsync();
