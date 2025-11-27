@@ -14,7 +14,6 @@ namespace HUP.Core.Entities.Academics
 
         public ICollection<CourseOffering> CourseOfferings { get; set; }
         public Faculty Faculty { get; set; }
-        public ICollection<ProgramPlan> ProgramPlan { get; set; }
         public ICollection<Instructor> Instructors { get; set; }
         public ICollection<ProgramPlan> Programs { get; set; }
     }

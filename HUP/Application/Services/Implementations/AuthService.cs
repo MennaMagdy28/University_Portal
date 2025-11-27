@@ -35,7 +35,9 @@ namespace HUP.Application.Services.Implementations
 
         public async Task<AuthResponseDto> LoginAsync(LoginDto loginDto)
         {
+            // Retrieve user by national ID
             var user = await _repository.GetByCredentialsAsync(loginDto.NationalId);
+            // Verify password using IPasswordHasher from Identity package
             var pass = _hasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password);
             if (user == null || pass == PasswordVerificationResult.Failed)
                 return null;
@@ -43,8 +45,10 @@ namespace HUP.Application.Services.Implementations
             var token = GenerateJwtToken(user);
             // role string format (key)
             // "user:{user.Id}:role"
-            var key = $"user:{user.Id}:role"; 
-            await _cache.SetAsync(key, user.RoleId.ToString(), 2); 
+            var key = $"user:{user.Id}:role";
+            // cache the role for 2 minutes for security purposes
+            await _cache.SetAsync(key, user.RoleId.ToString(), 2);
+            // set user permissions in cache
             await _permission.SetUserPermissionsAsync(user.Id, user.RoleId);
  
             //profile status to navigate to update password or insert missing information
@@ -88,6 +92,8 @@ namespace HUP.Application.Services.Implementations
             var hashed = _hasher.HashPassword(user, newPassword);
             //update password
             user.PasswordHash = hashed;
+            user.UpdatedAt = DateTime.Now;
+
             await _repository.SaveChangesAsync();
             return true;
         }

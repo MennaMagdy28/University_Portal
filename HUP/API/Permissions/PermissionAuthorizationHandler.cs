@@ -23,6 +23,7 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
         AuthorizationHandlerContext context,
         PermissionRequirement requirement)
     {
+        // get user id from claims
         var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
         if (userId == null)
@@ -53,9 +54,9 @@ public class PermissionAuthorizationHandler : AuthorizationHandler<PermissionReq
         {
             permissions = (await _permissionService.SetUserPermissionsAsync(Guid.Parse(userId), Guid.Parse(role))).ToArray();
         }
-        
+        // get role id from token
         var tokenRoleId = context.User.FindFirst("roleId")?.Value;
-        
+        // check if permissions contains the required permission and role id matches
         if (permissions.Contains(requirement.Permission) && role == tokenRoleId)
         {
             context.Succeed(requirement);

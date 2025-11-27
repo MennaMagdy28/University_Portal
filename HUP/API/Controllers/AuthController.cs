@@ -30,7 +30,6 @@ namespace HUP.API.Controllers
                 return Unauthorized(new { message = "Invalid National ID or Password." });
             }
 
-            // 3. Return Result
             return Ok(response);
         }
 
@@ -38,7 +37,7 @@ namespace HUP.API.Controllers
         [HttpPost("change-password")]
         public async Task<IActionResult> UpdatePassword([FromBody] UpdatePassword dto)
         {
-            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var success = await _authService.UpdatePassword(dto.CurrentPassword, dto.NewPassword, userId);
             if (!success) return BadRequest("Password change failed. Check your current password.");
 
