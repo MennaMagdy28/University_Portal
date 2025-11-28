@@ -33,12 +33,22 @@ public class UserController : ControllerBase
         return Ok(profile);
     }
 
-    [HttpPatch("update-profile")]
-    public async Task<IActionResult> InsertMissingData([FromBody] MissingInfoDto dto)
+    [HttpPatch("insert-profile-data")]
+    public async Task<IActionResult> InsertMissingData([FromBody] UpdateInfoDto dto)
     {
-        var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
 
         bool result = await _userService.InsertMissingData(userId, dto);
+        if (!result) return BadRequest("Failed to update");
+        return Ok("Profile updated successfully.");
+    }
+
+    [HttpPatch("update-profile")]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateInfoDto dto)
+    {
+        Guid userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
+        bool result = await _userService.Update(userId, dto);
         if (!result) return BadRequest("Failed to update");
         return Ok("Profile updated successfully.");
     }
@@ -52,5 +62,24 @@ public class UserController : ControllerBase
         if (exist) return BadRequest("This national Id is already registered");
         await _userService.AddAsync(dto);
         return Ok("User added successfully.");
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> SoftDelete(Guid id)
+    {
+        var user = await _userService.SoftDelete(id);
+        if (user == null)
+            return NotFound();
+        return Ok(user);
+    }
+    
+    [HttpDelete("{id}/hard")]
+    public async Task<IActionResult> HardDelete(Guid id)
+    {
+        var user = await _userService.GetUserById(id);
+        if (user == null)
+            return NotFound();
+        await _userService.Remove(id);
+        return NoContent();
     }
 }

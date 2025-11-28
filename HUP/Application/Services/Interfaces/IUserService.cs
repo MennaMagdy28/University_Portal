@@ -15,7 +15,10 @@ public interface IUserService
 
     public Task<IEnumerable<UsersListResponse>> GetAllUsers();
     public Task<ProfileInfoDto> GetUserById(Guid userId);
-    public Task<bool> InsertMissingData(Guid userId, MissingInfoDto dto);
+    public Task<bool> InsertMissingData(Guid userId, UpdateInfoDto dto);
     public Task AddAsync(CreateUserDto dto);
     public Task<bool> Exists(string nationalId);
+    public Task Remove(Guid userId);
+    public Task<string> SoftDelete(Guid userId);
+    public Task<bool> Update(Guid userId, UpdateInfoDto dto);
 }

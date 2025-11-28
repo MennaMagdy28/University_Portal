@@ -37,10 +37,10 @@ namespace HUP.Application.Services.Implementations
         {
             // Retrieve user by national ID
             var user = await _repository.GetByCredentialsAsync(loginDto.NationalId);
+            if (user == null) return null;
             // Verify password using IPasswordHasher from Identity package
             var pass = _hasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password);
-            if (user == null || pass == PasswordVerificationResult.Failed)
-                return null;
+            if (pass == PasswordVerificationResult.Failed) return null;
             
             var token = GenerateJwtToken(user);
             // role string format (key)
