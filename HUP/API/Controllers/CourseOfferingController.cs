@@ -4,7 +4,7 @@ using HUP.Application.Mappers;
 using HUP.Core.Entities.Academics;
 using HUP.Application.Services.Interfaces;
 
-namespace HUP.API
+namespace HUP.API.Controllers
 {
    [ApiController]
    [Route("api/[controller]")]

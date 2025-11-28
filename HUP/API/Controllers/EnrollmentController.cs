@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Services.Interfaces;
 using HUP.Application.DTOs.AcademicDtos.Enrollment;
 
-namespace HUP.API
+namespace HUP.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

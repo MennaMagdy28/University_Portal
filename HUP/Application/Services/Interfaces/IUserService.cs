@@ -1,4 +1,5 @@
 ﻿using HUP.Application.DTOs.IdentityDtos;
+using HUP.Application.DTOs.IdentityDtos.UserDtos;
 using HUP.Core.Entities.Identity;
 
 namespace HUP.Application.Services.Interfaces;
@@ -11,4 +12,10 @@ public interface IUserService
     public Task<List<string?>> GetMissingInfo(Guid userId);
     // This method gets the overall profile status including missing fields and password expiration
     public Task<ProfileStatus> GetProfileStatus(Guid userId, bool isPasswordExpired);
+
+    public Task<IEnumerable<UsersListResponse>> GetAllUsers();
+    public Task<ProfileInfoDto> GetUserById(Guid userId);
+    public Task<bool> InsertMissingData(Guid userId, MissingInfoDto dto);
+    public Task AddAsync(CreateUserDto dto);
+    public Task<bool> Exists(string nationalId);
 }
