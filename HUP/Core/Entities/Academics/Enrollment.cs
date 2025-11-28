@@ -10,9 +10,9 @@ namespace HUP.Core.Entities.Academics
         public Guid SemesterId { get; set; }
         public DateTime EnrollmentDate { get; set; }
         
-        public decimal? ClassGrade { get; set; }
-        public decimal? MidtermGrade { get; set; }
-        public decimal? finalGrade {get; set; }
+        public decimal ClassGrade { get; set; }
+        public decimal MidtermGrade { get; set; }
+        public decimal finalGrade {get; set; }
         public EnrollmentStatus Status { get; set; }
 
         public virtual Semester Semester { get; set; }

@@ -32,7 +32,7 @@
     {
        University,
        Faculty,
-       Specialization
+       Department
     }
 
     public enum UserRoles

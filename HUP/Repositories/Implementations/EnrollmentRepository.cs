@@ -9,9 +9,12 @@ namespace HUP.Repositories.Implementations
     public class EnrollmentRepository : IEnrollmentRepository
     {
         private readonly HupDbContext _context;
-        public EnrollmentRepository(HupDbContext context)
+        private readonly IStudentRepository _studentRepository;
+        public EnrollmentRepository(HupDbContext context, IStudentRepository studentRepository)
         {
             _context = context;
+            _studentRepository = studentRepository;
+
         }
         
         public async Task<IEnumerable<Enrollment>> GetByStudentId(Guid studentId)
@@ -82,27 +85,25 @@ namespace HUP.Repositories.Implementations
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<IGrouping<String, SemesterGrades>>> GetEnrollmentCourseGradesGroupedBySemester(Guid StudentId)
+        public async Task<List<SemesterGrades>> GetStudentSemesterGradeModelsAsync(Guid studentId)
         {
-        var data = await _context.Enrollments
-        .Include(e => e.Course)
-        .Include(e => e.Semester)
-        .Where(e => e.StudentId == StudentId)
-        .Select(e => new SemesterGrades
-        {
-            SemesterId = e.SemesterId,
-            SemesterName = e.Semester.SemesterName,
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId)
+                .Select(e => new SemesterGrades
+                {
+                    SemesterId = e.SemesterId,
+                    SemesterName = e.Semester.SemesterName,
 
-            CourseCode = e.Course.CourseCode,
-            CourseName = e.Course.CourseName,
+                    CourseId = e.CourseId,
+                    CourseName = e.Course.CourseName,
+                    CourseCode = e.Course.CourseCode,
+                    CourseCredits = e.Course.Credits,
 
-            TotalGrade = (e.ClassGrade ?? 0) +
-                         (e.MidtermGrade ?? 0) +
-                         (e.finalGrade ?? 0)
-        })        
-        .ToListAsync();
-
-        return data.GroupBy(e => e.SemesterName);
+                    ClassGrade = e.ClassGrade,
+                    MidtermGrade = e.MidtermGrade,
+                    FinalGrade = e.finalGrade
+                })
+                .ToListAsync();
         }
     }
 }
