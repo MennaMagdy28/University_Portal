@@ -62,7 +62,7 @@ namespace HUP.Application.Services.Implementations
             await _repository.SaveChangesAsync();
         }
 
-        public async Task Update(Guid id, UpdateEnrollmentStatusDto dto)
+        public async Task UpdateStatus(Guid id, UpdateEnrollmentStatusDto dto)
         {
             var enrollment = await _repository.GetByIdAsync(id);
             enrollment.UpdatedAt = DateTime.Now;
@@ -70,6 +70,36 @@ namespace HUP.Application.Services.Implementations
             // ef core tracks the changes and update only only specific attributes
             EnrollmentMapper.ToUpdateStatus(dto, enrollment);
             await _repository.SaveChangesAsync();
+        }
+
+        public async Task UpdateGrades(Guid id, UpdateEnrollmentGradesDto dto)
+        {
+            var enrollment = await _repository.GetByIdAsync(id);
+            enrollment.UpdatedAt = DateTime.Now;
+            // the mapper will copy the values in it to the entity
+            // ef core tracks the changes and update only only specific attributes
+            EnrollmentMapper.ToUpdateGrades(dto, enrollment);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task<List<SemesterTranscriptDto>> GetStudentGradesAsync(Guid studentId)
+        {
+            var groupedModels = await _repository.GetEnrollmentCourseGradesGroupedBySemester(studentId);
+
+            var transcript = groupedModels.Select(group => new SemesterTranscriptDto
+            {
+                SemesterName = group.Key,
+                Courses = group.Select(model => new SemesterGradesDto
+                {
+                    SemesterId = model.SemesterId,
+                    SemesterName = model.SemesterName,
+                    CourseCode = model.CourseCode,
+                    CourseName = model.CourseName,
+                    TotalGrade = model.TotalGrade
+                }).ToList()
+            }).ToList();
+
+            return transcript;
         }
     }
 }

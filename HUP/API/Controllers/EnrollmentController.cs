@@ -49,16 +49,29 @@ namespace HUP.API
             return StatusCode(StatusCodes.Status201Created);
         }
 
-        // PUT: api/Enrollment/{id}
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateEnrollmentStatusDto updateDto)
+        // Patch: api/Enrollment/{id}/status
+        [HttpPatch("{id}/status")]
+        public async Task<IActionResult> UpdateStatus(Guid id, [FromBody] UpdateEnrollmentStatusDto updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var existing = await _service.GetByIdAsync(id);
             if (existing == null)
                 return NotFound();
-            await _service.Update(id, updateDto);
+            await _service.UpdateStatus(id, updateDto);
+            return NoContent();
+        }
+
+        // Patch: api/Enrollment/{id}/grades
+        [HttpPatch("{id}/grades")]
+        public async Task<IActionResult> UpdateGrades(Guid id, [FromBody] UpdateEnrollmentGradesDto updateDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var existing = await _service.GetByIdAsync(id);
+            if (existing == null)
+                return NotFound();
+            await _service.UpdateGrades(id, updateDto);
             return NoContent();
         }
 
@@ -82,6 +95,14 @@ namespace HUP.API
                 return NotFound();
             await _service.Remove(id);
             return NoContent();
+        }
+
+        // Get: api/Enrollment/AllGrades/{studentId}
+        [HttpGet("AllGrades/{studentId}")]
+        public async Task<IActionResult> GetStudentGrades(Guid studentId)
+        {
+            var result = await _service.GetStudentGradesAsync(studentId);
+            return Ok(result);
         }
     }
 }

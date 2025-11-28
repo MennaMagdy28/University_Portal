@@ -28,6 +28,8 @@ namespace HUP.Data
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<CourseOfferingInstructor> CourseOfferingInstructors { get; set; }
 
+        public DbSet<CourseSchedule> CourseSchedules { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -60,11 +62,11 @@ namespace HUP.Data
 
             // User ↔ Student (One-to-One)
             modelBuilder.Entity<Student>()
-                .HasKey(s => s.UserId);
+                .HasKey(s => s.Id);
             modelBuilder.Entity<Student>()
                 .HasOne(s => s.User)
                 .WithOne()
-                .HasForeignKey<Student>(s => s.UserId)
+                .HasForeignKey<Student>(s => s.Id)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // User ↔ Instructor (One-to-One)

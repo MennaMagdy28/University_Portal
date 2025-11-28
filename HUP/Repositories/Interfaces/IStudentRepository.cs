@@ -9,5 +9,8 @@ namespace HUP.Repositories.Interfaces
     {
         Task<IEnumerable<Student>> GetByFacultyAsync(Guid facultyId);
         Task<IEnumerable<Student>> GetByDepartmentAsync(Guid departmentId);
+
+        Task UpdateAsync(Student student);
+        Task UpdateAcademicStatusAsync(Guid studentId, AcademicStatus status);
     }
 }

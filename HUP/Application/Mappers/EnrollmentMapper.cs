@@ -17,7 +17,12 @@ namespace HUP.Application.Mappers
         public static partial EnrollmentResponseDto ToResponseDto(Enrollment entity);
 
         //Mapping for UpdateEnrollmentDto
+        // status update
         public static partial Enrollment ToEntityFromUpdateDto(UpdateEnrollmentStatusDto dto);
         public static partial void ToUpdateStatus(UpdateEnrollmentStatusDto dto, Enrollment entity);
+
+        // grades update
+        public static partial Enrollment ToEntityFromUpdateGradeDto(UpdateEnrollmentGradesDto dto);
+        public static partial void ToUpdateGrades(UpdateEnrollmentGradesDto dto, Enrollment entity);
     }
 }
