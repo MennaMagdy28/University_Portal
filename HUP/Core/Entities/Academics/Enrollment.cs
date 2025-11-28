@@ -19,7 +19,6 @@ namespace HUP.Core.Entities.Academics
         public virtual Student Student { get; set; }
         public virtual Course Course { get; set; }
 
-        public string SemesterName { get; set; }
         public bool IsActive { get; set; } = true;
     }
 }

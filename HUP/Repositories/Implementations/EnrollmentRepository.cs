@@ -78,7 +78,7 @@ namespace HUP.Repositories.Implementations
         {
             return await _context.Enrollments
                 .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && e.SemesterName == semester && e.IsActive)
+                .Where(e => e.StudentId == studentId && e.Semester.SemesterName == semester && e.IsActive)
                 .ToListAsync();
         }
 
