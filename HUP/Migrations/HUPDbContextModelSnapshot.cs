@@ -509,9 +509,6 @@ namespace HUP.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullEnglishName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -531,9 +528,6 @@ namespace HUP.Migrations
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("RoleId")
@@ -816,6 +810,9 @@ namespace HUP.Migrations
                             b1.Property<string>("City")
                                 .HasColumnType("nvarchar(max)");
 
+                            b1.Property<string>("Phone")
+                                .HasColumnType("nvarchar(max)");
+
                             b1.Property<string>("PhoneNumber")
                                 .HasColumnType("nvarchar(max)");
 
@@ -823,10 +820,8 @@ namespace HUP.Migrations
 
                             b1.ToTable("Users");
 
-                            b1.WithOwner("User")
+                            b1.WithOwner()
                                 .HasForeignKey("UserId");
-
-                            b1.Navigation("User");
                         });
 
                     b.OwnsOne("HUP.Core.Entities.Identity.UserPersonalInfo", "PersonalInfo", b1 =>
@@ -838,7 +833,9 @@ namespace HUP.Migrations
                                 .HasColumnType("datetime2");
 
                             b1.Property<string>("BirthPlace")
-                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<string>("FullEnglishName")
                                 .HasColumnType("nvarchar(max)");
 
                             b1.Property<int>("Gender")
@@ -856,10 +853,8 @@ namespace HUP.Migrations
 
                             b1.ToTable("Users");
 
-                            b1.WithOwner("User")
+                            b1.WithOwner()
                                 .HasForeignKey("UserId");
-
-                            b1.Navigation("User");
                         });
 
                     b.Navigation("ContactInfo")

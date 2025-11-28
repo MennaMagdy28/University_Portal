@@ -2,6 +2,7 @@
 using HUP.Application.Services.Implementations;
 using HUP.Application.Services.Interfaces;
 using HUP.Common.Extensions;
+using HUP.Core.Entities.Identity;
 using HUP.Core.Interfaces;
 using HUP.Data;
 using HUP.Repositories.Implementations;
@@ -58,20 +59,20 @@ builder.Services.AddAuthentication(options =>
 
 // ---
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-builder.Services.AddScoped<IFacultyRepository, FacultyRepository>();
-builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
-builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
-builder.Services.AddScoped<IExamRepository, ExamRepository>();
-builder.Services.AddScoped<ICourseScheduleRepository, CourseScheduleRepository>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+//builder.Services.AddScoped<IFacultyRepository, FacultyRepository>();
+//builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+//builder.Services.AddScoped<ICourseRepository, CourseRepository>();
+//builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
+//builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
+////builder.Services.AddScoped<IExamRepository, ExamRepository>();
+//builder.Services.AddScoped<ICourseScheduleRepository, CourseScheduleRepository>();
 
-builder.Services.AddScoped<IStudentAcademicService, StudentAcademicService>();
-builder.Services.AddScoped<ICourseScheduleService, CourseScheduleService>();
-builder.Services.AddScoped<IStudentService, StudentService>();
-builder.Services.AddScoped<IExamService, ExamService>();
+////builder.Services.AddScoped<IStudentAcademicService, StudentAcademicService>();
+//builder.Services.AddScoped<ICourseScheduleService, CourseScheduleService>();
+//builder.Services.AddScoped<IStudentService, StudentService>();
+//builder.Services.AddScoped<IExamService, ExamService>();
 // ---
 
 builder.Services.AddControllers(); 
