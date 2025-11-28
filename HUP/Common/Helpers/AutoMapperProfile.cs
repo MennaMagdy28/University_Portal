@@ -51,9 +51,9 @@ namespace HUP.Common.Helpers
                 .ForMember(dest => dest.ExamTypeArabic, opt => opt.MapFrom(src => GetArabicExamType(src.ExamType)))
                 .ForMember(dest => dest.ExamDate, opt => opt.MapFrom(src => src.ExamDate.ToDateTime(TimeOnly.MinValue)))
                 .ForMember(dest => dest.ExamTime, opt => opt.MapFrom(src => src.ExamTime.ToTimeSpan()))
-                .ForMember(dest => dest.Room, opt => opt.MapFrom(src => ExtractRoomNumber(src.Location)))
-                .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src =>
-                    src.Course.Department.Instructors.FirstOrDefault().User.FullName ?? "غير محدد"));
+                .ForMember(dest => dest.Room, opt => opt.MapFrom(src => ExtractRoomNumber(src.Location)));
+                //.ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src =>
+                //    src.Course.Department.Instructors.FirstOrDefault().User.FullName ?? "غير محدد"));
 
             CreateMap<ExamCreateDto, Exam>();
             CreateMap<ExamUpdateDto, Exam>();

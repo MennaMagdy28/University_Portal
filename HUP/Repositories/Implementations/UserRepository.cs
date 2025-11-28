@@ -14,7 +14,10 @@ public class UserRepository : IUserRepository
     }
     public async Task<User> GetByIdAsync(Guid id)
     {
-        return await _context.Users.FindAsync(id);
+        return await _context.Users
+            .Include(u => u.ContactInfo)
+            .Include(u => u.PersonalInfo)
+            .Where(u => u.Id == id && !u.IsDeleted).FirstOrDefaultAsync();
     }
     // return the user by login credentials
     // Args: nationalId, password is the hashed password from the service layer
@@ -26,11 +29,27 @@ public class UserRepository : IUserRepository
             return null;
         return user;
     }
-    
+
+    public async Task<(UserPersonalInfo?, UserContact?)> GetUserInformation(Guid userId)
+    {
+        var info = await _context.Users
+            .AsNoTracking()
+            .Where(u => u.Id == userId)
+            .Select(u => new
+            {
+                u.PersonalInfo,
+                u.ContactInfo
+            }).FirstOrDefaultAsync();
+        return (info.PersonalInfo, info.ContactInfo);
+    }
+
 
     public async Task<IEnumerable<User>> GetAllAsync()
     {
-        return await _context.Users.ToListAsync();
+        return await _context.Users
+            .Include(u => u.PersonalInfo)
+            .Include(u =>u.ContactInfo)
+            .ToListAsync();
     }
 
     public async Task AddAsync(User entity)

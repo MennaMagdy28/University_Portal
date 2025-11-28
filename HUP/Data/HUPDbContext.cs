@@ -117,7 +117,7 @@ namespace HUP.Data
             // Course ↔ ProgramPlan (One-to-Many)
             modelBuilder.Entity<ProgramPlan>()
                 .HasOne(p => p.Course)
-                .WithMany()
+                .WithMany(c=>c.Programs)
                 .HasForeignKey(p => p.CourseId)
                 .OnDelete(DeleteBehavior.Restrict);
 
