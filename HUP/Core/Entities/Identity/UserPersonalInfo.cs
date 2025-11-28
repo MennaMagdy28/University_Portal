@@ -10,5 +10,7 @@ namespace HUP.Core.Entities.Identity
         public string Religion { get; set; }
         public string Nationality { get; set; }
         public string BirthPlace { get; set; }
+        public string? FullEnglishName { get; set; }
+
     }
 }
