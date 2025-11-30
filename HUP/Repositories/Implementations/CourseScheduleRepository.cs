@@ -18,7 +18,7 @@ namespace HUP.Repositories.Implementations
         public async Task<CourseSchedule> GetByIdAsync(Guid id)
         {
             return await _context.CourseSchedules
-                .Include(cs => cs.Course)
+                .Include(cs => cs.CourseOffering)
                 .Include(cs => cs.Instructor)
                 .ThenInclude(i => i.User)
                 .FirstOrDefaultAsync(cs => cs.Id == id);
@@ -39,7 +39,7 @@ namespace HUP.Repositories.Implementations
                 return new List<CourseSchedule>();
 
             return await _context.CourseSchedules
-                .Include(cs => cs.Course)
+                .Include(cs => cs.CourseOffering)
                 .Include(cs => cs.Instructor)
                 .ThenInclude(i => i.User)
                 .Where(cs => studentEnrollments.Contains(cs.CourseID) &&

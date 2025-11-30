@@ -4,6 +4,7 @@ using HUP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HUP.Migrations
 {
     [DbContext(typeof(HupDbContext))]
-    partial class HUPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251130200716_lu")]
+    partial class lu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -524,9 +527,6 @@ namespace HUP.Migrations
                     b.Property<Guid>("DepartmentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("FacultyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Group")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -560,8 +560,6 @@ namespace HUP.Migrations
                     b.HasKey("UserId");
 
                     b.HasIndex("DepartmentId");
-
-                    b.HasIndex("FacultyId");
 
                     b.HasIndex("ProgramDepartmentId", "ProgramCourseId");
 
@@ -908,12 +906,6 @@ namespace HUP.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("HUP.Core.Entities.Academics.Faculty", "Faculty")
-                        .WithMany()
-                        .HasForeignKey("FacultyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HUP.Core.Entities.Identity.User", "User")
                         .WithOne()
                         .HasForeignKey("HUP.Core.Entities.Academics.Student", "UserId")
@@ -927,8 +919,6 @@ namespace HUP.Migrations
                         .IsRequired();
 
                     b.Navigation("Department");
-
-                    b.Navigation("Faculty");
 
                     b.Navigation("Program");
 
