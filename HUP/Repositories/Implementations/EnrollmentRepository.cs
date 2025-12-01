@@ -17,7 +17,7 @@ namespace HUP.Repositories.Implementations
         {
             return await _context.Enrollments
                 .Where(e => e.StudentId == studentId && !e.IsDeleted)
-                .Include(e => e.Course)
+                .Include(e => e.CourseOffering)
                 .Include(e => e.Student)
                 .ToListAsync();
         }
@@ -27,7 +27,7 @@ namespace HUP.Repositories.Implementations
             return await _context.Enrollments
                 .Where(e => e.EnrollmentDate >= semester.StartDate && e.EnrollmentDate <= semester.EndDate
                 && e.StudentId == studentId && !e.IsDeleted)
-                .Include(e => e.Course)
+                .Include(e => e.CourseOffering)
                 .Include(e => e.Student)
                 .ToListAsync();
         }
@@ -35,7 +35,7 @@ namespace HUP.Repositories.Implementations
         public async Task<Enrollment?> GetExistingAsync(Guid studentId, Guid courseId)
         {
             return await _context.Enrollments.Where(e => e.StudentId == studentId
-                                                         && e.CourseId == courseId && !e.IsDeleted)
+                                                         && e.CourseOfferingId == courseId && !e.IsDeleted)
                 .FirstOrDefaultAsync(); 
         }
 
@@ -47,7 +47,7 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<Enrollment>> GetAllAsync()
         {
             return await _context.Enrollments
-                .Include(e => e.Course)
+                .Include(e => e.CourseOffering)
                 .Include(e => e.Student)
                 .Where(e => !e.IsDeleted)
                 .ToListAsync();

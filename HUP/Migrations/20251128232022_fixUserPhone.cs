@@ -10,9 +10,9 @@ namespace HUP.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "ContactInfo_Phone",
-                table: "Users");
+            // migrationBuilder.DropColumn(
+            //     name: "ContactInfo_Phone",
+            //     table: "Users");
         }
 
         /// <inheritdoc />

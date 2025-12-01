@@ -8,7 +8,7 @@ namespace HUP.Core.Entities.Identity
         public string Name { get; set; }
         public string DisplayName { get; set; }
         public string? Description { get; set; }
-        public Guid CreatedBy { get; set; }
+        public Guid? CreatedBy { get; set; }
 
         public User CreatedByUser { get; set; }
         public ICollection<User> Users { get; set; } = new List<User>();

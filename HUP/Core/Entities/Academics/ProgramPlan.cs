@@ -15,7 +15,6 @@ namespace HUP.Core.Entities.Academics
         // indicates if the course is compulsory or elective
         public bool IsCompulsory { get; set; }
         public decimal FinalGrade { get; set; }
-        public decimal CourseWorkGrade { get; set; }
         public Course Course { get; set; }
         public Department Department { get; set; }
     }
