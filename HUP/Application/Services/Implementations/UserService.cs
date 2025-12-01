@@ -86,8 +86,6 @@ public class UserService : IUserService
     {
         var user = await _repository.GetByIdAsync(userId);
         var userProfileData = UserMapper.ToProfileDto(user);
-        userProfileData.PersonalInfo = UserMapper.ToPersonalDto(user.PersonalInfo);
-        userProfileData.ContactInfo = UserMapper.ToContactDto(user.ContactInfo);
         return userProfileData;
     }
 
@@ -97,8 +95,8 @@ public class UserService : IUserService
         if (user == null) return false;
 
         var missingFields = await GetMissingInfo(userId);
-        
-        UserHelper.ApplyPatch(user, dto, missingFields);
+
+        user = UserMapper.ToUpdate(dto);
 
         await _repository.SaveChangesAsync();
         return true;
@@ -113,8 +111,6 @@ public class UserService : IUserService
         var hashedPass = _hasher.HashPassword(user, dto.PasswordHash);
         user.PasswordHash = hashedPass;
         user.IsActive = true;
-        user.PersonalInfo = UserMapper.ToPersonalEntity(dto.PersonalInfo);
-        user.ContactInfo = UserMapper.ToContactEntity(dto.ContactInfo);
         await _repository.AddAsync(user);
         await _repository.SaveChangesAsync();
     }
@@ -145,8 +141,8 @@ public class UserService : IUserService
     {
         var user = await _repository.GetByIdAsync(userId);
         if (user == null) return false;
-        
-        UserHelper.ApplyPatch(user, dto);
+
+        user = UserMapper.ToUpdate(dto);
         
         await _repository.SaveChangesAsync();
         return true;

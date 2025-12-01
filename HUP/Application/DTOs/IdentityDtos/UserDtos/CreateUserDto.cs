@@ -1,4 +1,6 @@
-﻿namespace HUP.Application.DTOs.IdentityDtos.UserDtos;
+﻿using HUP.Core.Entities.Identity;
+
+namespace HUP.Application.DTOs.IdentityDtos.UserDtos;
 
 public class CreateUserDto
 {
