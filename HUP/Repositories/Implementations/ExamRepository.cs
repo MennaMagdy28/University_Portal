@@ -14,7 +14,6 @@ namespace HUP.Repositories.Implementations
         }
         public async Task AddAsync(Exam exam)
         {
-            //await _context.Exams.AddAsync(entity);
             await _context.Exams.AddAsync(exam);
             await _context.SaveChangesAsync();
         }
@@ -59,7 +58,7 @@ namespace HUP.Repositories.Implementations
                 .ThenInclude(c => c.Department)
                 .ThenInclude(d => d.Instructors)
                 .ThenInclude(i => i.User)
-                .Where(e => courseIds.Contains(e.CourseID) && e.IsActive)
+                .Where(e => courseIds.Contains(e.CourseOffering.CourseId))
                 .OrderBy(e => e.ExamDate)
                 .ThenBy(e => e.ExamTime)
                 .ToListAsync();
@@ -72,7 +71,6 @@ namespace HUP.Repositories.Implementations
                 .ThenInclude(c => c.Department)
                 .ThenInclude(d => d.Instructors)
                 .ThenInclude(i => i.User)
-                .Where(e => e.IsActive)
                 .OrderBy(e => e.ExamDate)
                 .ThenBy(e => e.ExamTime)
                 .ToListAsync();
@@ -90,7 +88,6 @@ namespace HUP.Repositories.Implementations
             var exam = await GetByIdAsync(id);
             if (exam != null)
             {
-                exam.IsActive = false;
                 exam.UpdatedAt = DateTime.UtcNow;
                 await UpdateAsync(exam);
             }

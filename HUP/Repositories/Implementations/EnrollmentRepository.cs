@@ -80,8 +80,8 @@ namespace HUP.Repositories.Implementations
         public async Task<IEnumerable<Enrollment>> GetByStudentAndSemesterAsync(Guid studentId, string semester)
         {
             return await _context.Enrollments
-                .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && e.Semester.SemesterName == semester && e.IsActive)
+                .Include(e => e.CourseOffering)
+                .Where(e => e.StudentId == studentId && e.CourseOffering.Semester.SemesterName == semester)
                 .ToListAsync();
         }
 

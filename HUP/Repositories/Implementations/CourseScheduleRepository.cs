@@ -29,10 +29,10 @@ namespace HUP.Repositories.Implementations
             var currentSemester = GetCurrentSemester();
 
             var studentEnrollments = await _context.Enrollments
-                .Include(e => e.Course)
-                .Where(e => e.StudentId == studentId && e.Semester.SemesterName == currentSemester && e.IsActive &&
+                .Include(e => e.CourseOffering)
+                .Where(e => e.StudentId == studentId && e.CourseOffering.Semester.SemesterName == currentSemester &&
                            (e.Status == EnrollmentStatus.Registered || e.Status == EnrollmentStatus.InProgress))
-                .Select(e => e.CourseId)
+                .Select(e => e.CourseOffering.CourseId)
                 .ToListAsync();
 
             if (!studentEnrollments.Any())

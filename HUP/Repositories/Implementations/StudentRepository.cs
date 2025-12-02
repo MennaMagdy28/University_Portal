@@ -66,7 +66,6 @@ namespace HUP.Repositories.Implementations
         // --- 
         public async Task UpdateAsync(Student student)
         {
-            student.UpdatedAt = DateTime.UtcNow;
             _context.Students.Update(student);
             await _context.SaveChangesAsync();
         }
@@ -77,7 +76,6 @@ namespace HUP.Repositories.Implementations
             if (student != null)
             {
                 student.AcademicStatus = status;
-                student.UpdatedAt = DateTime.UtcNow;
                 await UpdateAsync(student);
             }
         }

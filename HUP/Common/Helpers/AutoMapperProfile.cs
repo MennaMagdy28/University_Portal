@@ -11,9 +11,9 @@ namespace HUP.Common.Helpers
         {
             CreateMap<Student, StudentResponseDto>()
                 .ForMember(dest => dest.StudentID, opt => opt.MapFrom(src => src.UserId))
-                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.FullName))
-                .ForMember(dest => dest.FacultyName, opt => opt.MapFrom(src => src.Faculty.DisplayName))
-                .ForMember(dest => dest.ProgramName, opt => opt.MapFrom(src => src.Program.ProgramName));
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.FullName));
+                //.ForMember(dest => dest.FacultyName, opt => opt.MapFrom(src => src.Faculty.DisplayName))
+                //.ForMember(dest => dest.ProgramName, opt => opt.MapFrom(src => src.Program.ProgramName));
 
 
             CreateMap<CourseSchedule, StudentTimetableDto>()
