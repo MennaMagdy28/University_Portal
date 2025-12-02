@@ -1,4 +1,4 @@
-namespace HUP.Application.DTOs.IdentityDtos
+namespace HUP.Application.DTOs.IdentityDtos.UserDtos
 {
     public class UserDto
     {

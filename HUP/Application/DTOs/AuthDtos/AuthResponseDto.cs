@@ -1,4 +1,5 @@
-﻿using HUP.Application.DTOs.IdentityDtos;
+﻿using HUP.Application.DTOs.IdentityDtos.UserDtos;
+using HUP.Application.DTOs.IdentityDtos;
 
 namespace HUP.Application.DTOs.AuthDtos;
 

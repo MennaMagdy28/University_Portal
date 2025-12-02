@@ -14,6 +14,8 @@ namespace HUP.Core.Entities.Academics
         public Course Course { get; set; }
         public Semester Semester { get; set; }
         public ICollection<Schedule> Schedules { get; set; }
+        public ICollection<Exam> Exams { get; set; }
+        public ICollection<Enrollment> Enrollments { get; set; }
         public ICollection<CourseOfferingInstructor> Instructors { get; set; }
     }
 }

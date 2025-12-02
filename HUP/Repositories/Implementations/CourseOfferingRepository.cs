@@ -32,11 +32,11 @@ namespace HUP.Repositories.Implementations
                             (e.Status == EnrollmentStatus.Completed ||
                              e.Status == EnrollmentStatus.Registered ||
                              e.Status == EnrollmentStatus.InProgress))
-                        .Select(e => e.CourseId)
+                        .Select(e => e.CourseOfferingId)
                         .Contains(co.CourseId))
                 .Where(co => co.Course.PrerequisiteId == null || // If course has no prerequisite → allowed
                         _context.Enrollments.Any(e => e.StudentId == studentId &&
-                                                 e.CourseId == co.Course.PrerequisiteId &&
+                                                 e.CourseOfferingId == co.Course.PrerequisiteId &&
                                                  e.Status == EnrollmentStatus.Completed)) // If has prerequisite → student must have COMPLETED it
                 .Include(co => co.Course)
                 .Include(co => co.Schedules)

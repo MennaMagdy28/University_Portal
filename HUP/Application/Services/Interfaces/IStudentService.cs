@@ -1,4 +1,11 @@
-﻿using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.AcademicDtos.Student;
+
+namespace HUP.Application.Services.Interfaces;
+
+public interface IStudentService
+{
+    Task<StudentProfileDto> GetStudentProfile(Guid userId);
+}using HUP.Application.DTOs.AcademicDtos;
 using HUP.Core.Enums;
 
 namespace HUP.Application.Services.Interfaces

@@ -6,8 +6,7 @@ namespace HUP.Core.Entities.Academics
     public class Enrollment : BaseEntity
     {
         public Guid StudentId { get; set; }
-        public Guid CourseId { get; set; }
-        public Guid SemesterId { get; set; }
+        public Guid CourseOfferingId { get; set; }
         public DateTime EnrollmentDate { get; set; }
         
         public decimal ClassGrade { get; set; }
@@ -15,10 +14,7 @@ namespace HUP.Core.Entities.Academics
         public decimal finalGrade {get; set; }
         public EnrollmentStatus Status { get; set; }
 
-        public virtual Semester Semester { get; set; }
-        public virtual Student Student { get; set; }
-        public virtual Course Course { get; set; }
-
-        public bool IsActive { get; set; } = true;
+        public Student Student { get; set; }
+        public CourseOffering CourseOffering { get; set; }
     }
 }
