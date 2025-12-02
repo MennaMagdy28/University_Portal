@@ -1,13 +1,14 @@
 using HUP.Core.Enums;
 using HUP.Core.Entities.Identity;
 using HUP.Core.Entities.Shared;
+using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace HUP.Core.Entities.Academics
 {
-    public class Student : BaseEntity
+    public class Student
     {
-        public Guid UserId => Id;
+        public Guid UserId { get; set; }
         public string UniversityCode { get; set; }
         public string UniversityEmail { get; set; }
         public string? ProfileImage { get; set; } // <<==================
@@ -17,10 +18,11 @@ namespace HUP.Core.Entities.Academics
         public decimal Cgpa { get; set; } //<<=== general?
         public string Group { get; set; }
 
+        public DateTime? UpdatedAt { get; set; }
+
         public User User { get; set; }
         public Department Department { get; set; }
 
-        public Guid FacultyID { get; set; }
         public Guid ProgramID { get; set; }
 
         public virtual Faculty Faculty { get; set; }

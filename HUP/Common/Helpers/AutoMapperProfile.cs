@@ -10,7 +10,7 @@ namespace HUP.Common.Helpers
         public AutoMapperProfile()
         {
             CreateMap<Student, StudentResponseDto>()
-                .ForMember(dest => dest.StudentID, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.StudentID, opt => opt.MapFrom(src => src.UserId))
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.User.FullName))
                 .ForMember(dest => dest.FacultyName, opt => opt.MapFrom(src => src.Faculty.DisplayName))
                 .ForMember(dest => dest.ProgramName, opt => opt.MapFrom(src => src.Program.ProgramName));
@@ -20,22 +20,22 @@ namespace HUP.Common.Helpers
                 .ForMember(dest => dest.DayOfWeek, opt => opt.MapFrom(src => src.DayOfWeek.ToString()))
                 .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
                 .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
-                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.Course.CourseCode))
-                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
+                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseCode))
+                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseName))
                 .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src => src.Instructor.User.FullName));
 
             CreateMap<CourseSchedule, StudentTimetableDto>()
                 .ForMember(dest => dest.DayOfWeek, opt => opt.MapFrom(src => src.DayOfWeek.ToString()))
                 .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
                 .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
-                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.Course.CourseCode))
-                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
+                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseCode))
+                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseName))
                 .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src => src.Instructor.User.FullName));
 
 
             CreateMap<CourseSchedule, CourseScheduleDto>()
-                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.Course.CourseCode))
-                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
+                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseCode))
+                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseName))
                 .ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src => src.Instructor.User.FullName))
                 .ForMember(dest => dest.DayOfWeekArabic, opt => opt.MapFrom(src => GetArabicDay(src.DayOfWeek)))
                 .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
@@ -46,14 +46,14 @@ namespace HUP.Common.Helpers
 
 
             CreateMap<Exam, ExamDto>()
-                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.Course.CourseCode))
-                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.Course.CourseName))
+                .ForMember(dest => dest.CourseCode, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseCode))
+                .ForMember(dest => dest.CourseName, opt => opt.MapFrom(src => src.CourseOffering.Course.CourseName))
                 .ForMember(dest => dest.ExamTypeArabic, opt => opt.MapFrom(src => GetArabicExamType(src.ExamType)))
                 .ForMember(dest => dest.ExamDate, opt => opt.MapFrom(src => src.ExamDate.ToDateTime(TimeOnly.MinValue)))
                 .ForMember(dest => dest.ExamTime, opt => opt.MapFrom(src => src.ExamTime.ToTimeSpan()))
                 .ForMember(dest => dest.Room, opt => opt.MapFrom(src => ExtractRoomNumber(src.Location)));
                 //.ForMember(dest => dest.InstructorName, opt => opt.MapFrom(src =>
-                //    src.Course.Department.Instructors.FirstOrDefault().User.FullName ?? "غير محدد"));
+                //    src.CourseOffering.Department.Instructors.FirstOrDefault().User.FullName ?? "غير محدد"));
 
             CreateMap<ExamCreateDto, Exam>();
             CreateMap<ExamUpdateDto, Exam>();

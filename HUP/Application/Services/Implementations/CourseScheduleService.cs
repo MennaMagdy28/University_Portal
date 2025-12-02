@@ -27,7 +27,7 @@ namespace HUP.Application.Services.Implementations
 
         public async Task<IEnumerable<CourseScheduleDto>> GetAllAsync()
         {
-            var schedules = await _courseScheduleRepository.GetByStudentAsync(Guid.Empty); // Get all
+            var schedules = await _courseScheduleRepository.GetByStudentAsync(Guid.Empty);
             return _mapper.Map<IEnumerable<CourseScheduleDto>>(schedules);
         }
 
