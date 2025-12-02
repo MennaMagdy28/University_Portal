@@ -14,7 +14,7 @@ namespace HUP.Api.Controllers
             _programPlanService = programPlanService;
         }
 
-        [HttpGet("student/{Id}")]
+        [HttpGet("student/{studentId}")]
         public async Task<IActionResult> GetProgramPlanByStudentId(Guid studentId)
         {
             var result = await _programPlanService.GetByDepartmentAsync(studentId);
