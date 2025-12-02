@@ -18,7 +18,6 @@ namespace HUP.Core.Entities.Identity
         public UserPersonalInfo PersonalInfo { get; set; }
         public UserContact ContactInfo { get; set; }
         public ICollection<Role> CreatedRoles { get; set; } = new List<Role>();
-        public Department HeadOfDepartment { get; set; } 
 
     }
 }
