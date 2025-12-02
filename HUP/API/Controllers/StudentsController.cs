@@ -1,4 +1,6 @@
 ﻿using HUP.Application.DTOs.AcademicDtos;
+using HUP.Application.DTOs.AcademicDtos.Enrollment;
+using HUP.Application.DTOs.AcademicDtos.Student;
 using HUP.Application.Services.Interfaces;
 using HUP.Core.Enums;
 using Microsoft.AspNetCore.Http;
@@ -72,5 +74,15 @@ namespace HUP.API.Controllers
                 return BadRequest($"خطأ في رفع الصورة: {ex.Message}");
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateStudentDto createDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            await _studentService.AddStudent(createDto);
+            return Ok("Added");
+        }
+
     }
 }

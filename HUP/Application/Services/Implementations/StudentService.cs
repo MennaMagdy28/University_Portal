@@ -52,4 +52,16 @@ public class StudentService : IStudentService
         await _studentRepository.UpdateAsync(student);
         return true;
     }
+
+    public async Task AddStudent(CreateStudentDto dto)
+    {
+        var student = StudentMapper.ToCreateStudent(dto);
+        var user = student.User;
+        user.CreatedAt = DateTime.UtcNow;
+        user.Id = new Guid();
+        await _userRepository.AddAsync(user);
+        student.UserId = user.Id;
+        await _studentRepository.AddAsync(student);
+        await _studentRepository.SaveChangesAsync();
+    }
 }

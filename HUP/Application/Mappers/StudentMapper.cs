@@ -13,4 +13,14 @@ public static partial class StudentMapper
         return profile;
     }
     public static partial StudentProfileDto MapStudentFields(Student student);
+
+    public static Student ToCreateStudent(CreateStudentDto dto)
+    {
+        var student = new Student();
+        student = MapEntityFields(dto);
+        student.User = UserMapper.ToCreateEntity(dto.UserInfo);
+        return student;
+    }
+    public static partial Student MapEntityFields(CreateStudentDto dto); 
+
 }
