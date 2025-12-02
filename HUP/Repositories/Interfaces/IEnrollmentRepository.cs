@@ -11,5 +11,6 @@ namespace HUP.Repositories.Interfaces
         Task<Enrollment?> GetExistingAsync(Guid studentId, Guid courseId);
         Task<IEnumerable<Enrollment>> GetByStudentAndSemesterAsync(Guid studentId, string semester);
         Task<List<SemesterGrades>> GetStudentSemesterGradeModelsAsync(Guid studentId);
+        Task<IEnumerable<Enrollment>> GetRegisteredByStudentAsync(Guid studentId);
     }
 }

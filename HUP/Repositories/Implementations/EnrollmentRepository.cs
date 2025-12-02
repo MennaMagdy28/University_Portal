@@ -3,6 +3,7 @@ using HUP.Core.Entities.Academics;
 using HUP.Data;
 using Microsoft.EntityFrameworkCore;
 using HUP.Core.Models;
+using HUP.Core.Enums;
 
 namespace HUP.Repositories.Implementations
 {
@@ -104,6 +105,12 @@ namespace HUP.Repositories.Implementations
                     MidtermGrade = e.MidtermGrade,
                     FinalGrade = e.finalGrade
                 })
+                .ToListAsync();
+        }
+        public async Task<IEnumerable<Enrollment>> GetRegisteredByStudentAsync(Guid studentId)
+        {
+            return await _context.Enrollments
+                .Where(e => e.StudentId == studentId && e.Status == EnrollmentStatus.Registered)
                 .ToListAsync();
         }
     }

@@ -15,5 +15,6 @@ namespace HUP.Application.Services.Interfaces
         Task<bool> Exists(CreateEnrollmentDto dto);
         Task Remove(Guid id);
         Task<List<SemesterTranscriptDto>> GetStudentGradesAsync(Guid studentId);
+        Task<IEnumerable<EnrollmentResponseDto>> GetRegisteredByStudentAsync(Guid studentId);
     }
 }
