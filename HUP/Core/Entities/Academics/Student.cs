@@ -17,15 +17,8 @@ namespace HUP.Core.Entities.Academics
         public int Level { get; set; }
         public decimal Cgpa { get; set; } //<<=== general?
         public string Group { get; set; }
-        
         public ICollection<Enrollment> Enrollments { get; set; }
         public User User { get; set; }
         public Department Department { get; set; }
-
-        public Guid ProgramID { get; set; }
-
-        public virtual Faculty Faculty { get; set; }
-        public virtual ProgramPlan Program { get; set; }
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

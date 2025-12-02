@@ -88,16 +88,17 @@ namespace HUP.Repositories.Implementations
         public async Task<List<SemesterGrades>> GetStudentSemesterGradeModelsAsync(Guid studentId)
         {
             return await _context.Enrollments
+                .Include(e => e.CourseOffering)
                 .Where(e => e.StudentId == studentId)
                 .Select(e => new SemesterGrades
                 {
-                    SemesterId = e.SemesterId,
-                    SemesterName = e.Semester.SemesterName,
+                    SemesterId = e.CourseOffering.Semester.Id,
+                    SemesterName = e.CourseOffering.Semester.SemesterName,
 
-                    CourseId = e.CourseId,
-                    CourseName = e.Course.CourseName,
-                    CourseCode = e.Course.CourseCode,
-                    CourseCredits = e.Course.Credits,
+                    CourseId = e.CourseOffering.CourseId,
+                    CourseName = e.CourseOffering.Course.CourseName,
+                    CourseCode = e.CourseOffering.Course.CourseCode,
+                    CourseCredits = e.CourseOffering.Course.Credits,
 
                     ClassGrade = e.ClassGrade,
                     MidtermGrade = e.MidtermGrade,

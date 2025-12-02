@@ -12,8 +12,5 @@ namespace HUP.Core.Entities.Academics
         public string Location { get; set; }
 
         public virtual CourseOffering CourseOffering { get; set; }
-
-        public Guid CourseID { get; set; }
-        public bool IsActive { get; set; } = true;
     }
 }
