@@ -104,5 +104,13 @@ namespace HUP.API.Controllers
             var result = await _service.GetStudentGradesAsync(studentId);
             return Ok(result);
         }
+
+        // GET: api/Enrollment/Registered/{studentId}
+        [HttpGet("Registered/{studentId}")]
+        public async Task<ActionResult<IEnumerable<EnrollmentResponseDto>>> GetRegisteredByStudentAsync(Guid studentId)
+        {
+            var result = await _service.GetRegisteredByStudentAsync(studentId);
+            return Ok(result);
+        }
     }
 }

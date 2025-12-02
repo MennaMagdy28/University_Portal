@@ -49,7 +49,7 @@ namespace HUP.Application.Services.Implementations
 
         public async Task<bool> Exists(CreateEnrollmentDto dto)
         {
-            var entity = await _repository.GetExistingAsync(dto.StudentId, dto.CourseId);
+            var entity = await _repository.GetExistingAsync(dto.StudentId, dto.CourseOfferingId);
             return entity != null;
         }
 
@@ -162,7 +162,11 @@ namespace HUP.Application.Services.Implementations
             return transcript;
         }
 
-
+        public async Task<IEnumerable<EnrollmentResponseDto>> GetRegisteredByStudentAsync(Guid studentId)
+        {
+            var enrollments = await _repository.GetRegisteredByStudentAsync(studentId);
+            return enrollments.Select(e => EnrollmentMapper.ToResponseDto(e));
+        }
 
         public string getGrade(decimal grade)
         {
