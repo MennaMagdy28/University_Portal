@@ -3,8 +3,10 @@ using HUP.Application.DTOs.AcademicDtos.Enrollment;
 using HUP.Application.DTOs.AcademicDtos.Student;
 using HUP.Application.Services.Interfaces;
 using HUP.Core.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HUP.API.Controllers
 {
@@ -84,9 +86,11 @@ namespace HUP.API.Controllers
             return Ok("Added");
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<StudentProfileDto>> GetById(Guid id)
+        [HttpGet("Profile")]
+        [Authorize]
+        public async Task<ActionResult<StudentProfileDto>> GetProfile()
         {
+            var id = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var profile = await _studentService.GetStudentProfile(id);
             if (profile == null)
                 return BadRequest("User not found.");
