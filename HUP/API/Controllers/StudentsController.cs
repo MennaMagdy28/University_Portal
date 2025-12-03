@@ -84,5 +84,13 @@ namespace HUP.API.Controllers
             return Ok("Added");
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<StudentProfileDto>> GetById(Guid id)
+        {
+            var profile = await _studentService.GetStudentProfile(id);
+            if (profile == null)
+                return BadRequest("User not found.");
+            return Ok(profile);
+        }
     }
 }
