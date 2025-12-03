@@ -102,7 +102,7 @@ namespace HUP.API.Controllers
 
         // Get: api/Enrollment/AllGrades/{studentId}
         [Authorize]
-        [HttpGet("AllGrades/")]
+        [HttpGet("AllGrades")]
         public async Task<IActionResult> GetStudentGrades()
         {
             var studentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
@@ -111,9 +111,10 @@ namespace HUP.API.Controllers
         }
 
         // GET: api/Enrollment/Registered/{studentId}
-        [HttpGet("Registered/{studentId}")]
-        public async Task<ActionResult<IEnumerable<EnrollmentResponseDto>>> GetRegisteredByStudentAsync(Guid studentId)
+        [HttpGet("Registered")]
+        public async Task<ActionResult<IEnumerable<EnrollmentResponseDto>>> GetRegisteredByStudentAsync()
         {
+            var studentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var result = await _service.GetRegisteredByStudentAsync(studentId);
             return Ok(result);
         }
