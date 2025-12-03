@@ -35,11 +35,14 @@ namespace HUP.API.Controllers
             }
         }
 
-        [HttpPost("{id}/upload-profile")]
-        public async Task<ActionResult> UploadProfileImage(Guid id, IFormFile file)
+        [HttpPost("upload-profile")]
+        [Authorize]
+        public async Task<ActionResult> UploadProfileImage( IFormFile file)
         {
             try
             {
+                var id = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+
                 if (file == null || file.Length == 0)
                     return BadRequest("الرجاء اختيار صورة");
 

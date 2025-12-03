@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using HUP.Application.DTOs.AcademicDtos;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Services.Interfaces;
 using HUP.Application.DTOs.AcademicDtos.Enrollment;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HUP.API.Controllers
 {
@@ -98,9 +100,11 @@ namespace HUP.API.Controllers
         }
 
         // Get: api/Enrollment/AllGrades/{studentId}
-        [HttpGet("AllGrades/{studentId}")]
-        public async Task<IActionResult> GetStudentGrades(Guid studentId)
+        [Authorize]
+        [HttpGet("AllGrades/")]
+        public async Task<IActionResult> GetStudentGrades()
         {
+            var studentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var result = await _service.GetStudentGradesAsync(studentId);
             return Ok(result);
         }

@@ -1,8 +1,10 @@
+using System.Security.Claims;
 using HUP.Application.DTOs.AcademicDtos.CourseOffering;
 using Microsoft.AspNetCore.Mvc;
 using HUP.Application.Mappers;
 using HUP.Core.Entities.Academics;
 using HUP.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HUP.API.Controllers
 {
@@ -46,9 +48,11 @@ namespace HUP.API.Controllers
        }
 
        // GET: api/CourseOffering/available/{studentId}
-       [HttpGet("available/{studentId}")]
-       public async Task<ActionResult<IEnumerable<CourseOfferingDto>>> GetAvailableToRegister(Guid studentId)
+       [HttpGet("available/")]
+       [Authorize]
+       public async Task<ActionResult<IEnumerable<CourseOfferingDto>>> GetAvailableToRegister()
        {
+           var studentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
            var courseOfferings = await _service.GetAvailableToRegisterAsync(studentId);
            return Ok(courseOfferings);
        }

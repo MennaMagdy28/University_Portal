@@ -1,4 +1,6 @@
+using System.Security.Claims;
 using HUP.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HUP.Api.Controllers
@@ -14,9 +16,11 @@ namespace HUP.Api.Controllers
             _programPlanService = programPlanService;
         }
 
-        [HttpGet("student/{studentId}")]
-        public async Task<IActionResult> GetProgramPlanByStudentId(Guid studentId)
+        [HttpGet("student/")]
+        [Authorize]
+        public async Task<IActionResult> GetProgramPlanByStudentId()
         {
+            var studentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var result = await _programPlanService.GetByDepartmentAsync(studentId);
 
             if (result == null)
