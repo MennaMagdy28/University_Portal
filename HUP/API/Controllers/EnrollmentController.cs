@@ -44,6 +44,7 @@ namespace HUP.API.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+            createDto.StudentId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var exist = await _service.Exists(createDto);
             if (exist)
                 return BadRequest("The Course is registered");
