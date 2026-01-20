@@ -30,10 +30,12 @@ namespace HUP.Data
 
         public DbSet<CourseSchedule> CourseSchedules { get; set; }
 
+        public DbSet<ClassGroup> ClassGroups { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
             // RolePermission (Many-to-Many)
             modelBuilder.Entity<RolePermission>()
                 .HasKey(rp => new { rp.RoleId, rp.PermissionId });
@@ -64,7 +66,7 @@ namespace HUP.Data
             modelBuilder.Entity<Student>()
                 .HasKey(s => s.UserId);
             modelBuilder.Entity<Student>()
-                .HasOne( s => s.User)
+                .HasOne(s => s.User)
                 .WithOne()
                 .HasForeignKey<Student>(s => s.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
@@ -79,8 +81,8 @@ namespace HUP.Data
             // User ↔ Faculty (One-to-One - Dean)
             modelBuilder.Entity<Faculty>()
                 .HasOne(f => f.Dean)
-                .WithOne()
-                .HasForeignKey<Faculty>(f => f.DeanId)
+                .WithMany()
+                .HasForeignKey(f => f.DeanId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // Role ↔ User (CreatedBy)
@@ -204,7 +206,27 @@ namespace HUP.Data
                 .HasOne(s => s.CourseOffering)
                 .WithMany(co => co.Schedules)
                 .HasForeignKey(s => s.CourseOfferingId)
-                .OnDelete(DeleteBehavior.Restrict); 
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ClassGroup>()
+                .HasOne(cg => cg.CourseOffering)
+                .WithMany(co => co.ClassGroups)  
+                .HasForeignKey(cg => cg.CourseOfferingId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // ClassGroup ↔ Instructor (Many-to-One)
+            modelBuilder.Entity<ClassGroup>()
+                .HasOne(cg => cg.Instructor)
+                .WithMany()
+                .HasForeignKey(cg => cg.InstructorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // ClassGroup ↔ Enrollment (One-to-Many)
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.ClassGroup)
+                .WithMany(cg => cg.Enrollments)
+                .HasForeignKey(e => e.ClassGroupId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

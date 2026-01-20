@@ -22,14 +22,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />
     <PackageReference Include="MongoDB.Driver" Version="3.5.0" />
     <PackageReference Include="Riok.Mapperly" Version="4.3.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="StackExchange.Redis" Version="2.9.32" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Common\Helpers\" />
   </ItemGroup>
 
 </Project>

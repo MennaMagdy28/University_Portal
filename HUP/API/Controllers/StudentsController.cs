@@ -1,10 +1,7 @@
 ﻿using HUP.Application.DTOs.AcademicDtos;
-using HUP.Application.DTOs.AcademicDtos.Enrollment;
 using HUP.Application.DTOs.AcademicDtos.Student;
 using HUP.Application.Services.Interfaces;
 using HUP.Core.Enums;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -36,7 +33,6 @@ namespace HUP.API.Controllers
         }
 
         [HttpPost("upload-profile")]
-        [Authorize]
         public async Task<ActionResult> UploadProfileImage( IFormFile file)
         {
             try
@@ -90,7 +86,6 @@ namespace HUP.API.Controllers
         }
 
         [HttpGet("Profile")]
-        [Authorize]
         public async Task<ActionResult<StudentProfileDto>> GetProfile()
         {
             var id = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
