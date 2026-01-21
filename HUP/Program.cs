@@ -1,12 +1,10 @@
-﻿using HUP.Application.Services.Caching;
-using HUP.Application.Services.Implementations;
-using HUP.Application.Services.Interfaces;
+﻿//using HUP.API.Data;
+using HUP.Application.Services.Caching;
 using HUP.Common.Extensions;
+using HUP.Common.Helpers;
 using HUP.Core.Entities.Identity;
 using HUP.Core.Interfaces;
 using HUP.Data;
-using HUP.Repositories.Implementations;
-using HUP.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,8 +14,10 @@ using MongoDB.Driver;
 using StackExchange.Redis;
 using System.Text;
 
+// Add configuration
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
 
@@ -57,28 +57,13 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
-// ---
 builder.Services.AddAutoMapper(typeof(Program));
-//builder.Services.AddScoped<IUserRepository, UserRepository>();
-//builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-//builder.Services.AddScoped<IFacultyRepository, FacultyRepository>();
-//builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-//builder.Services.AddScoped<ICourseRepository, CourseRepository>();
-//builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
-//builder.Services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
-////builder.Services.AddScoped<IExamRepository, ExamRepository>();
-//builder.Services.AddScoped<ICourseScheduleRepository, CourseScheduleRepository>();
-
-////builder.Services.AddScoped<IStudentAcademicService, StudentAcademicService>();
-//builder.Services.AddScoped<ICourseScheduleService, CourseScheduleService>();
-//builder.Services.AddScoped<IStudentService, StudentService>();
-//builder.Services.AddScoped<IExamService, ExamService>();
-// ---
 
 builder.Services.AddControllers(); 
 
+builder.Services.AddSwaggerWithAuth();
+//builder.Services.AddSwaggerGen(); 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); 
 
 builder.Services.AddCors(options =>
 {
@@ -91,13 +76,31 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+    logging.AddDebug();
+    logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(); 
-    app.UseSwaggerUI(); 
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "HUP API v1");
+        c.RoutePrefix = "swagger"; 
+        c.DocumentTitle = "HUP University Portal API";
+        c.DefaultModelsExpandDepth(-1); 
+        c.DisplayRequestDuration();
+        c.EnableDeepLinking();
+        c.EnableFilter();
+    });
 }
+app.UseStaticFiles();
 
 app.UseCors("AllowReactApp");
 
@@ -105,5 +108,35 @@ app.UseCors("AllowReactApp");
 app.UseAuthorization();
 
 app.MapControllers();
+
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    try
+//    {
+//        var context = services.GetRequiredService<HupDbContext>();
+//        var passwordHasher = services.GetRequiredService<IPasswordHasher<User>>();
+//        var logger = services.GetRequiredService<ILogger<Program>>();
+
+//        logger.LogInformation("Starting database migration and seeding");
+
+//        await context.Database.MigrateAsync();
+//        logger.LogInformation("Database migrations applied successfully");
+
+//        await DataSeeder.SeedAsync(context, passwordHasher, logger);
+
+//        logger.LogInformation("Application startup completed successfully");
+//    }
+//    catch (Exception ex)
+//    {
+//        var logger = services.GetRequiredService<ILogger<Program>>();
+//        logger.LogError(ex, "An error occurred while migrating or seeding the database");
+
+//        if (app.Environment.IsDevelopment())
+//        {
+//            throw;
+//        }
+//    }
+//}
 
 app.Run();

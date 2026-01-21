@@ -103,7 +103,7 @@ namespace HUP.Repositories.Implementations
 
                     ClassGrade = e.ClassGrade,
                     MidtermGrade = e.MidtermGrade,
-                    FinalGrade = e.finalGrade
+                    FinalGrade = e.FinalGrade
                 })
                 .ToListAsync();
         }
