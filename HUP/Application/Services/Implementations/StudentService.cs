@@ -33,32 +33,7 @@ public class StudentService : IStudentService
         var profile = StudentMapper.ToStudentProfile(student);
         return profile;
     }
-
-    public async Task<StudentResponseDto> GetStudentByIdAsync(Guid id)
-    {
-        var student = await _studentRepository.GetByIdAsync(id);
-        return _mapper.Map<StudentResponseDto>(student);
-    }
-
-    public async Task<StudentResponseDto> UpdateStudentAcademicStatusAsync(Guid id, AcademicStatus status)
-    {
-        await _studentRepository.UpdateAcademicStatusAsync(id, status);
-        return await GetStudentByIdAsync(id);
-    }
-
-    public async Task<bool> UploadProfileImageAsync(Guid studentId, string imagePath)
-    {
-        var student = await _studentRepository.GetByIdAsync(studentId);
-        if (student == null)
-            return false;
-
-        student.ProfileImage = imagePath;
-        student.User.UpdatedAt = DateTime.UtcNow;
-
-        await _studentRepository.UpdateAsync(student);
-        return true;
-    }
-
+    
     public async Task AddStudent(CreateStudentDto dto)
     {
         var student = StudentMapper.ToCreateStudent(dto);

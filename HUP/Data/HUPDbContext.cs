@@ -27,8 +27,7 @@ namespace HUP.Data
         public DbSet<ProgramPlan> ProgramPlan { get; set; }
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<CourseOfferingInstructor> CourseOfferingInstructors { get; set; }
-
-        public DbSet<CourseSchedule> CourseSchedules { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
